@@ -23,9 +23,9 @@ mail("awilsonprogramming@gmail.com","My subject",$msg);
   </head>
   <body>
     <canvas id="display"></canvas>
-    <h2>Send e-mail to someone@example.com:</h2>
+    <h2>Send e-mail to awilsonprogramming@gmail.com:</h2>
 
-<form action="mailto:someone@example.com" method="post" enctype="text/plain">
+<form action="mailto:awilsonprogramming@gmail.com" method="post" enctype="text/plain">
 Name:<br>
 <input type="text" name="name"><br>
 E-mail:<br>
