@@ -1,5 +1,4 @@
 # Anthony-Wilson-Programming.github.io
-!DOCTYPE html
 <html>
   <head>
     <meta charset="utf-8">
@@ -18,5 +17,6 @@
   <script>
     alert("Hello user!");
     var input = prompt("Type something here");
+    document.write("YOU TYPED: "+input);
   </script>
 </html>
