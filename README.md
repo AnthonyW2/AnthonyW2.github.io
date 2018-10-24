@@ -16,6 +16,7 @@
     <canvas id="display"></canvas>
   </body>
   <script>
-    alert("Hello");
+    alert("Hello user!");
+    var input = prompt("Type something here");
   </script>
 </html>
