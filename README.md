@@ -27,6 +27,6 @@ mail("awilsonprogramming@gmail.com","My subject",$msg);
   <script>
     //alert("Hello user!");
     var input = prompt("Type something here");
-    document.write("YOU TYPED: "+input);
+    document.write("You typed: "+input);
   </script>
 </html>
