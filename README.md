@@ -23,6 +23,18 @@ mail("awilsonprogramming@gmail.com","My subject",$msg);
   </head>
   <body>
     <canvas id="display"></canvas>
+    <h2>Send e-mail to someone@example.com:</h2>
+
+<form action="mailto:someone@example.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
   </body>
   <script>
     //alert("Hello user!");
