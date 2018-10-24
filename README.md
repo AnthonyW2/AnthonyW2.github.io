@@ -5,9 +5,9 @@
     <title>Stop logging!</title>
     <style>
       body{
-        margin: 0;
-        background: #000;
-        color: #fff;
+        margin: 0px;
+        background: #000000;
+        color: #ffffff;
       }
     </style>
   </head>
@@ -15,7 +15,7 @@
     <canvas id="display"></canvas>
   </body>
   <script>
-    alert("Hello user!");
+    //alert("Hello user!");
     var input = prompt("Type something here");
     document.write("YOU TYPED: "+input);
   </script>
