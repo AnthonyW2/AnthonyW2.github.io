@@ -9,8 +9,16 @@
 		<canvas data-processing-sources="hello-web.pde"></canvas>
 	</body>
 	<script>
-		//alert("Hello user!");
-		var input = prompt("Type something here");
-		document.write("You typed: "+input);
+		void setup(){
+		  frameRate(100);
+		  size(400,400);
+		}
+		draw(){
+		  background(255,0,0);
+		  stroke(0,255,0);
+		  fill(0,0,255);
+		  
+		  ellipse(200,200,20,20);
+		}
 	</script>
 </html>
