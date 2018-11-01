@@ -9,15 +9,12 @@
     //<canvas data-processing-sources="hello-web.pde"></canvas>
   </body>
   <script>
-    void setup(){
-      frameRate(100);
-      size(400,400);
-    }
-    draw(){
-      background(255,0,0);
-      stroke(0,255,0);
-      fill(0,0,255);
-      ellipse(200,200,20,20);
+    void setup() {
+      size(200, 200);
+      background(100);
+      stroke(255);
+      ellipse(50, 50, 25, 25);
+      println("hello web!");
     }
   </script>
 </html>
