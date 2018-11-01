@@ -6,7 +6,6 @@
   </head>
   <body>
     <script src="processing-1.0.0.min.js"></script>
-    //<canvas data-processing-sources="hello-web.pde"></canvas>
   </body>
   <script>
     void setup() {
