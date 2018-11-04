@@ -14,7 +14,7 @@
     <script type="text/processing" data-processing-target="processing-canvas">
 void setup() {
    frameRate(10);
-   size(1024,704, P3D);
+   size(1000,700, P3D);
 }
 
 
