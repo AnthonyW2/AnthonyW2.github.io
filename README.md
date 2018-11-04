@@ -5,12 +5,12 @@
     <title>Processing Sketch</title>
     <style>
       html, head, body {
-        position: fixed;
+        position: absolute;
       }
     </style>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script><//script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <script type="text/processing" data-processing-target="processing-canvas">
 void setup() {
    frameRate(10);
