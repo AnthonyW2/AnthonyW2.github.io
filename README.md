@@ -11,7 +11,7 @@
     </style>
   </head>
   <body>
-    <br/>
+    <br>
     <p>Colour:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
 
@@ -57,7 +57,7 @@ void draw() {
 
     </script>
     <canvas id="processing-canvas"> </canvas>
-    <br/>
+    <br>
     <p>Now Grey Scale:</p>
     <script type="text/processing" data-processing-target="processing-canvas2">
 
@@ -102,15 +102,15 @@ void draw() {
 
     </script>
     <canvas id="processing-canvas2"> </canvas>
-    <br/>
+    <br>
     <p>Which do you like better?</p>
     <form>
       <input type="radio" name="opinion" value="Colour" />
-      <br/>
+      <br>
       <input type="radio" name="opinion" value="Grey-Scale" />
-      <br/>
+      <br>
       <input type="radio" name="opinion" value="Both equally" />
-      <br/>
+      <br>
       <input type="submit" value="Submit" />
     </form>
     <p>*DISCLAIMER: This info doesn't go anywhere yet</p>
