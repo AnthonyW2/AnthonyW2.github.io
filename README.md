@@ -44,11 +44,8 @@ void draw() {
    for(int a = 0;a < amount;a += 1){
       for(int b = 0;b < amount;b += 1){
          translate(a*pixelSize,b*pixelSize,0);
-         
          fill((noise((-frameCount+a)*noiseScale,(-frameCount+b)*noiseScale)*255*-3+255*2+200)%255,255,150);
-         
          box(pixelSize,pixelSize,(noise((-frameCount+a)*noiseScale,(-frameCount+b)*noiseScale)*500));
-         
          translate(a*-pixelSize,b*-pixelSize,0);
       }
    }
