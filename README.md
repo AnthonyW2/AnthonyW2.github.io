@@ -11,6 +11,7 @@
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+    <p>Colour:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
 void setup() {
    frameRate(10);
