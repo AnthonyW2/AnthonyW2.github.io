@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Processing Sketch</title>
     <style>
       html, head, body {
@@ -10,12 +11,13 @@
     </style>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+    <br/>
     <p>Colour:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
+
 void setup() {
    frameRate(10);
-   size(1000,700, P3D);
+   size(1000,500, P3D);
 }
 
 
@@ -52,13 +54,16 @@ void draw() {
    }
    //resetMatrix();
 }
+
     </script>
     <canvas id="processing-canvas"> </canvas>
+    <br/>
     <p>Now Grey Scale:</p>
     <script type="text/processing" data-processing-target="processing-canvas2">
+
 void setup() {
    frameRate(10);
-   size(1000,700, P3D);
+   size(1000,500, P3D);
 }
 
 
@@ -94,7 +99,20 @@ void draw() {
    }
    resetMatrix();
 }
+
     </script>
     <canvas id="processing-canvas2"> </canvas>
+    <br/>
+    <p>Which do you like better?</p>
+    <form>
+      <input type="radio" name="opinion" value="Colour" />
+      <br/>
+      <input type="radio" name="opinion" value="Grey-Scale" />
+      <br/>
+      <input type="radio" name="opinion" value="Both equally" />
+      <br/>
+      <input type="submit" value="Submit" />
+    </form>
+    <p>*DISCLAIMER: This info doesn't go anywhere yet</p>
   </body>
 </html>
