@@ -106,11 +106,11 @@ void draw() {
     <p>Which do you like better?</p>
     
     <form>
-      <input type="radio" name="status" value="Colour" />
+      <input type="radio" name="opinion" value="Colour" /> Colour
       <br>
-      <input type="radio" name="status" value="Grey-Scale" />
+      <input type="radio" name="opinion" value="Grey-Scale" /> Grey-Scale
       <br>
-      <input type="radio" name="status" value="Both equally" />
+      <input type="radio" name="opinion" value="Both equally" /> Both Equally
       <br>
       <input type="submit" value="Submit" />
     </form>
