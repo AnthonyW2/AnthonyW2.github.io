@@ -114,7 +114,8 @@ void draw() {
       <br>
       <input type="submit" value="Submit" />
     </form>
-    
+    <br>
+    <br>
     <p>*DISCLAIMER: This info doesn't go anywhere yet</p>
   </body>
 </html>
