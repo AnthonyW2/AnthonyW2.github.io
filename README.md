@@ -104,15 +104,17 @@ void draw() {
     <canvas id="processing-canvas2"> </canvas>
     <br>
     <p>Which do you like better?</p>
+    
     <form>
-      <input type="radio" name="opinion" value="Colour" />
+      <input type="radio" name="status" value="Colour" />
       <br>
-      <input type="radio" name="opinion" value="Grey-Scale" />
+      <input type="radio" name="status" value="Grey-Scale" />
       <br>
-      <input type="radio" name="opinion" value="Both equally" />
+      <input type="radio" name="status" value="Both equally" />
       <br>
       <input type="submit" value="Submit" />
     </form>
+    
     <p>*DISCLAIMER: This info doesn't go anywhere yet</p>
   </body>
 </html>
