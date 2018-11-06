@@ -58,9 +58,9 @@ void draw() {
     <canvas id="processing-canvas"> </canvas>
     <p>Now Grey Scale:</p>
     <script type="text/processing" data-processing-target="processing-canvas2">
-    void setup() {
+void setup() {
    frameRate(10);
-   size(1024,704, P3D);
+   size(1000,700, P3D);
 }
 
 
@@ -97,6 +97,6 @@ void draw() {
    resetMatrix();
 }
     </script>
-    <canvas id="processing-canvas"> </canvas>
+    <canvas id="processing-canvas2"> </canvas>
   </body>
 </html>
