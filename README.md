@@ -120,5 +120,73 @@ void draw() {
     <br>
     <br>
     <p>*DISCLAIMER: This info doesn't go anywhere yet</p>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>FPS & CPS:</p>
+    <script type="text/processing" data-processing-target="cps-meter">
+void setup() {
+   size(400, 400);
+   frameRate(1000);
+   textSize(20);
+   textAlign(CENTER,CENTER);
+   fill(200);
+   noStroke();
+}
+
+int peakCPS = 1;
+
+int CPF = 100;
+int tickCount = 0;
+
+int sampleTime = 500;
+int lastTime = millis();
+int lastFrame = frameCount;
+int cps = 1;
+
+
+void draw() {
+   background(100);
+   
+   for (int tick = 0; tick < CPF; tick += 1) {
+      
+      int now = millis();
+      int elapsed = now-lastTime;
+      if(elapsed > sampleTime){
+         cps = 1000 * (tickCount - lastFrame) / elapsed;
+         lastTime = now;
+         lastFrame = tickCount;
+      }
+      
+      tickCount += 1;
+   }
+   
+   if(frameRate > 200){
+      CPF += 1;
+   }
+   if(frameRate > 150){
+      CPF += 1;
+   }
+   if(frameRate > 100){
+      CPF += 1;
+   }
+   if(frameRate > 50){
+      CPF += 1;
+   }
+   
+   if(cps > peakCPS){
+      peakCPS = cps;
+   }
+   
+   text("Calculations Per Frame: "+CPF,200,100);
+   text("Frames Per Second: "+floor(frameRate),200,150);
+   text("Calculations Per Second: "+floor(cps),200,200);
+   text("Highest CPS: "+floor(peakCPS),200,250);
+   
+}
+    </script>
+    <canvas id="cps-meter"> </canvas>
   </body>
 </html>
