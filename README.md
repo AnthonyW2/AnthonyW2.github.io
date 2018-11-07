@@ -138,7 +138,7 @@ void setup() {
 
 int peakCPS = 1;
 
-int CPF = 100;
+int CPF = 1;
 int tickCount = 0;
 
 int sampleTime = 500;
