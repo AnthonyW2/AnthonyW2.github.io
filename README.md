@@ -11,16 +11,11 @@
     </style>
   </head>
   <body>
-    <br>
-    <br>
     <p>Welcome to my Github Page!</p>
     <br>
-    <br>
     <p>LINKS:</p>
-    <br>
-    <a href="https://anthony-wilson-programming.github.io/CPS/">https://anthony-wilson-programming.github.io/CPS/</a>
-    <br>
-    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">https://anthony-wilson-programming.github.io/Terrain_Gen/</a>
+    <a href="https://anthony-wilson-programming.github.io/CPS/">https://anthony-wilson-programming.github.io/CPS/</a>CPS Meter
+    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">https://anthony-wilson-programming.github.io/Terrain_Gen/</a>3D Terrain Gen
     <br>
     <br>
     <p>Milliseconds you've spent on this page:</p>
