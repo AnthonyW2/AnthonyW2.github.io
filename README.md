@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Github Page</title>
     <style>
-      //body {position: absolute;}
+      body {position: absolute;}
       h1 {color: #006400; font-weight: bold; font-size: 150%;}
       h2 {color: #006400; font-size: 120%;}
       p {color: #000000;}
