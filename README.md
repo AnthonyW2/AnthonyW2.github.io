@@ -8,6 +8,7 @@
       h1 {color: #006400; font-weight: bold; font-size: 150%;}
       h2 {color: #006400; font-size: 120%;}
       p {color: #000000;}
+      a {text-decoration: underline;}
     </style>
   </head>
   <body>
