@@ -14,7 +14,10 @@
     <p>Welcome to my Github Page!</p>
     <br>
     <p>LINKS:</p>
+    <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io</a>
+    <br>
     <a href="https://anthony-wilson-programming.github.io/CPS/">https://anthony-wilson-programming.github.io/CPS/</a>CPS Meter
+    <br>
     <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">https://anthony-wilson-programming.github.io/Terrain_Gen/</a>3D Terrain Gen
     <br>
     <br>
