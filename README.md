@@ -14,11 +14,13 @@
     <p>Welcome to my Github Page!</p>
     <br>
     <p>LINKS:</p>
-    <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io</a>
+    <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
     <br>
-    <a href="https://anthony-wilson-programming.github.io/CPS/">https://anthony-wilson-programming.github.io/CPS/</a>CPS Meter
+    <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
     <br>
-    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">https://anthony-wilson-programming.github.io/Terrain_Gen/</a>3D Terrain Gen
+    <a href="https://anthony-wilson-programming.github.io/CPS/">CPS Meter</a>
+    <br>
+    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">Terrain Gen</a>
     <br>
     <br>
     <p>Milliseconds you've spent on this page:</p>
