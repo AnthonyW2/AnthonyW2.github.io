@@ -4,14 +4,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Github Page</title>
     <style>
-      //body {position: absolute;}
-      //h1 {color: #006400; font-weight: bold; font-size: 150%;}
-      //h2 {color: #006400; font-size: 120%;}
-      //p {color: #000000;}
+      body {position: absolute;}
+      h1 {color: #006400; font-weight: bold; font-size: 150%;}
+      h2 {color: #006400; font-size: 120%;}
+      p {color: #000000;}
     </style>
   </head>
   <body>
-    <h1>Welcome to my Github Page!</h1><style>
+    <h1>Welcome to my Github Page!</h1>
     <br>
     <h2>LINKS:</h2>
     <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
