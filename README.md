@@ -25,7 +25,6 @@
     <br>
     <br>
     <br>
-    <p>Time you've spent on this page:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
         size(1000,150);
@@ -36,10 +35,10 @@
         background(100);
         fill(200);
         noStroke();
-        textAlign(CENTER,CENTER);
+        textAlign(LEFT,CENTER);
         textSize(50);
         
-        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)*1000),width/2,height/2);
+        text("You have spent "+floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)*1000)+" of your time on this page",50,height/2);
       }
     </script>
     <canvas id="processing-canvas"> </canvas>
