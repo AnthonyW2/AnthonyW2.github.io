@@ -23,10 +23,11 @@
     <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">Terrain Gen</a>
     <br>
     <br>
-    <p>Milliseconds you've spent on this page:</p>
+    <br>
+    <p>Time you've spent on this page:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
-        size(1000,200);
+        size(1000,150);
         frameRate(1000);
       }
       
@@ -37,7 +38,7 @@
         textAlign(CENTER,CENTER);
         textSize(50);
         
-        text(millis(),width/2,height/2);
+        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+millis(),width/2,height/2);
       }
     </script>
     <canvas id="processing-canvas"> </canvas>
