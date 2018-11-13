@@ -1,4 +1,3 @@
-# Github Page
 <!doctype html>
 <html>
   <head>
@@ -6,13 +5,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Github Page</title>
     <style>
-      html, head, body {
+      body {
         position: absolute;
+        color: #006400
       }
     </style>
   </head>
   <body>
-    <p>Welcome to my Github Page!</p>
+    <p>Welcome to my Github Page!</p><style>
+    <style>
+      body {
+        position: absolute;
+        color: #000
+      }
+    </style>
     <br>
     <p>LINKS:</p>
     <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
@@ -25,6 +31,7 @@
     <br>
     <br>
     <br>
+    <p>You have wasted this amout of time on this page:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
         size(1000,150);
@@ -38,7 +45,7 @@
         textAlign(LEFT,CENTER);
         textSize(50);
         
-        text("You have spent "+floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)*1000)+" of your time on this page",50,height/2);
+        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)*1000),50,height/2);
       }
     </script>
     <canvas id="processing-canvas"> </canvas>
