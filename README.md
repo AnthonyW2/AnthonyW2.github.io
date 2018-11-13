@@ -1,9 +1,10 @@
 # Github Page
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
-    <title>Processing Sketch</title>
+    <title>Github Page</title>
     <style>
       html, head, body {
         position: absolute;
