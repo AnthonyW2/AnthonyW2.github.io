@@ -35,6 +35,7 @@
         text(millis(),width/2,height/2);
       }
     </script>
+    <canvas id="processing-canvas"> </canvas>
     <br>
     <br>
     <br>
