@@ -19,9 +19,14 @@
     <p>LINKS:</p>
     <br>
     <a href="https://anthony-wilson-programming.github.io/CPS/">https://anthony-wilson-programming.github.io/CPS/</a>
+    <br>
+    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">https://anthony-wilson-programming.github.io/Terrain_Gen/</a>
+    <br>
+    <br>
+    <p>Milliseconds you've spent on this page:</p>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
-        size(1000,500);
+        size(1000,200);
         frameRate(1000);
       }
       
