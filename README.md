@@ -1,26 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Github Page</title>
     <style>
-      body {
-        position: absolute;
-        color: #006400
-      }
+      //body {position: absolute;}
+      h1 {color: #006400; font-weight: bold; font-size: 150%;}
+      h2 {color: #006400; font-size: 120%;}
+      p {color: #000000;}
     </style>
   </head>
   <body>
-    <p>Welcome to my Github Page!</p><style>
-    <style>
-      body {
-        position: absolute;
-        color: #000
-      }
-    </style>
+    <h1>Welcome to my Github Page!</h1><style>
     <br>
-    <p>LINKS:</p>
+    <h2>LINKS:</h2>
     <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
     <br>
     <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
@@ -31,7 +25,7 @@
     <br>
     <br>
     <br>
-    <p>You have wasted this amout of time on this page:</p>
+    <h2>You have wasted this amout of time on this page:</h2>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
         size(1000,150);
@@ -45,11 +39,10 @@
         textAlign(LEFT,CENTER);
         textSize(50);
         
-        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)*1000),50,height/2);
+        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)%60+":"+floor(millis()/1000)%60+"."+millis()%1000,50,height/2);
       }
     </script>
     <canvas id="processing-canvas"> </canvas>
-    <br>
     <br>
     <br>
   </body>
