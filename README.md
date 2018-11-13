@@ -38,7 +38,7 @@
         textAlign(CENTER,CENTER);
         textSize(50);
         
-        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+millis(),width/2,height/2);
+        text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)+":"+floor(millis()/1000)+"."+(millis()-floor(millis()/1000)),width/2,height/2);
       }
     </script>
     <canvas id="processing-canvas"> </canvas>
