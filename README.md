@@ -25,7 +25,7 @@
     <br>
     <br>
     <br>
-    <h2>You have wasted this amout of time on this page:</h2>
+    <h2>You have wasted this amount of time on this page:</h2>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
         size(1000,150);
