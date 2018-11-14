@@ -14,7 +14,7 @@
     <h1>Welcome to my Github Page!</h1>
     <br>
     <h2>LINKS:</h2>
-    <a href="https://github.com">Github Home</a>
+    <a style="color:red;" href="https://github.com">Github Home</a>
     <br>
     <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
     <br>
@@ -25,7 +25,7 @@
     <a href="https://anthony-wilson-programming.github.io/Video/">Video Testing</a>
     <br>
     <br>
-    <a href="https://www.khanacademy.org">Khan Academy Home</a>
+    <a style="color:red;" hhref="https://www.khanacademy.org">Khan Academy Home</a>
     <br>
     <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
     <br>
