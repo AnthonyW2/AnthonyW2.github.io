@@ -33,11 +33,12 @@
     <h2>You have wasted this amount of time on this page:</h2>
     <script type="text/processing" data-processing-target="processing-canvas">
       void setup(){
-        size(1000,60);
+        size(500,60);
         frameRate(1000);
       }
       
       void draw(){
+        noSmooth();
         background(255);
         fill(0);
         noStroke();
