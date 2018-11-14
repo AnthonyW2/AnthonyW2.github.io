@@ -23,10 +23,12 @@
     ✯ <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">Terrain Gen</a>
     <br>
     ✯ <a href="https://anthony-wilson-programming.github.io/Video/">Video Testing</a>
-    <hr style="height:1px; visibility:hidden;" />
+    <br>
+    <br>
     ✯ <a style="color:red;" href="https://www.khanacademy.org">Khan Academy Home</a>
     <br>
     ✯ <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
+    <br>
     <br>
     <br>
     <br>
