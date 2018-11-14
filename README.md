@@ -14,19 +14,19 @@
     <h1>Welcome to my Github Page!</h1>
     <br>
     <h2>LINKS:</h2>
-    <a style="color:red;" href="https://github.com">Github Home</a>
+    ✯ <a style="color:red;" href="https://github.com">Github Home</a>
     <br>
-    <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
+    ✯ <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
     <br>
-    <a href="https://anthony-wilson-programming.github.io/CPS/">CPS Meter</a>
+    ✯ <a href="https://anthony-wilson-programming.github.io/CPS/">CPS Meter</a>
     <br>
-    <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">Terrain Gen</a>
+    ✯ <a href="https://anthony-wilson-programming.github.io/Terrain_Gen/">Terrain Gen</a>
     <br>
-    <a href="https://anthony-wilson-programming.github.io/Video/">Video Testing</a>
+    ✯ <a href="https://anthony-wilson-programming.github.io/Video/">Video Testing</a>
     <br style ="line-height:150%;">
-    <a style="color:red;" href="https://www.khanacademy.org">Khan Academy Home</a>
+    ✯ <a style="color:red;" href="https://www.khanacademy.org">Khan Academy Home</a>
     <br>
-    <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
+    ✯ <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
     <br>
     <br>
     <br>
