@@ -24,8 +24,7 @@
     <br>
     <a href="https://anthony-wilson-programming.github.io/Video/">Video Testing</a>
     <br>
-    <br>
-    <a style="color:red;" hhref="https://www.khanacademy.org">Khan Academy Home</a>
+    <a style="color:red;" href="https://www.khanacademy.org">Khan Academy Home</a>
     <br>
     <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects">My Khan Academy Programs</a>
     <br>
