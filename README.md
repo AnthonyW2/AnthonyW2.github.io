@@ -13,7 +13,7 @@
   <body>
     <h1>Welcome to my Github Page!</h1>
     <br>
-    <h2>Links:</h2>
+    <h2>Links: </h2>
     ✯ <a style="color:red;" href="https://github.com">Github Home</a>
     <br>
     ✯ <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io">See the Repository</a>
