@@ -47,6 +47,8 @@
     <br>
     <h2>You have wasted this amount of time on this page:</h2>
     <script type="text/processing" data-processing-target="processing-canvas">
+      PFont Serif = loadFont("Serif");
+      
       void setup(){
         size(250,50);
         frameRate(1000);
@@ -58,7 +60,7 @@
         fill(0,100,0);
         noStroke();
         textAlign(LEFT,TOP);
-        textFont(createFont("new times roman"));
+        textFont(Serif,40);
         textSize(40);
         
         text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)%60+":"+floor(millis()/1000)%60+"." +floor(millis()/100)%10+""+floor(millis()/10)%10+""+floor(millis()/1)%10,5,5);
