@@ -50,7 +50,7 @@
       PFont Serif = loadFont("Georgia");
       
       void setup(){
-        size(250,50);
+        size(500,100);
         frameRate(1000);
       }
       
@@ -66,7 +66,7 @@
         text(floor(millis()/1000/60/60)+":"+floor(millis()/1000/60)%60+":"+floor(millis()/1000)%60+"." +floor(millis()/100)%10+""+floor(millis()/10)%10+""+floor(millis()/1)%10,5,5);
       }
     </script>
-    <canvas id="processing-canvas"> </canvas>
+    <canvas id="processing-canvas" width="50" height="250"></canvas>
     <br>
     <br>
     <br>
