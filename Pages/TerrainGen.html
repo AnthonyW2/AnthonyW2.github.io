@@ -5,8 +5,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <title>Processing Sketch</title>
     <style>
-      html, head, body {
-        position: absolute;
+      canvas.lock-screen {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+        position: fixed;
       }
     </style>
   </head>
@@ -57,7 +60,7 @@ void draw() {
 }
 
     </script>
-    <canvas id="processing-canvas" scrolling="no"> </canvas>
+    <canvas id="processing-canvas" class="lock-screen"> </canvas>
     <br>
     <br>
     <p>Now Grey Scale:</p>
