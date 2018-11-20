@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {position: absolute;}
+      h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
+      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
+      p.default {color: #000000; font-family: "times new roman";}
+      p.other {color:#000000; font-family: "arial";}
+      a {color: #0000FF; text-decoration: underline;}
+    </style>
+    <title>Testing Index</title>
+  </head>
+  <body>
+    <h1>Welcome to the testing Index!</h1>
+    <br>
+    <br>
+    <button onclick="openPage()">Open New Page</button>
+    <button onclick="refreshPage()">Refresh Page</button>
+    <button onclick="closePage()">Close Page</button>
+    <script>
+      var currentWindow;
+      
+      function openPage() {
+        currentWindow = window.open("", "_blank");
+      }
+      
+      function refreshPage() {
+        
+      }
+      function closePage() {
+        currentWindow.close();
+      }
+    </script>
+    <br>
+  </body>
+</html>
