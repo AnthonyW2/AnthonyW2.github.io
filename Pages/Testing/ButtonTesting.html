@@ -10,10 +10,10 @@
       p.other {color:#000000; font-family: "arial";}
       a {color: #0000FF; text-decoration: underline;}
     </style>
-    <title>Testing Index</title>
+    <title>Button Testing</title>
   </head>
   <body>
-    <h1>Welcome to the testing Index!</h1>
+    <h1>Buttons. Click them if you dare.</h1>
     <br>
     <br>
     <button onclick="openPage()">Open New Page</button>
@@ -23,11 +23,11 @@
       var currentWindow;
       
       function openPage() {
-        currentWindow = window.open("", "_blank");
+        currentWindow = window.open("https://anthony-wilson-programming.github.io/Pages/Testing/ButtonTesting.html", "_blank");
       }
       
       function refreshPage() {
-        
+        location.reload();
       }
       function closePage() {
         currentWindow.close();
