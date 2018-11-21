@@ -1,1 +1,27 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {position: absolute;}
+      h1 {color: #006400; font-size: 500%; font-family: "times new roman";}
+      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
+      p.default {color: #000000; font-family: "times new roman";}
+      p.other {color:#000000; font-family: "arial";}
+      a {color: #0000FF; text-decoration: underline;}
+    </style>
+    <title>LOL</title>
+  </head>
+  <body onload="newTab()">
+    <h1>LOL!</h1>
+    <br>
+    <a href="
+    <br>
+    <script>
+      function newTab() {
+        window.open("about:blank","_blank");
+      }
+    </script>
+    <br>
+  </body>
+</html>
