@@ -16,21 +16,21 @@
     <h1>Buttons. Click them if you dare.</h1>
     <br>
     <br>
-    <button onclick="openPage()">Open New Page</button>
-    <button onclick="refreshPage()">Refresh Page</button>
-    <button onclick="closePage()">Close Page</button>
+    <button onclick="addCookie()">Add a cookie</button>
+    <button onclick="getCookies()">Show cookies stored</button>
+    <button onclick="deleteCookie()">Remove cookies</button>
     <script>
-      var currentWindow;
+      var cookies = document.cookie;
       
-      function openPage() {
-        currentWindow = window.open("https://anthony-wilson-programming.github.io/Pages/Testing/ButtonTesting.html", "_blank");
+      function addCookie() {
+        document.cookie = "NewCookie=Some Random Cookie;";
       }
       
-      function refreshPage() {
-        location.reload();
+      function getCookies() {
+        document.write(cookies);
       }
-      function closePage() {
-        window.close();
+      function deleteCookie() {
+        document.cookie = "NewCookie=; Expires=01 Jan 1970 00:00:00 UTC;";
       }
     </script>
     <br>
