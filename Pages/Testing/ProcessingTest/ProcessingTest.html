@@ -36,14 +36,22 @@
         frameRate(1000);
       }
       void draw() {
+        background(50);
+        noStroke();
+        fill(200);
+        noSmooth();
+        textSize(20);
+        textAlign(CENTER,CENTER);
         
+        text("This sketch is written and stored in the code of this website", 200,150);
+        text("Framerate: "+frameRate,200,250);
       }
     </script>
     <canvas id="ProcessingCodeCanvas"> </canvas>
     <br>
     <br>
     <p>Processing Sketch using the .pde files found in the "MultipleClasses" folder in the current directory (Two Classes)</p>
-    
+    <canvas data-processing-sources="/MultipleClasses/Class1.pde /MultipleClasses/Class2.pde"></canvas>
     <br>
   </body>
 </html>
