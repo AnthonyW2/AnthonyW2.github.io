@@ -25,15 +25,24 @@
     <br>
     <br>
     <br>
-    <p>Processing Sketch using the .pde found in the current directory</p>
+    <p>Processing Sketch using the .pde file found in the current directory (One Class)</p>
     <canvas data-processing-sources="ProcessingTest.pde"></canvas>
     <br>
     <br>
-    <p>Processing Sketch</p>
-    
+    <p>Processing Sketch using code written and stored inside the web page .html file (One Class)</p>
+    <script type="text/processing" data-processing-target="ProcessingCodeCanvas">
+      void setup() {
+        size(400,400);
+        frameRate(1000);
+      }
+      void draw() {
+        
+      }
+    </script>
+    <canvas id="ProcessingCodeCanvas"> </canvas>
     <br>
     <br>
-    <p>Processing Sketch</p>
+    <p>Processing Sketch using the .pde files found in the "MultipleClasses" folder in the current directory (Two Classes)</p>
     
     <br>
   </body>
