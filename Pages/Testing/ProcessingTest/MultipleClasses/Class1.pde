@@ -11,6 +11,5 @@ void draw(){
   textSize(20);
   textAlign(CENTER,CENTER);
   
-  text("This .pde is stored in the current directory", 200,150);
-  text("Framerate: "+frameRate,200,250);
+  drawText();
 }
