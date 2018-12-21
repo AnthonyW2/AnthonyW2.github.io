@@ -11,5 +11,5 @@ void draw(){
   textSize(20);
   textAlign(CENTER,CENTER);
   
-  drawText();
+  DrawText();
 }
