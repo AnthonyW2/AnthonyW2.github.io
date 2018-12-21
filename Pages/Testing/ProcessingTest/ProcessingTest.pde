@@ -1,6 +1,6 @@
 void setup(){
   size(400,400);
-  frameRate(60);
+  frameRate(1000);
 }
 
 void draw(){
@@ -12,5 +12,5 @@ void draw(){
   textAlign(CENTER,CENTER);
   
   text("This .pde is stored in the current directory", 200,150);
-  text(frameRate,200,250);
+  text("Framerate: "+frameRate,200,250);
 }
