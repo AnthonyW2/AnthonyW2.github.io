@@ -13,7 +13,7 @@ void draw(){
   textSize(20);
   textAlign(CENTER,CENTER);
   
-  text("This .pde is stored in the current directory as well", 200,20);
+  text("This .pde is stored in the current directory as well", width/2,20);
   
   
 }
