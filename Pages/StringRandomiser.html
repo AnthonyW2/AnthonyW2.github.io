@@ -20,7 +20,7 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>..............
+    <br>...............
     <br>
     Input Strings/Words: <textarea rows="4" cols="50" id="INPUTS">Example1,Example2,Example3,Example4</textarea>
     <br>
@@ -43,8 +43,8 @@
           }
         }
         
-        //Output.push(Input.substr(lastSplit));
-        document.getElementById("OUTPUT").innerHTML = "Output.length = "+Output.length+" Input = "+Input;
+        Output.push(Input.substr(lastSplit));
+        document.getElementById("OUTPUT").innerHTML = "Output.length = "+Output.length+" | Input = "+Input+" | Output[0] = "+Output[0];
         
         //document.getElementById("OUTPUT").innerHTML = Output[0];
       }
