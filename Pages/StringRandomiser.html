@@ -36,7 +36,7 @@
         var Input = document.getElementById("INPUTS");
         var Output = ["In1","In2"];
         var lastSplit = 0;
-        
+        var Splitter = ",";
         for(var a = 0;a < Input.length;a += 1){
           if(Input.charAt(a) == Splitter){
             Output.push(Input.substring(lastSplit,a));
