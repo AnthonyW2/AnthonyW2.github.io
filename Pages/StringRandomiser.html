@@ -44,7 +44,7 @@
     </script>
     <script>
     function splitStr(Input, Splitter){
-      var Output = [];
+      var Output = ["First","Second"];
       var lastSplit = 0;
       for(var a = 0;a < Input.length,a += 1){
         if(Input.charAt(a) == Splitter){
@@ -56,7 +56,7 @@
       Output.push(Input.substring(lastSplit,Input.length));
       
       document.getElementById("demo").innerHTML = Output[0];
-      return Output;
+      //return Output;
     }
     </script>
     <br>
