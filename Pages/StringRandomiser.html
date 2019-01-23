@@ -21,9 +21,9 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>......
+    <br>.......
     <form id="form1">
-      Input Strings/Words: <input type="text" name="INPUTS" id="INPUTS" value="Example 1,Example 2,Example 3">
+      Input Strings/Words: <input type="text" name="INPUTS" id="INPUTS" value="Example1,Example2,Example3">
     </form>
 
     <button onclick="randomiseInputs()">Randomise</button>
@@ -37,14 +37,15 @@
         var Output = ["In1","In2"];
         var lastSplit = 0;
         var Splitter = ",";
-        for(var a = 0;a < Input.length;a += 1){
+        var a;
+        for(a = 0;a < Input.length;a += 1){
           if(Input.charAt(a) == Splitter){
             Output.push(Input.substr(lastSplit,a));
             lastSplit = a+1;
           }
         }
         
-        //Output.push(Input.substr(lastSplit,Input.length));
+        Output.push(Input.substr(lastSplit,Input.length));
         document.getElementById("OUTPUT").innerHTML = "HELLO";
         
         //document.getElementById("OUTPUT").innerHTML = Output[0];
