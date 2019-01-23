@@ -23,14 +23,32 @@
     <h1>In-Browser Random String Chooser</h1>
     <br>
     <form id="form1">
-      Input Strings/Words: <input type="text" name="fname" value="Example 1,Example 2,Example 3">
+      Input Strings/Words: <input type="text" name="INPUTS" id="INPUTS" value="Example 1,Example 2,Example 3">
     </form>
 
-    <button onclick="getInputs()">Get Inputs</button>
-    <button onclick="splitStr('HELLO,hello,Hello,hELLO',',')">Split String</button>
+    <button onclick="randomiseInputs()">Randomise</button>
+    <!--button onclick="splitStr('HELLO,hello,Hello,hELLO',',')">Split String</button-->
 
-    <p id="demo"></p>
-
+    <p id="OUTPUT"></p>
+    
+    <script>
+      function randomiseInputs(){
+        var Input = document.getElementById("INPUTS");
+        var Output = ["In1","In2"];
+        var lastSplit = 0;
+        
+        for(var a = 0;a < Input.length;a += 1){
+          if(Input.charAt(a) == Splitter){
+            Output.push(Input.substring(lastSplit,a));
+            lastSplit = a+1;
+          }
+        }
+        
+        Output.push(Input.substring(lastSplit,Input.length));
+        
+        document.getElementById("OUTPUT").innerHTML = Output[0];
+      }
+    </script>
     <script>
     function getInputs() {
       var x = document.getElementById("form1");
