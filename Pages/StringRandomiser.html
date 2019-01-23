@@ -38,24 +38,26 @@
         var Output = [];
         var lastSplit = 0;
         var Splitter = ",";
-        var a;
-        for(a = 0;a < Input.length;a += 1){
+        for(var a = 0;a < Input.length;a += 1){
           if(Input.charAt(a) == Splitter){
             Output.push(Input.substr(lastSplit,a));
             lastSplit = a+1;
           }
         }
-        
         Output.push(Input.substr(lastSplit));
         
-        var singleOutput = Output[Math.floor(Math.random() * Output.length)];
+        var allOuts = "";
+        for(var a = 0;a < Output.length;a += 1){
+          allOuts += " | "+Output[a];
+        }
         
+        //var singleOutput = Output[Math.floor(Math.random() * Output.length)];
+        var singleOutput = allOuts;
+        
+        document.getElementById("OUTPUT").innerHTML = singleOutput;
         if(document.getElementById("ALERTS").checked == true){
           alert("The result is:\n"+singleOutput);
         }
-        
-        document.getElementById("OUTPUT").innerHTML = singleOutput;
-        //document.getElementById("OUTPUT").innerHTML = "";
       }
     </script>
     <script>
