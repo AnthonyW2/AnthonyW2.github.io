@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>
+    <br>.
     <form id="form1">
       Input Strings/Words: <input type="text" name="INPUTS" id="INPUTS" value="Example 1,Example 2,Example 3">
     </form>
@@ -37,6 +37,7 @@
         var Output = ["In1","In2"];
         var lastSplit = 0;
         var Splitter = ",";
+        document.getElementById("OUTPUT").innerHTML = "HELLO";
         for(var a = 0;a < Input.length;a += 1){
           if(Input.charAt(a) == Splitter){
             Output.push(Input.substring(lastSplit,a));
@@ -47,7 +48,6 @@
         Output.push(Input.substring(lastSplit,Input.length));
         
         //document.getElementById("OUTPUT").innerHTML = Output[0];
-        document.getElementById("OUTPUT").innerHTML = "HELLO";
       }
     </script>
     <script>
