@@ -40,6 +40,21 @@
       }
       document.getElementById("demo").innerHTML = text;
     }
+    
+    function splitStr(Input, Splitter){
+      var Output = [];
+      var lastSplit = 0;
+      for(var a = 0;a < Input.length,a += 1){
+        if(Input.charAt(a) == Splitter){
+          Output.push(Input.substring(lastSplit,a));
+          lastSplit = a+1;
+        }
+      }
+      
+      Output.push(Input.substring(lastSplit,Input.length));
+      
+      return Output;
+    }
     </script>
     <br>
   </body>
