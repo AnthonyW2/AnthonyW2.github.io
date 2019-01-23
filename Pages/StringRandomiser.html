@@ -26,7 +26,7 @@
     </form>
 
     <button onclick="getInputs()">Get Inputs</button>
-    <button onclick="splitStr("HELLO,hello,Hello,hELLO,",',')">Split String</button>
+    <button onclick='splitStr("HELLO,hello,Hello,hELLO,",",")'>Split String</button>
 
     <p id="demo"></p>
 
@@ -55,7 +55,7 @@
       Output.push(Input.substring(lastSplit,Input.length));
       
       return Output;
-      document.getElementById("demo").innerHTML = Output;
+      document.getElementById("demo").innerHTML = Output[0];
     }
     </script>
     <br>
