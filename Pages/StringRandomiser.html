@@ -9,7 +9,6 @@
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
       a {color: #0000FF; text-decoration: underline;}
-      input {width: 100%;}
     </style>
     <title>String Randomiser</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -21,11 +20,9 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>..........
-    <form id="form1">
-      Input Strings/Words: <input type="text" name="INPUTS" id="INPUTS" value="Example1,Example2,Example3,Example4">
-    </form>
-
+    <br>...........
+    Input Strings/Words: <textarea rows="4" cols="50" id="INPUTS" value="Example1,Example2,Example3,Example4">
+    <br>
     <button onclick="randomiseInputs()">Randomise</button>
     <!--button onclick="splitStr('HELLO,hello,Hello,hELLO',',')">Split String</button-->
 
