@@ -20,9 +20,10 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>...............
     <br>
-    Input Strings/Words: <textarea rows="4" cols="50" id="INPUTS">Example1,Example2,Example3,Example4</textarea>
+    <br>
+    Input Strings/Words:<br>
+    <textarea rows="4" cols="50" id="INPUTS">Example1,Example2,Example3,Example4</textarea>
     <br>
     <button onclick="randomiseInputs()">Randomise</button>
     <!--button onclick="splitStr('HELLO,hello,Hello,hELLO',',')">Split String</button-->
@@ -32,7 +33,7 @@
     <script>
       function randomiseInputs(){
         var Input = document.getElementById("INPUTS").value;
-        var Output = ["In1","In2"];
+        var Output = [];
         var lastSplit = 0;
         var Splitter = ",";
         var a;
@@ -44,9 +45,9 @@
         }
         
         Output.push(Input.substr(lastSplit));
-        document.getElementById("OUTPUT").innerHTML = "Output.length = "+Output.length+" | Input = "+Input+" | Output[0] = "+Output[0];
         
-        //document.getElementById("OUTPUT").innerHTML = Output[0];
+        document.getElementById("OUTPUT").innerHTML = Output[floor(math.random(0,Output.length-0.99))];
+        //document.getElementById("OUTPUT").innerHTML = "Output.length = "+Output.length+" | Input = "+Input+" | Output[0] = "+Output[0];
       }
     </script>
     <script>
@@ -58,23 +59,6 @@
         text += x.elements[i].value + "<br>";
       }
       document.getElementById("demo").innerHTML = text;
-    }
-    </script>
-    <script>
-    function splitStr(Input, Splitter){
-      var Output = ["First","Second"];
-      var lastSplit = 0;
-      for(var a = 0;a < Input.length,a += 1){
-        if(Input.charAt(a) == Splitter){
-          Output.push(Input.substring(lastSplit,a));
-          lastSplit = a+1;
-        }
-      }
-      
-      Output.push(Input.substring(lastSplit,Input.length));
-      
-      document.getElementById("demo").innerHTML = Output[0];
-      //return Output;
     }
     </script>
     <br>
