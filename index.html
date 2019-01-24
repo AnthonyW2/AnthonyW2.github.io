@@ -26,11 +26,11 @@
       
       function bindJavascript() {
         var pjs = Processing.getInstanceById('mysketch3');
-          if(pjs!=null) {
-            pjs.bindJavascript(this);
-            bound = true;
-          }
-          if(!bound) setTimeout(bindJavascript, 250);
+        if(pjs!=null) {
+          pjs.bindJavascript(this);
+          bound = true;
+        }
+        if(!bound) setTimeout(bindJavascript, 250);
       }
       bindJavascript();
       
