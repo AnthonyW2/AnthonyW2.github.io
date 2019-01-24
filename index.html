@@ -25,7 +25,7 @@
       var bound = false;
       
       function bindJavascript() {
-        var pjs = Processing.getInstanceById('mysketch3');
+        var pjs = Processing.getInstanceById('timer-canvas');
         if(pjs!=null) {
           pjs.bindJavascript(this);
           bound = true;
@@ -35,7 +35,7 @@
       bindJavascript();
       
       function getProcessingTime(H, M, S, MS) {
-        document.getElementById('Hours').value = H;
+        document.getElementById("Hours").value = H;
         document.getElementById('Minutes').value = M;
         document.getElementById('Seconds').value = S;
         document.getElementById('MilliSeconds').value = MS;
@@ -124,6 +124,8 @@
         if(javascript!=null){
           javascript.getProcessingTime(floor(millis()/1000/60/60), floor(millis()/1000/60)%60, floor(millis()/1000)%60, floor(millis()/100)%10+""+floor(millis()/10)%10+""+floor(millis()/1)%10);
         }
+        
+        text("HELLO",20,20);
       }
     </script>
     <canvas id="timer-canvas"></canvas>
