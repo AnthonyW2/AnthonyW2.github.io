@@ -20,7 +20,7 @@
   </head>
   <body>
     <h1>In-Browser Random String Chooser</h1>
-    <br>
+    <br>.
     <br>
     <h2>Input Strings/Words:</h2>
     <textarea rows="4" cols="50" id="INPUTS">Example1,Example2,Example3,Example4</textarea>
@@ -41,7 +41,7 @@
         for(var a = 0;a < Input.length;a += 1){
           if(Input.charAt(a) == Splitter){
             Output.push(Input.substr(lastSplit,a));
-            lastSplit = a+1;
+            lastSplit = a;
           }
         }
         Output.push(Input.substr(lastSplit));
