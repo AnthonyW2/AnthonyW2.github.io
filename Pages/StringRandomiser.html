@@ -41,9 +41,9 @@
         var lastSplit = 0;
         var Splitter = document.getElementById("SPLITTER").value;
         for(var a = 0;a < Input.length;a += 1){
-          if(Input.charAt(a) == Splitter){
-            Output.push(Input.substr(lastSplit,a-1));
-            lastSplit = a;
+          if(Input.charAt(a) == Splitter.charAt(0)){
+            Output.push(Input.substr(lastSplit,a));
+            lastSplit = a+1;
           }
         }
         Output.push(Input.substr(lastSplit));
