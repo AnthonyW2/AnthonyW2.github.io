@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <style>
-      body {position: absolute;}
+      body {margin: auto;}
       h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
@@ -32,8 +32,9 @@
     <br><br>
     <button onclick="randomiseInputs()">Randomise</button>
     <br>
+    <h2>Result:</h2>
     <p id="OUTPUT"></p>
-    
+    <br>
     <script>
       function randomiseInputs(){
         var Input = document.getElementById("INPUTS").value;
@@ -58,14 +59,7 @@
           }
         }
         
-        var allOuts = "";
-        
-        for(var a = 0;a < Output.length;a += 1){
-          allOuts += Output[a];
-        }
-        
-        //var singleOutput = Output[Math.floor(Math.random() * Output.length)];
-        var singleOutput = allOuts;
+        var singleOutput = Output[Math.floor(Math.random() * Output.length)];
         
         document.getElementById("OUTPUT").innerHTML = singleOutput;
         if(document.getElementById("ALERTS").checked == true){
