@@ -11,6 +11,10 @@
       a {color: #0000FF; text-decoration: underline;}
       input[type=text] {width: 9px; text-align: center;}
       .centerText {text-align: center;}
+      .center {display: block; margin-left: auto; margin-right: auto;}
+      .align1 {position: absolute; left: 100px;}
+      .align2 {position: absolute; left: 120px;}
+      .align3 {position: absolute; left: 200px;}
     </style>
     <title>String Randomiser</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -24,14 +28,14 @@
     <h1>Random String Chooser</h1>
     <br>
     <br>
-    <h2>Input Strings/Words:</h2>
-    <textarea rows="4" cols="50" id="INPUTS">Example1,Example2,Example3,Example4</textarea>
+    <h2 class="align1">Input Strings/Words:</h2>
+    <textarea rows="4" cols="50" id="INPUTS" class="center">1,2,3</textarea>
     <br>
-    <input type="checkbox" name="ALERT" id="ALERTS" checked>Give alert when button is pressed
-    <br>Seperation Character:
-    <input type="text" name="SPLITTER" id="SPLITTER" maxlength="1" value=",">
+    <input type="checkbox" name="ALERT" id="ALERTS" class="align1" checked><b class="align2">Give alert when button is pressed</b>
+    <br><b class="align1">Seperation Character:</b>
+    <input type="text" name="SPLITTER" id="SPLITTER" maxlength="1" value="," class="align3>
     <br><br>
-    <button onclick="randomiseInputs()">Randomise</button>
+    <button onclick="randomiseInputs()" class="center">Randomise</button>
     <br>
     <h2 class="centerText">Result:</h2>
     <h2 id="OUTPUT" class="centerText"></h2>
