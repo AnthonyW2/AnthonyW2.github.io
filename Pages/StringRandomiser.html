@@ -49,10 +49,13 @@
         Output.push(Input.substr(lastSplit));
         
         for(var i = 0;i < Output.length;i += 1){
-          //if(Input.charAt(a) == Splitter.charAt(0)){
-            //Output.push(Input.substr(lastSplit,a));
-            //lastSplit = a+1;
-          //}
+          for(var a = 0;a < Output[i].length;a += 1){
+            if(Output[i].replace(Splitter,"") != Output[i]){
+              if(Output[i].charAt(a) == Splitter.charAt(0)){
+                Output[i] = Output[i].substr(0,a);
+              }
+            }
+          }
         }
         
         var singleOutput = Output[Math.floor(Math.random() * Output.length)];
