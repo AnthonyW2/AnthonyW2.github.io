@@ -9,7 +9,7 @@
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
       a {color: #0000FF; text-decoration: underline;}
-      input[type=text] {width: 5px;}
+      input[type=text] {width: 8px;}
     </style>
     <title>String Randomiser</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -48,9 +48,11 @@
         }
         Output.push(Input.substr(lastSplit));
         
-        var allOuts = "";
-        for(var a = 0;a < Output.length;a += 1){
-          allOuts += " | "+Output[a];
+        for(var i = 0;i < Output.length;i += 1){
+          //if(Input.charAt(a) == Splitter.charAt(0)){
+            //Output.push(Input.substr(lastSplit,a));
+            //lastSplit = a+1;
+          //}
         }
         
         var singleOutput = Output[Math.floor(Math.random() * Output.length)];
