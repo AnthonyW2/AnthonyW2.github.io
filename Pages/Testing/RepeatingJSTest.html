@@ -22,19 +22,23 @@
     <h1>JS Draw() function</h1>
     <br>
     <br>
-    <button onclick="draw()">START</button>
+    <button onclick="loop()">START</button>
+    <button onclick="noLoop()">STOP</button>
     <br>
     <p id="FRAMECOUNT">FRAMECOUNT</p>
     <script>
       var frameCount = 0;
-      var loop = true;
+      var doLoop = true;
+      
+      function loop(){doLoop = true;}
+      function noLoop(){doLoop = false;}
       
       function draw(){
         
         //document.getElementById("FRAMECOUNT").value = frameCount;
         document.getElementById("FRAMECOUNT").innerHTML = frameCount;
         
-        if(loop){
+        if(doLoop){
           frameCount += 1;
           setTimeout(draw, 10);
         }
