@@ -9,6 +9,7 @@
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
       a {color: #0000FF; text-decoration: underline;}
+      .slider {width: 500px;}
     </style>
     <title>JS Draw Function</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -25,8 +26,8 @@
     <button onclick="loop();draw();">START</button>
     <button onclick="noLoop()">STOP</button>
     <br>
-    FPS: <input type="range" id="FPS" min="1" max="1000" value="60"><p id="fps"></p>
-    MSPT: <input type="range" id="MSPT" min="1" max="1000" value="16.6"><p id="mspt"></p>
+    FPS: <input type="range" id="FPS" min="1" max="1000" value="60" classs="slider"><p id="fps"></p>
+    <!--MSPT: <input type="range" id="MSPT" min="1" max="1000" value="16.6"><p id="mspt"></p-->
     <br>
     <br>
     <p id="FRAMECOUNT"></p>
@@ -40,13 +41,10 @@
       function noLoop(){doLoop = false;}
       
       function draw(){
-        
         frameRate = document.getElementById("FPS").value;
-        MSPT = document.getElementById("MSPT").value;
+        MSPT = 1000/frameRate;
         
-        document.getElementById("fps").innerHTML = frameRate;
-        document.getElementById("mspt").innerHTML = MSPT;
-        
+        document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+MSPT;
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
         if(doLoop){
