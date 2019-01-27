@@ -25,8 +25,8 @@
     <button onclick="loop();draw();">START</button>
     <button onclick="noLoop()">STOP</button>
     <br>
-    FPS: <input type="range" id="FPS" min="1" max="1000" value="60"><p id="FPS"></p>
-    MSPT: <input type="range" id="MSPT" min="1" max="1000" value="16.6"><p id="MSPT"></p>
+    FPS: <input type="range" id="FPS" min="1" max="1000" value="60"><p id="fps"></p>
+    MSPT: <input type="range" id="MSPT" min="1" max="1000" value="16.6"><p id="mspt"></p>
     <br>
     <br>
     <p id="FRAMECOUNT"></p>
@@ -41,11 +41,17 @@
       
       function draw(){
         
+        frameRate = document.getElementById("FPS").value;
+        MSPT = document.getElementById("MSPT").value;
+        
+        document.getElementById("fps").innerHTML = frameRate;
+        document.getElementById("mspt").innerHTML = MSPT;
+        
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
         if(doLoop){
           frameCount += 1;
-          setTimeout(draw, 10);
+          setTimeout(draw, MSPT);
         }
       }
       
