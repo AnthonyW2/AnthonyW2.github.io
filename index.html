@@ -72,9 +72,7 @@
     <!--h2>You have wasted a total of this amount if time on this webpage:</h-->
     <br>
     <h2>You have wasted <b id="Hours">0</b> Hours, <b id="Minutes">0</b> Minutes, <b id="Seconds">0</b> Seconds and <b id="MilliSeconds">000</b> Milliseconds on this page.</h2>
-    <!--canvas id="timer-canvas"></canvas>
-    <canvas id="MainPageTimer" data-processing-sources="MainPageTimer.pde"></canvas>
-    <!-- -->
+    <h2>This page was opened <b id="tHours">0</b> Hours, <b id="tMinutes">0</b> Minutes, <b id="tSeconds">0</b> Seconds and <b id="tMilliSeconds">000</b> Milliseconds ago.</h2>
     <script>
       var frameCount = 0;
       var doLoop = true;
@@ -91,12 +89,15 @@
         
         TotalTime = d.getTime()-StartTime;
         
-        //text(+":"++":"++"." +,0,0);
-        
         document.getElementById("Hours").innerHTML = Math.floor(frameCount*10/1000/60/60);
         document.getElementById("Minutes").innerHTML = Math.floor(frameCount*10/1000/60)%60;
         document.getElementById("Seconds").innerHTML = Math.floor(frameCount*10/1000)%60;
         document.getElementById("MilliSeconds").innerHTML = Math.floor(frameCount*10/100)%10+""+Math.floor(frameCount*10/10)%10+""+Math.floor(frameCount*10/1)%10;
+        
+        document.getElementById("tHours").innerHTML = Math.floor(TotalTime*10/1000/60/60);
+        document.getElementById("tMinutes").innerHTML = Math.floor(TotalTime*10/1000/60)%60;
+        document.getElementById("tSeconds").innerHTML = Math.floor(TotalTime*10/1000)%60;
+        document.getElementById("tMilliSeconds").innerHTML = Math.floor(TotalTime*10/100)%10+""+Math.floor(TotalTime*10/10)%10+""+Math.floor(TotalTime*10/1)%10;
         
         if(doLoop){
           frameCount += 1;
