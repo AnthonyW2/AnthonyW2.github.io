@@ -44,12 +44,12 @@
         frameRate = document.getElementById("FPS").value;
         MSPT = 1000/frameRate;
         
-        document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+ceil(MSPT);
+        document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
         if(doLoop){
           frameCount += 1;
-          setTimeout(draw,ceil(MSPT));
+          setTimeout(draw,Math.ceil(MSPT));
         }
       }
       
