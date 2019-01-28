@@ -94,7 +94,8 @@
         document.getElementById("Seconds").innerHTML = Math.floor(frameCount*10/1000)%60;
         document.getElementById("MilliSeconds").innerHTML = Math.floor(frameCount*10/100)%10+""+Math.floor(frameCount*10/10)%10+""+Math.floor(frameCount*10/1)%10;
         
-        document.getElementById("tHours").innerHTML = Math.floor(TotalTime*10/1000/60/60);
+        //document.getElementById("tHours").innerHTML = Math.floor(TotalTime*10/1000/60/60);
+        document.getElementById("tHours").innerHTML = TotalTime;
         document.getElementById("tMinutes").innerHTML = Math.floor(TotalTime*10/1000/60)%60;
         document.getElementById("tSeconds").innerHTML = Math.floor(TotalTime*10/1000)%60;
         document.getElementById("tMilliSeconds").innerHTML = Math.floor(TotalTime*10/100)%10+""+Math.floor(TotalTime*10/10)%10+""+Math.floor(TotalTime*10/1)%10;
