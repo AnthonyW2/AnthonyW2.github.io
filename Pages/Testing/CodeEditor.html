@@ -15,8 +15,7 @@
       }
       
       textarea {
-        //width: 100%;
-        width: "device-width";
+        width: 100%;
         float: top;
         min-height: 250px;
         overflow: scroll;
@@ -35,7 +34,7 @@
         height: 35em;
       }
     </style>
-    <title>JS Draw Function</title>
+    <title>Processing Code Editor</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
@@ -44,7 +43,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>JS Draw() function</h1>
+    <h1>Processing Code Editor</h1>
     <br>
     <br>
     <textarea id="pjs" placeholder="Processing code"></textarea>
@@ -60,9 +59,9 @@
       document.body.onkeyup = function() {
         code.open();
         code.writeln(
-          '<script type="text/processing" data-processing-target="processing-canvas">' +
+          "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">" +
           js.value +
-          '</script>'
+          "</script>"
         );
         code.close();
       };
