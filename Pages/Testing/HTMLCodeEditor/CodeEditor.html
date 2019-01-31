@@ -62,12 +62,12 @@ function compile() {
     code.open();
     code.writeln(
       html.value +
-        "<style>" +
+        "<"+"style>" +
         css.value +
         "</style>" +
         "<script>" +
         js.value +
-        "</script>"
+        "</"+"script>"
     );
     code.close();
   };
