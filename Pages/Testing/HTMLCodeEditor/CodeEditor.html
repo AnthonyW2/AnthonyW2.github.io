@@ -34,7 +34,7 @@
         height: 35em;
       }
     </style>
-    <title>Processing Code Editor</title>
+    <title>HTML Code Editor</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
@@ -43,38 +43,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Processing Code Editor</h1>
+    <h1>HTML Code Editor</h1>
+    <br>
+    <p>Code for this page's functionality completely supplied by <a href="https://enlight.nyc/projects/code-editor/" target="_blank">elight.nyc</a>
     <br>
     <br>
     <textarea id="html" placeholder="HTML"></textarea>
-    <textarea id="css" placeholder="CSS"></textarea>
-    <textarea id="js" placeholder="JavaScript"></textarea>
+    <!--textarea id="css" placeholder="CSS"></textarea>
+    <textarea id="js" placeholder="JavaScript"></textarea-->
     <iframe id="code"></iframe>
     <br>
     <script type="text/javascript">
 function compile() {
   var html = document.getElementById("html");
-  var css = document.getElementById("css");
-  var js = document.getElementById("js");
+  //var css = document.getElementById("css");
+  //var js = document.getElementById("js");
   var code = document.getElementById("code").contentWindow.document;
-
   document.body.onkeyup = function() {
     code.open();
-    code.writeln(
-      html.value +
-        "<"+"style>" +
-        css.value +
-        "</style>" +
-        "<script>" +
-        js.value +
-        "</"+"script>"
-    );
+    code.writeln(html.value);
     code.close();
   };
 }
-
 compile();
     </script>
-    <!--canvas id="processing-canvas"></canvas-->
   </body>
 </html>
