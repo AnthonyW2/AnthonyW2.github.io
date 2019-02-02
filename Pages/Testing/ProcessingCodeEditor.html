@@ -34,7 +34,7 @@
   </head>
   <body>
     <h1>Processing Code Editor</h1>
-    <br>.......
+    <br>........
     <br>
     <p id="CODE">Code</p>
     <textarea id="pjs" placeholder="Processing Code"></textarea>
@@ -43,15 +43,15 @@
         var pjs = document.getElementById("pjs");
         //var code = document.getElementById("code").contentWindow.document;
         document.body.onkeyup = function() {
-          document.getElementById("CODE").innerHTML = pjs.value;
           var s = document.createElement("script");
           s.type = "text/processing";
           //s.src = "js1.js";
           s.innerHTML = pjs.value;
           s.id = "ProcessingCanvas";
-          s.data-processing-target = "processing-canvas";
+          //s.data-processing-target = "processing-canvas";
           document.getElementById("output").innerHTML = "";
           document.getElementById("output").appendChild(s);
+          document.getElementById("CODE").innerHTML = s;
           var p = document.createElement("canvas");
           p.id = "processing-canvas";
           document.getElementById("outCanvas").innerHTML = "";
