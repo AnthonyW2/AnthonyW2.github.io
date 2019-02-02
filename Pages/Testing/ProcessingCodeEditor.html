@@ -10,6 +10,19 @@
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
       a {color: #0000FF; text-decoration: underline;}
+      body {text-align: center;}
+      textarea {
+        width: 100%;
+        float: top;
+        min-height: 250px;
+        overflow: scroll;
+        margin: auto;
+        display: inline-block;
+        //background: #f4f4f9;
+        outline: none;
+        font-family: Courier, sans-serif;
+        font-size: 14px;
+      }
     </style>
     <title>Terrain Generation</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -22,14 +35,29 @@
   <body>
     <h1>Processing Code Editor</h1>
     <br>
+    <br>
+    <textarea id="pjs" placeholder="Processing Code"></textarea>
     <script type="text/javascript">
-      
+      function compile() {
+        var pjs = document.getElementById("pjs");
+        //var code = document.getElementById("code").contentWindow.document;
+        document.body.onkeyup = function() {
+          var s = document.createElement("script");
+          s.type = "text/processing";
+          //s.src = "js1.js";
+          s.innerHTML = pjs.value;
+          s.id = "ProcessingCanvas";
+          s.data-processing-target = "processing-canvas";
+          document.getElementById("output").innerHTML = "";
+          document.getElementById("output").appendChild(s);
+        };
+      }
+      compile();
     </script>
     <br>
     <div id="output">
-      <script id="widget" type="text/processing" data-processing-target="processing-canvas">
-        
-      </script>
+      <script id="ProcessingCanvas" type="text/processing" data-processing-target="processing-canvas"></script>
     </div>
+    <canvas id="processing-canvas"> </canvas>
   </body>
 </html>
