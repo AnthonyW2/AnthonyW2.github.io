@@ -50,8 +50,10 @@
           s.data-processing-target = "processing-canvas";
           document.getElementById("output").innerHTML = "";
           document.getElementById("output").appendChild(s);
+          var p = document.createEkement("canvas");
+          p.id = "processing-canvas";
           document.getElementById("outCanvas").innerHTML = "";
-          document.getElementById("outCanvas").appendChild("<"+"canvas id=\"processing-canvas\""+"></"+"canvas"+">");
+          document.getElementById("outCanvas").appendChild(p);
         };
       }
       compile();
