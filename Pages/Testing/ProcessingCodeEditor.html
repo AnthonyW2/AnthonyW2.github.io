@@ -50,6 +50,8 @@
           s.data-processing-target = "processing-canvas";
           document.getElementById("output").innerHTML = "";
           document.getElementById("output").appendChild(s);
+          document.getElementById("outCanvas").innerHTML = "";
+          document.getElementById("outCanvas").appendChild("<"+"canvas id=\"processing-canvas\""+"></"+"canvas"+">");
         };
       }
       compile();
@@ -58,6 +60,8 @@
     <div id="output">
       <script id="ProcessingCanvas" type="text/processing" data-processing-target="processing-canvas"></script>
     </div>
-    <canvas id="processing-canvas"> </canvas>
+    <div id="outCanvas">
+      <canvas id="processing-canvas"></canvas>
+    </div>
   </body>
 </html>
