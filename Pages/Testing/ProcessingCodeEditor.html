@@ -44,7 +44,7 @@
         //var code = document.getElementById("code").contentWindow.document;
         document.body.onkeyup = function() {
           //var s = document.createElement("script");
-          var s = "<"+"script id=\"ProcessingCanvas\" type=\"text/processing\" data-processing-target=\"processing-canvas\""+">"+pjs.value+"</"+"script"+">";
+          var s = "<"+"script id=\"ProcessingCanvas\" type=\"text/processing\" data-processing-target=\"processing-canvas\""+">"+"\n"+pjs.value+"\n"+"</"+"script"+">"+"\n"+"<"+"canvas id=\"processing-canvas\""+">"+"</"+"canvas"+">";
           //s.type = "text/processing";
           //s.src = "js1.js";
           //s.innerHTML = pjs.value;
@@ -64,8 +64,8 @@
     <br>
     <div id="output">
       <script id="ProcessingCanvas" type="text/processing" data-processing-target="processing-canvas"></script>
-    </div>
-    <div id="outCanvas">
+    <!--/div>
+    <div id="outCanvas"-->
       <canvas id="processing-canvas"></canvas>
     </div>
   </body>
