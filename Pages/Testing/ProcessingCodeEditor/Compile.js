@@ -1,7 +1,7 @@
 function compile(){
   var pjs = document.getElementById("pjs");
   var code = document.getElementById("code").contentWindow.document;
-  document.body.onkeyup = function() {
+  function COMPILE(){
     code.open();
     code.writeln(
       "<!DOCTYPE html>"+
@@ -19,6 +19,9 @@ function compile(){
       "</html>"
     );
     code.close();
+  };
+  document.body.onkeyup = function() {
+    COMPILE();
   };
 }
 compile();
