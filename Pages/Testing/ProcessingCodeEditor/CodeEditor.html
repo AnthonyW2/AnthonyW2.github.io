@@ -46,7 +46,19 @@
     <h1>Processing Code Editor</h1>
     <br>                                                                                                                                                                     
     <br>
-    <textarea id="pjs" placeholder="Processing Code"></textarea>
+    <textarea id="pjs" placeholder="Processing Code">
+void setup(){
+  size(400,400);
+  frameRate(60);
+}
+
+void draw(){
+  background(50,50,50);
+  fill(200,200,200);
+  stroke(150,150,150);
+  
+  text(frameRate,20,20);
+}</textarea>
     <!--textarea id="css" placeholder="CSS"></textarea>
     <textarea id="js" placeholder="JavaScript"></textarea-->
     <iframe id="code"></iframe>
