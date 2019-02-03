@@ -53,19 +53,6 @@
     <textarea id="js" placeholder="JavaScript"></textarea-->
     <iframe id="code"></iframe>
     <br>
-    <script type="text/javascript">
-function compile() {
-  var html = document.getElementById("html");
-  //var css = document.getElementById("css");
-  //var js = document.getElementById("js");
-  var code = document.getElementById("code").contentWindow.document;
-  document.body.onkeyup = function() {
-    code.open();
-    code.writeln(html.value);
-    code.close();
-  };
-}
-compile();
-    </script>
+    <script type="text/javascript" src="Compile.js"></script>
   </body>
 </html>
