@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--This is for testing purposes only-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+    <style>
+      body {position: absolute;}
+      h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
+      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
+      p {color: #000000; font-family: "times new roman";}
+      a {color: #0000FF; text-decoration: underline;}
+      body {text-align: center;}
+      textarea {
+        width: 100%;
+        float: top;
+        min-height: 250px;
+        overflow: scroll;
+        margin: auto;
+        display: inline-block;
+        //background: #f4f4f9;
+        outline: none;
+        font-family: Courier, sans-serif;
+        font-size: 14px;
+      }
+    </style>
+    <title>Processing Editor</title>
+    <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
+    <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
+    <meta name="apple-mobile-web-app-title" content="W̵">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Processing Code Editor</h1>
+    <br>.
+    <br>
+    <p id="CODE">Code</p>
+    <textarea id="pjs" placeholder="Processing Code"></textarea>
+    <script type="text/javascript">
+      function compile() {
+        var pjs = document.getElementById("pjs");
+        //var code = document.getElementById("code").contentWindow.document;
+        document.body.onkeyup = function() {
+          //var s = document.createElement("script");
+          var s = "<"+"script id=\"ProcessingCanvas\" type=\"text/processing\" data-processing-target=\"processing-canvas\""+">"+"\n"+pjs.value+"\n"+"</"+"script"+">"+"\n"+"<"+"canvas id=\"processing-canvas\""+">"+"</"+"canvas"+">";
+          //s.type = "text/processing";
+          //s.src = "js1.js";
+          //s.innerHTML = pjs.value;
+          //s.id = "ProcessingCanvas";
+          //s.data-processing-target = "processing-canvas";
+          document.getElementById("output").innerHTML = "";
+          document.getElementById("output").appendChild(s);
+          //document.getElementById("CODE").innerHTML = "";
+          //var p = document.createElement("canvas");
+          //p.id = "processing-canvas";
+          //document.getElementById("outCanvas").innerHTML = "";
+          //document.getElementById("outCanvas").appendChild(p);
+        };
+      }
+      compile();
+    </script>
+    <br>
+    <div id="output">
+      <script id="ProcessingCanvas" type="text/processing" data-processing-target="processing-canvas"></script>
+    <!--/div>
+    <div id="outCanvas"-->
+      <canvas id="processing-canvas"></canvas>
+    </div>
+  </body>
+</html>
