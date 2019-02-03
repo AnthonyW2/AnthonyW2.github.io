@@ -17,14 +17,14 @@
       textarea {
         width: 100%;
         float: top;
-        min-height: 250px;
+        min-height: 500px;
         overflow: scroll;
         margin: auto;
         display: inline-block;
         //background: #f4f4f9;
         outline: none;
         font-family: Courier, sans-serif;
-        font-size: 14px;
+        font-size: 20px;
       }
       
       iframe {
@@ -44,7 +44,7 @@
   </head>
   <body>
     <h1>Processing Code Editor</h1>
-    <br>                                                                                                                                                                     
+    <br>
     <br>
     <textarea id="pjs" placeholder="Processing Code">
 void setup(){
@@ -58,7 +58,8 @@ void draw(){
   stroke(150,150,150);
   
   text(frameRate,20,20);
-}</textarea>
+}
+</textarea>
     <!--textarea id="css" placeholder="CSS"></textarea>
     <textarea id="js" placeholder="JavaScript"></textarea-->
     <iframe id="code"></iframe>
