@@ -11,6 +11,7 @@ function COMPILE(){
     "</head>"+
     "<body>"+
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
+    "int TESTINTEGER = 1;\n"+
     pjs.value+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
