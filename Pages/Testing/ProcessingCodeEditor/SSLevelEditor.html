@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<!--This is for testing purposes and public use-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+    <style>
+      body {position: absolute;}
+      h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
+      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
+      p {color: #000000; font-family: "times new roman";}
+      a {color: #0000FF; text-decoration: underline;}
+      body {
+        text-align: center;
+      }
+      
+      textarea {
+        width: 100%;
+        float: top;
+        min-height: 500px;
+        overflow: scroll;
+        margin: auto;
+        display: inline-block;
+        //background: #f4f4f9;
+        outline: none;
+        font-family: Courier, sans-serif;
+        font-size: 20px;
+      }
+      
+      iframe {
+        bottom: 0;
+        position: relative;
+        width: 1515px;
+        height: 1015px;
+      }
+    </style>
+    <title>Processing Code Editor</title>
+    <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
+    <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
+    <meta name="apple-mobile-web-app-title" content="W̵">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Processing Code Editor</h1>
+    <br>
+    <br>
+    <textarea id="pjs" placeholder="Processing Code">
+//Edit this just like you would edit any Processing Sketch!
+void setup(){
+  size(400,400);//Max size = 1500 × 1000
+  frameRate(60);
+}
 
+void draw(){
+  background(50,50,50);
+  fill(200,200,200);
+  stroke(150,150,150);
+  
+  text(frameRate,20,20);
+}
+</textarea>
+    <!--textarea id="css" placeholder="CSS"></textarea>
+    <textarea id="js" placeholder="JavaScript"></textarea-->
+    <iframe id="code"></iframe>
+    <br>
+    <script type="text/javascript" src="SSLECompiler.js"></script>
+  </body>
+</html>
