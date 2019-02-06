@@ -13,7 +13,11 @@ function COMPILE(){
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
     "void setup(){size(1024,704);frameRate(100);}"+
     "int LAG = 2;float blockSize = round(1024/30);"+
+    "void wall(float x,float y,float endX,float endY){rect(x,y,endX,endY);};"+
+    "void platform(float x,float y,float endX){rect(x,y,endX,2);};"+
+    "void draw(){"+
     pjs.value+
+    "};"+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
     "</body>"+
