@@ -47,18 +47,40 @@
     <br>
     <br>
     <textarea id="pjs" placeholder="Processing Code">
-//Edit this just like you would edit any Processing Sketch!
-void setup(){
-  size(400,400);//Max size = 1500 × 1000
-  frameRate(60);
+background(0,100,0);
+if(useImages){
+   //image(Images[1],0,0,width,height);
 }
+if(LAG == 0){
+   fill(200,150,0);
+}else{
+   stroke(250,200,0);
+}
+electricArc(blockSize*0,blockSize*0,blockSize*1,blockSize*1,"H");
+noStroke();
+fill(0,0,0);
+wall(blockSize*0,blockSize*0,blockSize*1,blockSize*1);
+fill(120,130,120);
+noStroke();
+ladder(blockSize*0,blockSize*0,1);
+noStroke();
+noFill();
+platform(blockSize*0,blockSize*0,blockSize*1);
+fill(115,70,70);
+noStroke();
+//groundBug(blockSize*8+bounceNumber(blockSize*6,false),blockSize*12);
+fill(255);
+noStroke();
+finish(blockSize*28,blockSize*15);
+collectable(blockSize*0,blockSize*0,1);
 
-void draw(){
-  background(50,50,50);
-  fill(200,200,200);
-  stroke(150,150,150);
-  
-  text(frameRate,20,20);
+textFont(createFont("serif",70),70);
+textAlign(CENTER,CENTER);
+fill(0,100,0);
+text("Level 5",width/2,80);
+textAlign(CENTER,TOP);
+textSize(30);
+text("",width/2,120);
 }
 </textarea>
     <!--textarea id="css" placeholder="CSS"></textarea>
