@@ -11,7 +11,7 @@ function COMPILE(){
     "</head>"+
     "<body>"+
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
-    "int TESTINTEGER = 1;"+
+    "void setup(){size(1024,704);frameRate(100);}"+
     pjs.value+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
