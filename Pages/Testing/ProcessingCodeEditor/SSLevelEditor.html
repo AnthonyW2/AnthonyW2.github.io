@@ -33,6 +33,7 @@
         width: 1039px;
         height: 719px;
       }
+      .slider {width: 100px;}
     </style>
     <title>Starship Code Editor</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -47,7 +48,7 @@
     <br>
     <br>
     LAG Value:
-    <input type="slider" width="100">
+    <input type="range" id="LAG" min="0" max="2" value="2" class="slider"><p id="lag"></p>
     <br>
     <textarea id="pjs" placeholder="Processing Code">
 background(0,100,0);
