@@ -16,6 +16,8 @@ function COMPILE(){
     "void wall(float x,float y,float endX,float endY){rect(x,y,endX,endY);};"+
     "void platform(float x,float y,float endX){rect(x,y,endX,2);};"+
     "void ladder(float x, float y, int size){rect(x,y,2,size*blockSize);rect(x+blockSize-2,y,2,size*blockSize);for(int a = 0;a < size*blockSize;a += 14){rect(x,y+a,blockSize,3);}};"+
+    "void vine(float[][] positions){rect(0,0,2,2);};"+
+    ""+
     "void draw(){\n"+
     pjs.value+
     "\n};"+
