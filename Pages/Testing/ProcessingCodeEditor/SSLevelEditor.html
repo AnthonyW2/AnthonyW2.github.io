@@ -51,43 +51,82 @@
     <input type="range" id="LAG" min="0" max="2" value="2" class="slider" onchange="COMPILE()"><p id="lag"></p>
     <br>
     <textarea id="pjs" placeholder="Processing Code">
-background(0,100,0);
-/*
-if(useImages){
-   image(Images[1],0,0,width,height);
-}
-*/
-if(LAG == 0){
-   fill(200,150,0);
-}else{
-   stroke(250,200,0);
-}
-electricArc(blockSize*0,blockSize*0,blockSize*1,blockSize*1,"H");
-noStroke();
-fill(0,0,0);
-wall(blockSize*0,blockSize*0,blockSize*1,blockSize*1);
-fill(120,130,120);
-noStroke();
-ladder(blockSize*0,blockSize*0,1);
-noStroke();
-noFill();
-platform(blockSize*0,blockSize*0,blockSize*1);
-fill(115,70,70);
-noStroke();
-//groundBug(blockSize*8+bounceNumber(blockSize*6,false),blockSize*12);
-fill(255);
-noStroke();
-finish(blockSize*28,blockSize*15);
-collectable(blockSize*0,blockSize*0,1);
-
-textFont(createFont("serif",70),70);
-textAlign(CENTER,CENTER);
-fill(0,100,0);
-text("Level 5",width/2,80);
-textAlign(CENTER,TOP);
-textSize(30);
-text("Level Tip Goes Here",width/2,120);
-}
+      background(0,100,0);
+      if(useImages){
+         image(Images[1],0,0,width,height);
+      }
+      noStroke();
+      fill(0,0,0);
+      wall(blockSize*0,blockSize*0,blockSize*31,blockSize*5);
+      wall(blockSize*0,blockSize*5,blockSize*7,blockSize*4);
+      wall(blockSize*25,blockSize*5,blockSize*7,blockSize*3);
+      wall(blockSize*0,blockSize*20,blockSize*31,blockSize);
+      wall(blockSize*0,blockSize*15,blockSize*4,blockSize*5);
+      wall(blockSize*11,blockSize*15,blockSize*2,blockSize*5);
+      wall(blockSize*16,blockSize*12,blockSize*2,blockSize*8);
+      wall(blockSize*19,blockSize*15,blockSize*5,blockSize);
+      wall(blockSize*22,blockSize*12,blockSize*2,blockSize*3);
+      wall(blockSize*24,blockSize*12,blockSize,blockSize);
+      wall(blockSize*25,blockSize*12,blockSize,blockSize*8);
+      wall(blockSize*26,blockSize*13,blockSize,blockSize*4);
+      wall(blockSize*26,blockSize*18,blockSize,blockSize*2);
+      wall(blockSize*27,blockSize*14,blockSize,blockSize);
+      wall(blockSize*27,blockSize*19,blockSize*2,blockSize);
+      wall(blockSize*29,blockSize*15,blockSize*2,blockSize*5);
+      wall(blockSize*27,blockSize*15,blockSize*2,blockSize);
+      fill(0,150,0);
+      float[][] vinePositions = {
+         {4,15},{4,16},
+         {5,14},{5,15},
+         {6,13},{6,14},{6,15},{6,16},{6,17},{6,18},{6,19},
+         {7,13},{7,15},{7,16},{7,17},{7,18},{7,19},
+         {8,13},{8,14},{8,15},{8,16},{8,17},{8,18},{8,19},
+         {9,14},{9,15},{9,16},
+         {10,15},
+         {13,14},{13,15},{13,16},
+         {14,13},{14,14},
+         {15,12},{15,13},{15,14},
+         {20,12},{20,13},{20,14},{21,12},{21,13},{21,14}
+      };
+      vine(vinePositions);
+      fill(115,70,70);
+      noStroke();
+      float[][][] enemyPositions = {{{blockSize*4,blockSize*17},{blockSize*10,blockSize*17}},{{blockSize*14,blockSize*8},{blockSize*14,blockSize*18}},{{blockSize*11,blockSize*11},{blockSize*21,blockSize*11}}};
+      flyingBug(enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[0],enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[1]);
+      flyingBug(enemyPath(enemyPositions[1],floor(milliseconds/10)%675,1)[0],enemyPath(enemyPositions[1],floor(milliseconds/10)%675,1)[1]);
+      flyingBug(enemyPath(enemyPositions[2],floor(milliseconds/10)%675,1)[0],enemyPath(enemyPositions[2],floor(milliseconds/10)%675,1)[1]);
+      fill(255);
+      noStroke();
+      finish(blockSize*29,blockSize*13);
+      collectable(blockSize*6,blockSize*18,2);
+      trigger(blockSize*18,blockSize*15,0);
+      if(triggers[0]){
+         float[][] vinePositions0 = {
+            {18,15},{18,16},{18,17},{18,18},{18,19},
+            {19,16},{19,17},{19,18},{19,19},
+            {20,16},{20,17},{20,18},{20,19},
+            {21,16},{21,17},{21,18},{21,19},
+            {22,16},{22,17},{22,18},{22,19},
+            {23,16},{23,17},{23,18},{23,19},
+            {24,13},{24,14},{24,15},{24,16},{24,17},{24,18},{24,19}
+         };
+         noStroke();
+         fill(0,150,0);
+         vine(vinePositions0);
+         collectable(blockSize*24,blockSize*13,3);
+      }
+      stroke(50);
+      fill(100);
+      float[][] spikePositions = {{4,19,0},{5,19,0},{6,19,0},{7,19,0},{8,19,0},{9,19,0},{10,19,0},{13,19,0},{14,19,0},{15,19,0},{18,19,0},{19,19,0},{20,19,0},{21,19,0},{22,19,0},{23,19,0},{24,19,0}};
+      spike(spikePositions);
+      
+      textFont(createFont("serif",70),70);
+      textAlign(CENTER,CENTER);
+      fill(0,100,0);
+      text("Jungle Planet 1",width/2,80);
+      textAlign(CENTER,TOP);
+      textSize(30);
+      text("Climb vines just like you would climb ladders",width/2,120);
 </textarea>
     <!--textarea id="css" placeholder="CSS"></textarea>
     <textarea id="js" placeholder="JavaScript"></textarea-->
