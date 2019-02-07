@@ -15,9 +15,9 @@ function COMPILE(){
     "int LAG = 2;float blockSize = round(1024/30);"+
     "void wall(float x,float y,float endX,float endY){rect(x,y,endX,endY);};"+
     "void platform(float x,float y,float endX){rect(x,y,endX,2);};"+
-    "void draw(){"+
+    "void draw(){\n"+
     pjs.value+
-    "};"+
+    "\n};"+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
     "</body>"+
