@@ -34,9 +34,6 @@ function compile(){
     COMPILE();
   };
 };
-function slider(){
-  document.getElementById("lag").innerHTML = document.getElementById("LAG").value;
-};
 
 compile();
 COMPILE();
