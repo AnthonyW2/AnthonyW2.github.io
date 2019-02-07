@@ -72,9 +72,13 @@ vine(vinePositions);
 fill(115,70,70);
 noStroke();
 float[][][] enemyPositions = {{{blockSize*4,blockSize*17},{blockSize*10,blockSize*17}}};
-flyingBug(enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[0],enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[1]);
+//flyingBug(enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[0],enemyPath(enemyPositions[0],floor(milliseconds/10)%400,1)[1]);
 fill(255);
 noStroke();
+fill(120,130,120);
+noStroke();
+ladder(blockSize*8,blockSize*8,6);
+/*
 finish(blockSize*29,blockSize*13);
 collectable(blockSize*10,blockSize*10,1);
 trigger(blockSize*11,blockSize*11,0);
@@ -87,6 +91,7 @@ if(triggers[0]){
    vine(vinePositions0);
    collectable(blockSize*9,blockSize*9,1);
 }
+*/
 stroke(50);
 fill(100);
 float[][] spikePositions = {{0,5,0},{1,5,1},{2,5,2},{3,5,3}};
