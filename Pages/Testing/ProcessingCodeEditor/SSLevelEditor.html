@@ -50,8 +50,13 @@
     LAG Value:
     <input type="range" id="LAG" min="0" max="2" value="2" class="slider" onchange="COMPILE()"><p id="lag"></p>
     <br>
+    Trigger 1:
+    <input type="checkbox" id="Trig1" onchange="COMPILE()">
+    Trigger 2:
+    <input type="checkbox" id="Trig2" onchange="COMPILE()">
+    <br>
     <textarea id="pjs" placeholder="Processing Code">
-background(0,100,0);
+      background(0,100,0);
 //if(useImages){//
 //image(Images[1],0,0,width,height);
 //}
@@ -63,10 +68,10 @@ if(LAG == 0){
 electricArc(blockSize*5,blockSize*5,blockSize*2,blockSize,"H");
 noStroke();
 fill(0,0,0);
-wall(blockSize*0,blockSize*0,blockSize*1,blockSize*1);
+wall(blockSize*0,blockSize*0,blockSize*30,blockSize*5);
 fill(0,150,0);
 float[][] vinePositions = {
-   {1,1},{2,1}
+   {1,10},{2,10}
 };
 vine(vinePositions);
 fill(115,70,70);
@@ -77,14 +82,14 @@ fill(255);
 noStroke();
 fill(120,130,120);
 noStroke();
-ladder(blockSize*8,blockSize*8,6);
-/*
+ladder(blockSize*8,blockSize*5,6);
 finish(blockSize*29,blockSize*13);
-collectable(blockSize*10,blockSize*10,1);
-trigger(blockSize*11,blockSize*11,0);
+collectable(blockSize*10,blockSize*5,1);
+/*
+trigger(blockSize*12,blockSize*5,0);
 if(triggers[0]){
    float[][] vinePositions0 = {
-      {1,2},{2,2}
+      {1,11},{2,11}
    };
    noStroke();
    fill(0,150,0);
