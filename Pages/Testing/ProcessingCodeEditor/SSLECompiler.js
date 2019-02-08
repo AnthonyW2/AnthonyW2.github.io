@@ -1,3 +1,5 @@
+var Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
+
 var pjs = document.getElementById("pjs");
 var code = document.getElementById("code").contentWindow.document;
 function COMPILE(){
@@ -12,7 +14,7 @@ function COMPILE(){
     "<body>"+
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
     "void setup(){size(1024,704);frameRate(100);}"+
-    "int LAG = "+document.getElementById("LAG").value+";float blockSize = round(1024/30);"+
+    "int LAG = "+document.getElementById("LAG").value+";float blockSize = round(1024/30);boolean[] triggers = {"+Triggers[0]+","+Triggers[1]+","+Triggers[2]+","+Triggers[3]+","+Triggers[4]+"};"+
     "void wall(float x,float y,float endX,float endY){rect(x,y,endX,endY);};"+
     "void platform(float x,float y,float endX){rect(x,y,endX,2);};"+
     "void ladder(float x, float y, int size){rect(x,y,2,size*blockSize);rect(x+blockSize-2,y,2,size*blockSize);for(int a = 0;a < size*blockSize;a += 14){rect(x,y+a,blockSize,3);}};"+
