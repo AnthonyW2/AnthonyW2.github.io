@@ -33,6 +33,7 @@ function COMPILE(){
     "void trigger(float x, float y, int n){pushStyle();fill(255,255,0);rect(x,y,blockSize,blockSize);if(triggers[n]){fill(0,200,0);}else{fill(255,100,0);}textAlign(CENTER,CENTER);textSize(30);text(n,x+blockSize/2,y+blockSize/2);popStyle();}"+
     "void draw(){\n"+
     pjs.value+
+    "\ntextAlign(RIGHT,TOP);textSize(20);textFont(createFont("serif",20));fill(200);text("FPS: "+floor(frameRate),width-10,10);"+
     "\n};"+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
