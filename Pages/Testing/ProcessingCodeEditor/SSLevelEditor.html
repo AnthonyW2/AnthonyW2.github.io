@@ -87,10 +87,10 @@ flyingBug(enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[0],enemyP
 //groundBug(enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[0],enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[1]);
 fill(255);
 noStroke();
+finish(blockSize*29,blockSize*13);
 fill(120,130,120);
 noStroke();
 ladder(blockSize*8,blockSize*5,6);
-finish(blockSize*29,blockSize*13);
 collectable(blockSize*10,blockSize*5,1);
 trigger(blockSize*12,blockSize*5,0);
 if(triggers[0]){
