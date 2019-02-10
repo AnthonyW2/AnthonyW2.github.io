@@ -75,6 +75,9 @@ electricArc(blockSize*5,blockSize*5,blockSize*2,blockSize,"H");
 noStroke();
 fill(0,0,0);
 wall(blockSize*0,blockSize*0,blockSize*30,blockSize*5);
+for(int a = 0;a < 10;a +=1 ){
+   stair(blockSize*(10+a*0.5),blockSize*(15.5-a*0.5),blockSize*0.5,blockSize*1,2);
+}
 fill(0,150,0);
 float[][] vinePositions = {
    {1,10},{2,10}
