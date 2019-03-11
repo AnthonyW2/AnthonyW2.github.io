@@ -9,7 +9,7 @@
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
       p {color: #000000; font-family: "times new roman";}
       a {color: #0000FF; text-decoration: underline;}
-      input[type=text] {width: 9px; text-align: center;}
+      input[type=text] {width: 50px; text-align: center;}
       body {
         text-align: center;
       }
@@ -26,14 +26,6 @@
         font-family: Courier, sans-serif;
         font-size: 15px;
       }
-      
-      iframe {
-        bottom: 0;
-        position: relative;
-        width: 1039px;
-        height: 719px;
-      }
-      .slider {width: 100px;}
     </style>
     <title>Text Modifier</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -44,17 +36,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Text Indenter & Replacer</h1>
+    <h1>Text Indenter & Replacer (WIP)</h1>
     <br>
     <br>
     String to replace:
-    <input type="">
+    <input type="text" name="REPLACETARGET" id="TARGET">
     <br>
     What to replace it with:
-    <input type="">
+    <input type="text" name="REPLACESTRING" id="STRING">
+    <button onclick="void()">Replace</button>
     <br>
     Indentation amount (spaces):
-    <input type="">
+    <input type="text" name="INDENTAMOUNT" id="AMOUNT">
+    <button onclick="void()">Indent</button>
     <br>
     <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Text Goes Here"></textarea>
     <br>
@@ -63,7 +57,7 @@
     <br>
     <script>
       function randomiseInputs(){
-        var Input = document.getElementById("INPUTS").value;
+        var Input = document.getElementById("INPUT").value;
         var Output = [];
         var lastSplit = 0;
         var Splitter = document.getElementById("SPLITTER").value;
