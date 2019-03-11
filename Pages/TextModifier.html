@@ -58,6 +58,40 @@
     <br>
     <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Text Goes Here"></textarea>
     <br>
-    <!--script type="text/javascript" src="SSLECompiler.js"></script-->
+    <h2>Result:</h2>
+    <h2 id="OUTPUT"></h2>
+    <br>
+    <script>
+      function randomiseInputs(){
+        var Input = document.getElementById("INPUTS").value;
+        var Output = [];
+        var lastSplit = 0;
+        var Splitter = document.getElementById("SPLITTER").value;
+        for(var a = 0;a < Input.length;a += 1){
+          if(Input.charAt(a) == Splitter.charAt(0)){
+            Output.push(Input.substr(lastSplit,a));
+            lastSplit = a+1;
+          }
+        }
+        Output.push(Input.substr(lastSplit));
+        
+        for(var i = 0;i < Output.length;i += 1){
+          for(var a = 0;a < Output[i].length;a += 1){
+            if(Output[i].replace(Splitter,"") != Output[i]){
+              if(Output[i].charAt(a) == Splitter.charAt(0)){
+                Output[i] = Output[i].substr(0,a);
+              }
+            }
+          }
+        }
+        
+        var singleOutput = Output[Math.floor(Math.random() * Output.length)];
+        
+        document.getElementById("OUTPUT").innerHTML = singleOutput;
+        if(document.getElementById("ALERTS").checked == true){
+          alert("The result is:\n"+singleOutput);
+        }
+      }
+    </script>
   </body>
 </html>
