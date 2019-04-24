@@ -2,10 +2,10 @@
 //1/3/2019
 
 void setup() {
-   size(1024,704);
+   size(1024,1024);
    frameRate(60);
    
-   EarthImg = loadImage("https:// Anthony-Wilson-Programming.github.io/Pages/ScienceTalentSearch/Moon.png");
+   EarthImg = loadImage("https://Anthony-Wilson-Programming.github.io/Pages/ScienceTalentSearch/Earth.png");
    MoonImg  = loadImage("https://Anthony-Wilson-Programming.github.io/Pages/ScienceTalentSearch/Moon.png");
 }
 
@@ -84,29 +84,18 @@ void draw() {
    MousePV = (mousePressed)?(MousePV + 1):(0);
    MouseRV = (mousePressed)?(0):(MouseRV + 1);
    
+   textAlign(CENTER,CENTER);
+   textFont(createFont("Courier",20));
+   textSize(20);
+   
    if(SCENE == 0){
-   
-   background(50);
-   noStroke();
-   
-   MoonOrbitAngle += 0.01;
-   
-   translate(width/2,height/2);
-   if(Scale <= 0){
-      scale(0.0002);
+      background(50);
+      noStroke();
       
-      fill(0,100,255);
-      ellipse(0,EarthSize/3,EarthSize/2,EarthSize/2);//Earth
-      imageMode(CENTER);
-      rotate(HALF_PI);
-      image(EarthImg,EarthSize/3,0,EarthSize*0.58,EarthSize*0.58);
-      rotate(-HALF_PI);
-      fill(200);
-      ellipse(sin(-MoonOrbitAngle)*(EarthSize+MoonDistance),cos(-MoonOrbitAngle)*(EarthSize+MoonDistance+MoonSize),MoonSize/2,MoonSize/2);//Moon
-      ellipse(0,-MoonSize,MoonSize/2,MoonSize/2);//Moon
-      image(MoonImg,0,-MoonSize,MoonSize*0.8,MoonSize*0.6);
       
-   }else{
+      MoonOrbitAngle += 0.01;
+      translate(width/2,height/2-100);
+      
       scale(Scale);
       
       fill(0,100,255);
@@ -122,23 +111,99 @@ void draw() {
       textSize(20);
       text("Earth, "+(EarthSize/500)+"km in diameter",50,0);
       text("Moon, "+(MoonSize/500)+"km in diameter",sin(-MoonOrbitAngle)*(310),cos(-MoonOrbitAngle)*(310)-20);
-   }
-   
-   resetMatrix();
-   
+      
+      translate(-width/2,-height/2+100);
+      
+      //'Play' button
+      fill(180);
+      if(mouseX > width/2-200 && mouseX < width/2-100 && mouseY > height/2-20 && mouseY < height/2+20){
+         cursor(HAND);
+         CursorOpen = false;
+         fill(140);
+         if(mousePressed){
+            fill(100);
+         }
+         if(MouseRV == 1){
+            SCENE = 1;
+         }
+      }
+      rect(width/2-200,height/2-20,100,40);
+      
+      //'How to play' button
+      fill(180);
+      if(mouseX > width/2+100 && mouseX < width/2+200 && mouseY > height/2-20 && mouseY < height/2+20){
+         cursor(HAND);
+         CursorOpen = false;
+         fill(140);
+         if(mousePressed){
+            fill(100);
+         }
+         if(MouseRV == 1){ 
+            SCENE = 2;
+         }
+      }
+      rect(width/2+100,height/2-20,100,40);
+      
+      //'Exit' button
+      fill(180);
+      if(mouseX > 10 && mouseX < 90 && mouseY > 10 && mouseY < 30){
+         cursor(HAND);
+         CursorOpen = false;
+         fill(140);
+         if(mousePressed){
+            fill(100);
+         }
+         if(MouseRV == 1){
+            exit();//Closes the game, 1 of _ lines that does this
+         }
+      }
+      rect(10,10,80,20);
+      
+      fill(255);
+      textAlign(CENTER,CENTER);
+      textFont(createFont("Courier",20));
+      textSize(20);
+      text("Play",width/2-150,height/2);
+      text("How To",width/2+150,height/2);
+      text("Exit",50,20);
+      
    }else if(SCENE == 1){
+      background(50);
+      noStroke();
+      
+      MoonOrbitAngle += 0.01;
+      
+      translate(width/2,height/2);
+      if(Scale <= 0){
+         scale(0.0002);
+         
+         fill(0,100,255);
+         ellipse(0,EarthSize/3,EarthSize/2,EarthSize/2);//Earth
+         imageMode(CENTER);
+         image(EarthImg,0,EarthSize/3,EarthSize*0.58,EarthSize*0.58);
+         fill(200);
+         ellipse(sin(-MoonOrbitAngle)*(EarthSize+MoonDistance),cos(-MoonOrbitAngle)*(EarthSize+MoonDistance+MoonSize),MoonSize/2,MoonSize/2);//Moon
+         ellipse(0,-MoonSize,MoonSize/2,MoonSize/2);//Moon
+         image(MoonImg,0,-MoonSize,MoonSize*0.8,MoonSize*0.6);
+         
+      }else{
+      }
+      
+      resetMatrix();
       
    }else{
       text("Error",width/2,height/2);
    }
    
    fill(200);
-   textAlign(LEFT,TOP);
+   textAlign(RIGHT,TOP);
    textSize(15);
-   text(frameRate,20,20);
-   text(Scale+"",20,40);
+   text(frameRate,width-20,20);
+   text(Scale+"",width-20,40);
 }
 
 void mousePressed(){
-   Scale = 0;
+   if(SCENE == 1){
+      Scale = 0;
+   }
 }
