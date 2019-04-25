@@ -57,16 +57,17 @@ void BackButton(int scene, int subscene){
   
   fill(180);
   if(mouseX > 10 && mouseX < 90 && mouseY > 10 && mouseY < 30){
-    cursor(HAND);
-    CursorOpen = false;
-    fill(140);
-    if(mousePressed){
-      fill(100);
-    }
-    if(MouseRV == 1){
-      SCENE = scene;
-      SUBSCENE = subscene;
-    }
+     cursor(HAND);
+     CursorOpen = false;
+     fill(140);
+     if(mousePressed){
+        fill(100);
+     }
+     if(MouseRV == 1){
+        Scale = 0.0000008;
+        SCENE = scene;
+        SUBSCENE = subscene;
+     }
   }
   rect(10,10,80,20);
   
@@ -92,8 +93,8 @@ void draw() {
       background(50);
       noStroke();
       
-      
       MoonOrbitAngle += 0.01;
+      
       translate(width/2,height/2-100);
       
       scale(Scale);
@@ -110,7 +111,7 @@ void draw() {
       textAlign(LEFT,CENTER);
       textSize(20);
       text("Earth, "+(EarthSize/500)+"km in diameter",50,0);
-      text("Moon, "+(MoonSize/500)+"km in diameter",sin(-MoonOrbitAngle)*(310),cos(-MoonOrbitAngle)*(310)-20);
+      text("Moon, "+(MoonSize/500)+"km in diameter\nLocated "+round(MoonDistance/1000)+"km away from the Earth",sin(-MoonOrbitAngle)*(310),cos(-MoonOrbitAngle)*(310)-20);
       
       translate(-width/2,-height/2+100);
       
@@ -154,7 +155,7 @@ void draw() {
             fill(100);
          }
          if(MouseRV == 1){
-            exit();//Closes the game, 1 of _ lines that does this
+            exit();
          }
       }
       rect(10,10,80,20);
@@ -166,6 +167,8 @@ void draw() {
       text("Play",width/2-150,height/2);
       text("How To",width/2+150,height/2);
       text("Exit",50,20);
+      textSize(50);
+      text("Launch to the Moon",width/2,50);
       
    }else if(SCENE == 1){
       background(50);
@@ -187,12 +190,46 @@ void draw() {
          image(MoonImg,0,-MoonSize,MoonSize*0.8,MoonSize*0.6);
          
       }else{
+         scale(Scale);
+         
+         fill(0,100,255);
+         ellipse(0,0,EarthSize/2,EarthSize/2);//Earth
+         
+         fill(200);
+         ellipse(sin(-MoonOrbitAngle)*(EarthSize+MoonDistance),cos(-MoonOrbitAngle)*(EarthSize+MoonDistance+MoonSize),MoonSize/2,MoonSize/2);//Moon
+         
+         scale(1/Scale);
+         
+         fill(230);
+         textAlign(LEFT,CENTER);
+         textSize(20);
+         text("Earth, "+(EarthSize/500)+"km in diameter",50,0);
+         text("Moon, "+(MoonSize/500)+"km in diameter\nLocated "+round(MoonDistance/1000)+"km away from the Earth",sin(-MoonOrbitAngle)*(310),cos(-MoonOrbitAngle)*(310)-20);
       }
       
       resetMatrix();
       
+      BackButton(0,0);
+      
+   }else if(SCENE == 2){
+      background(50);
+      noStroke();
+      
+      fill(255);
+      textAlign(CENTER,CENTER);
+      textFont(createFont("Courier",20));
+      
+      textSize(40);
+      text("How To Play",width/2,50);
+      
+      textSize(20);
+      text("After pressing play, your screen will show an extremely\nzoomed out image of the Earth and the Moon. Click anywhere\nto zoom in. Once zoomed in, your screen will display an\nenlarged version of the Earth and the Moon. These enlarged\nversions of the Earth and Moon are still "+round(MoonDistance/1000)+"km apart.\nYou can click on the top of the Earth to zoom in to the launchpad.\nOn the launchpad you can create your rocket. The game\nwill tell you the stats of your rocket (weight, fuel, damage, etc.),\npress the \"launch\" button to launch your rocket on the way to the moon.",width/2,height/2);
+      
+      BackButton(0,0);
    }else{
       text("Error",width/2,height/2);
+      
+      BackButton(0,0);
    }
    
    fill(200);
@@ -207,3 +244,5 @@ void mousePressed(){
       Scale = 0;
    }
 }
+
+
