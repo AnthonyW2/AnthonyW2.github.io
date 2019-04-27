@@ -16,6 +16,7 @@ function COMPILE(){
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
     "void setup(){size(1024,704);frameRate(100);}"+
     "int LAG = "+document.getElementById("LAG").value+";float blockSize = round(1024/30);boolean[] triggers = {"+Triggers[0]+","+Triggers[1]+","+Triggers[2]+","+Triggers[3]+","+Triggers[4]+"};"+
+    "float milliseconds = 0;"+
     "float coordsToRadians(float x, float y){if(x >= 0 && y >= 0){return atan(x/y);}else if(x >= 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y >= 0){return TWO_PI+atan(x/y);}else{return 0/0;}}"+
     "float coordsToAngleRads(float x1, float y1, float x2, float y2){return (coordsToRadians(x1-x2,-y1+y2)+PI)%TWO_PI;}"+
     "float radiansToCoords(float x1, float y1, float Angle, float distance, float axis){float angle = Angle-HALF_PI;if(Angle < 0){angle = -HALF_PI;}float x = x1 + cos(angle) * distance;float y = y1 + sin(angle) * distance;if(axis == 0){return x;}else{return y;}}"+
@@ -33,6 +34,7 @@ function COMPILE(){
     "void finish(float x,float y){if(LAG == 0){rect(x,y,blockSize,blockSize);}else if(LAG == 1){rect(x,y,blockSize,blockSize);}else{for(int a = 0;a < 5;a += 1){triangle(x+random(0,blockSize),y+random(0,blockSize),x+random(0,blockSize),y+random(0,blockSize),x+random(0,blockSize),y+random(0,blockSize));}}};"+
     "void trigger(float x, float y, int n){pushStyle();fill(255,255,0);rect(x,y,blockSize,blockSize);if(triggers[n]){fill(0,200,0);}else{fill(255,100,0);}textAlign(CENTER,CENTER);textSize(30);text(n,x+blockSize/2,y+blockSize/2);popStyle();}"+
     "void draw(){\n"+
+    "milliseconds = float(millis());\n"+
     pjs.value+
     "\n"+"textAlign(RIGHT,TOP);textFont(createFont(\"serif\",20));textSize(20);fill(200,200,200);text(\"FPS: \"+floor(frameRate),width-10,10);"+
     "\n};"+
