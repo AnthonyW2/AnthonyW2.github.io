@@ -19,7 +19,7 @@ function COMPILE(){
     "int WIDTH = 400;int HEIGHT = 400;"+
     "float[] XPositions = new float[Amount];float[] YPositions = new float[Amount];float[] Directions = new float[Amount];"+
     "void setup(){size(400,400);frameRate(100);smooth();"+
-    "for(int n = 0;n < Amount;n += 1){XPositions[n] = random(0,WIDTH);YPositions[n] = random(0,HEIGHT);if(RandomDirection){Directions[n] = random(0,TWO_PI);}else{Directions[n] = TWO_PI/Amount*n;}}}"+
+    "for(int n = 0;n < Amount;n += 1){XPositions[n] = random(0,WIDTH);YPositions[n] = random(0,HEIGHT);if(RandomDirection){Directions[n] = random(0,TWO_PI);}}}"+
     "float coordsToRadians(float x, float y){if(x >= 0 && y >= 0){return atan(x/y);}else if(x >= 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y >= 0){return TWO_PI+atan(x/y);}else{return 0/0;}}"+
     "float coordsToAngle(float x1, float y1, float x2, float y2){return (coordsToRadians(x1-x2,-y1+y2)+PI)%TWO_PI;}"+
     ""+
@@ -38,8 +38,6 @@ function COMPILE(){
     "}}"+
     "for(int n = 0;n < Amount;n += 1){ellipse(XPositions[n],YPositions[n],Size,Size);}"+
     "}"+
-    "\n"+"textAlign(RIGHT,TOP);textFont(createFont(\"serif\",20));textSize(20);fill(200,200,200);text(\"FPS: \"+floor(frameRate),width-10,10);"+
-    "\n};"+
     "</script>"+
     "<canvas id=\"processing-canvas\"> </canvas>"+
     "</body>"+
