@@ -3,7 +3,7 @@
 //var pjs = document.getElementById("pjs");
 var code = document.getElementById("code").contentWindow.document;
 function COMPILE(){
-  Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
+  //Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
   code.open();
   code.writeln(
     "<!DOCTYPE html>"+
