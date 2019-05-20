@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--This is for testing purposes and public use-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
+    <style>
+      body {position: absolute;}
+      h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
+      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
+      p {color: #000000; font-family: "times new roman";}
+      a {color: #0000FF; text-decoration: underline;}
+      body {
+        text-align: center;
+      }
+      
+      textarea {
+        width: 100%;
+        float: top;
+        min-height: 500px;
+        overflow: scroll;
+        margin: auto;
+        display: inline-block;
+        //background: #f4f4f9;
+        outline: none;
+        font-family: Courier, sans-serif;
+        font-size: 15px;
+      }
+      
+      iframe {
+        bottom: 0;
+        position: relative;
+        width: 1039px;
+        height: 719px;
+      }
+      .slider {width: 100px;}
+    </style>
+    <title>Starship Code Editor</title>
+    <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
+    <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
+    <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
+    <meta name="apple-mobile-web-app-title" content="W̵">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Starship Code Editor</h1>
+    <br>
+    <br>
+    LAG Value:
+    <input type="range" id="LAG" min="0" max="2" value="2" class="slider" onchange="COMPILE()"><p id="lag"></p>
+    <br>
+    Trigger 1:
+    <input type="checkbox" id="Trig1" onchange="COMPILE()">
+    Trigger 2:
+    <input type="checkbox" id="Trig2" onchange="COMPILE()">
+    Trigger 3:
+    <input type="checkbox" id="Trig3" onchange="COMPILE()">
+    Trigger 4:
+    <input type="checkbox" id="Trig4" onchange="COMPILE()">
+    Trigger 5:
+    <input type="checkbox" id="Trig5" onchange="COMPILE()">
+    <br>
+    <textarea id="pjs" placeholder="Processing Code">
+background(0,100,0);
+//if(useImages){//
+//image(Images[1],0,0,width,height);
+//}
+if(LAG == 0){
+   fill(200,150,0);
+}else{
+   stroke(250,200,0);
+}
+electricArc(blockSize*5,blockSize*5,blockSize*2,blockSize,"H");
+noStroke();
+fill(0,0,0);
+wall(blockSize*0,blockSize*0,blockSize*30,blockSize*5);
+for(int a = 0;a < 10;a +=1 ){
+   stair(blockSize*(10+a*0.5),blockSize*(15.5-a*0.5),blockSize*0.5,blockSize*1,2);
+}
+fill(0,150,0);
+float[][] vinePositions = {
+   {1,10},{2,10}
+};
+vine(vinePositions);
+fill(115,70,70);
+noStroke();
+float[][][] enemyPositions = {{{blockSize*4,blockSize*17},{blockSize*10,blockSize*17}}};
+flyingBug(enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[0],enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[1]);
+//groundBug(enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[0],enemyPath(enemyPositions[0],floor(float(millis())/10)%400,1)[1]);
+fill(255);
+noStroke();
+finish(blockSize*29,blockSize*13);
+fill(120,130,120);
+noStroke();
+ladder(blockSize*8,blockSize*5,6);
+collectable(blockSize*10,blockSize*5,1);
+trigger(blockSize*12,blockSize*5,0);
+if(triggers[0]){
+   float[][] vinePositions0 = {
+      {1,11},{2,11}
+   };
+   noStroke();
+   fill(0,150,0);
+   vine(vinePositions0);
+   collectable(blockSize*9,blockSize*9,1);
+}
+stroke(50);
+fill(100);
+float[][] spikePositions = {{0,5,0},{1,5,1},{2,5,2},{3,5,3}};
+spike(spikePositions);
+
+textFont(createFont("serif",70),70);
+textAlign(CENTER,CENTER);
+fill(0,100,0);
+text("Planet Name 1",width/2,80);
+textAlign(CENTER,TOP);
+textSize(30);
+text("Level Tip",width/2,120);
+
+</textarea>
+    <!--textarea id="css" placeholder="CSS"></textarea>
+    <textarea id="js" placeholder="JavaScript"></textarea-->
+    <iframe id="code"></iframe>
+    <br>
+    <script type="text/javascript" src="SSLECompiler.js"></script>
+  </body>
+</html>
