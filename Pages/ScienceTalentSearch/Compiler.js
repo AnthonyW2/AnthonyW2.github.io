@@ -14,12 +14,11 @@ function COMPILE(){
     "</head>"+
     "<body>"+
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
+    "int Amount = "+document.getElementById("AMOUNT").value+";int Size = "+document.getElementById("SIZE").value+";float Speed = "+document.getElementById("SPEED").value+";boolean RandomDirection = true;"+
     "int WIDTH = 400;int HEIGHT = 400;"+
     "float[] XPositions = new float[Amount];float[] YPositions = new float[Amount];float[] Directions = new float[Amount];"+
-    "void settings(){size(WIDTH,HEIGHT);smooth();}"+
     "void setup(){size(400,400);frameRate(100);smooth();"+
     "for(int n = 0;n < Amount;n += 1){XPositions[n] = random(0,WIDTH);YPositions[n] = random(0,HEIGHT);if(RandomDirection){Directions[n] = random(0,TWO_PI);}else{Directions[n] = TWO_PI/Amount*n;}}}}"+
-    "int Amount = "+document.getElementById("AMOUNT").value+";int Size = "+document.getElementById("SIZE").value+";float Speed = "+document.getElementById("SIZE").value+";boolean RandomDirection = true;"+
     "float coordsToRadians(float x, float y){if(x >= 0 && y >= 0){return atan(x/y);}else if(x >= 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y >= 0){return TWO_PI+atan(x/y);}else{return 0/0;}}"+
     "float coordsToAngle(float x1, float y1, float x2, float y2){return (coordsToRadians(x1-x2,-y1+y2)+PI)%TWO_PI;}"+
     ""+
