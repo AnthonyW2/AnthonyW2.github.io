@@ -14,92 +14,31 @@ function COMPILE(){
     "</head>"+
     "<body>"+
     "<script type=\"text/processing\" data-processing-target=\"processing-canvas\">"+
-    "void setup(){size(400,400);frameRate(100);smooth();}"+
-    "int Amount = 100"+document.getElementById("AMOUNT").value+";int Size = 10;"+
-    "float milliseconds = 0;"+
+    "int WIDTH = 400;int HEIGHT = 400;"+
+    "float[] XPositions = new float[Amount];float[] YPositions = new float[Amount];float[] Directions = new float[Amount];"+
+    "void settings(){size(WIDTH,HEIGHT);smooth();}"+
+    "void setup(){size(400,400);frameRate(100);smooth();"+
+    "for(int n = 0;n < Amount;n += 1){XPositions[n] = random(0,WIDTH);YPositions[n] = random(0,HEIGHT);if(RandomDirection){Directions[n] = random(0,TWO_PI);}else{Directions[n] = TWO_PI/Amount*n;}}}}"+
+    "int Amount = 100"+document.getElementById("AMOUNT").value+";int Size = 10"+document.getElementById("AMOUNT").value+";float Speed = 0.5;boolean RandomDirection = true;"+
     "float coordsToRadians(float x, float y){if(x >= 0 && y >= 0){return atan(x/y);}else if(x >= 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y >= 0){return TWO_PI+atan(x/y);}else{return 0/0;}}"+
     "float coordsToAngle(float x1, float y1, float x2, float y2){return (coordsToRadians(x1-x2,-y1+y2)+PI)%TWO_PI;}"+
     ""+
     ""+
     ""+
-    ""+
-    ""+
     "void draw(){\n"+
-    "milliseconds = float(millis());\n"+
-    "
-int Size = 10;
-float Speed = 0.5;
-boolean RandomDirection = true;
-int WIDTH = 400;
-int HEIGHT = 400;
-float[] XPositions = new float[Amount];
-float[] YPositions = new float[Amount];
-float[] Directions = new float[Amount];
-
-void settings(){
-  size(WIDTH,HEIGHT);
-  smooth();
-}
-
-void setup(){
-  frameRate(1000);
-  size(WIDTH,HEIGHT);
-  
-  for(int n = 0;n < Amount;n += 1){
-    XPositions[n] = random(0,WIDTH);
-    YPositions[n] = random(0,HEIGHT);
-    if(RandomDirection){
-      Directions[n] = random(0,TWO_PI);
-    }else{
-      Directions[n] = TWO_PI/Amount*n;
-    }
-  }
-}
-void draw(){
-  background(50);
-  noStroke();
-  fill(200);
-  
-  for(int tick = 0;tick < 1;tick += 1){
-    
-    for(int n = 0;n < Amount;n += 1){
-      XPositions[n] = XPositions[n]+sin(Directions[n])*Speed;
-      YPositions[n] = YPositions[n]+cos(Directions[n])*Speed;
-      
-      for(int n2 = 0;n2 < Amount;n2 += 1){
-        if(n != n2 && dist(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]) < Size){
-          float CollisionAngle = coordsToAngle(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]);
-          Directions[n] = CollisionAngle;
-          Directions[n2] = CollisionAngle+PI;
-        }
-      }
-      
-      if(XPositions[n] < Size/2){
-        Directions[n] = HALF_PI+PI+(HALF_PI-Directions[n]);
-        XPositions[n] = Size/2;
-      }
-      if(XPositions[n] > width-Size/2){
-        Directions[n] = HALF_PI+TWO_PI+((HALF_PI+PI)-Directions[n]);
-        XPositions[n] = width-Size/2;
-      }
-      if(YPositions[n] < Size/2){
-        Directions[n] = PI+PI+(PI-Directions[n]);
-        YPositions[n] = Size/2;
-      }
-      if(YPositions[n] > height-Size/2){
-        Directions[n] = PI+TWO_PI+((PI+PI)-Directions[n]);
-        YPositions[n] = height-Size/2;
-      }
-    }
-    
-  }
-  
-  for(int n = 0;n < Amount;n += 1){
-    ellipse(XPositions[n],YPositions[n],Size,Size);
-  }
-}
-
-"+
+    "background(50);noStroke();fill(200);"+
+    "for(int tick = 0;tick < 1;tick += 1){for(int n = 0;n < Amount;n += 1){"+
+    "XPositions[n] = XPositions[n]+sin(Directions[n])*Speed;YPositions[n] = YPositions[n]+cos(Directions[n])*Speed;"+
+    "for(int n2 = 0;n2 < Amount;n2 += 1){if(n != n2 && dist(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]) < Size){"+
+    "float CollisionAngle = coordsToAngle(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]);Directions[n] = CollisionAngle;Directions[n2] = CollisionAngle+PI;"+
+    "}}"+
+    "if(XPositions[n] < Size/2){Directions[n] = HALF_PI+PI+(HALF_PI-Directions[n]);XPositions[n] = Size/2;}"+
+    "if(XPositions[n] > width-Size/2){Directions[n] = HALF_PI+TWO_PI+((HALF_PI+PI)-Directions[n]);XPositions[n] = width-Size/2;}"+
+    "if(YPositions[n] < Size/2){Directions[n] = PI+PI+(PI-Directions[n]);YPositions[n] = Size/2;}"+
+    "if(YPositions[n] > height-Size/2){Directions[n] = PI+TWO_PI+((PI+PI)-Directions[n]);YPositions[n] = height-Size/2;}"+
+    "}}"+
+    "for(int n = 0;n < Amount;n += 1){ellipse(XPositions[n],YPositions[n],Size,Size);}"+
+    "}"+
     "\n"+"textAlign(RIGHT,TOP);textFont(createFont(\"serif\",20));textSize(20);fill(200,200,200);text(\"FPS: \"+floor(frameRate),width-10,10);"+
     "\n};"+
     "</script>"+
