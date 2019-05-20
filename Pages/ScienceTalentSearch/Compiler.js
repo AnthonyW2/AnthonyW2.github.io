@@ -19,14 +19,13 @@ function COMPILE(){
     "void settings(){size(WIDTH,HEIGHT);smooth();}"+
     "void setup(){size(400,400);frameRate(100);smooth();"+
     "for(int n = 0;n < Amount;n += 1){XPositions[n] = random(0,WIDTH);YPositions[n] = random(0,HEIGHT);if(RandomDirection){Directions[n] = random(0,TWO_PI);}else{Directions[n] = TWO_PI/Amount*n;}}}}"+
-    "int Amount = 100"+document.getElementById("AMOUNT").value+";int Size = 10"+document.getElementById("AMOUNT").value+";float Speed = 0.5;boolean RandomDirection = true;"+
+    "int Amount = 100"+document.getElementById("AMOUNT").value+";int Size = 10"+document.getElementById("SIZE").value+";float Speed = 0.5;boolean RandomDirection = true;"+
     "float coordsToRadians(float x, float y){if(x >= 0 && y >= 0){return atan(x/y);}else if(x >= 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y < 0){return PI+atan(x/y);}else if(x < 0 && y >= 0){return TWO_PI+atan(x/y);}else{return 0/0;}}"+
     "float coordsToAngle(float x1, float y1, float x2, float y2){return (coordsToRadians(x1-x2,-y1+y2)+PI)%TWO_PI;}"+
     ""+
-    ""+
-    ""+
     "void draw(){\n"+
     "background(50);noStroke();fill(200);"+
+    "ellipse(20,20,20,20);"+
     "for(int tick = 0;tick < 1;tick += 1){for(int n = 0;n < Amount;n += 1){"+
     "XPositions[n] = XPositions[n]+sin(Directions[n])*Speed;YPositions[n] = YPositions[n]+cos(Directions[n])*Speed;"+
     "for(int n2 = 0;n2 < Amount;n2 += 1){if(n != n2 && dist(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]) < Size){"+
