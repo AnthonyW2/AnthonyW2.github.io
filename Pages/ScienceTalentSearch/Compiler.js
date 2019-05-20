@@ -3,6 +3,7 @@
 //var pjs = document.getElementById("pjs");
 var code = document.getElementById("code").contentWindow.document;
 function COMPILE(){
+  alert("BEGIN");
   //Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
   code.open();
   code.writeln(
@@ -45,6 +46,7 @@ function COMPILE(){
     "</html>"
   );
   code.close();
+  alert("SUCCESS!");
 };
 
 function compile(){
@@ -53,5 +55,5 @@ function compile(){
   };
 };
 
-compile();
+//compile();
 COMPILE();
