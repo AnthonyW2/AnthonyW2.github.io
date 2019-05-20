@@ -1,10 +1,5 @@
-//var Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
-
-//var pjs = document.getElementById("pjs");
 var code = document.getElementById("code").contentWindow.document;
 function COMPILE(){
-  alert("BEGIN");
-  //Triggers = [document.getElementById("Trig1").checked,document.getElementById("Trig2").checked,document.getElementById("Trig3").checked,document.getElementById("Trig4").checked,document.getElementById("Trig5").checked];
   code.open();
   code.writeln(
     "<!DOCTYPE html>"+
@@ -25,7 +20,6 @@ function COMPILE(){
     ""+
     "void draw(){\n"+
     "background(50);noStroke();fill(200);"+
-    "ellipse(20,20,20,20);"+
     "for(int tick = 0;tick < 1;tick += 1){for(int n = 0;n < Amount;n += 1){"+
     "XPositions[n] = XPositions[n]+sin(Directions[n])*Speed;YPositions[n] = YPositions[n]+cos(Directions[n])*Speed;"+
     "for(int n2 = 0;n2 < Amount;n2 += 1){if(n != n2 && dist(XPositions[n],YPositions[n],XPositions[n2],YPositions[n2]) < Size){"+
@@ -44,14 +38,6 @@ function COMPILE(){
     "</html>"
   );
   code.close();
-  alert("SUCCESS!");
 };
 
-function compile(){
-  document.body.onkeyup = function() {
-    COMPILE();
-  };
-};
-
-//compile();
 COMPILE();
