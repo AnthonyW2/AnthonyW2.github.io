@@ -35,19 +35,19 @@
       <div id="mapid"></div>
     </p>
     <script>
-//       LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE); 
-//       Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//       var longitude = location.getLongitude();
-//       var latitude = location.getLatitude();
+      var DeviceLongitude = 0;
+      var DeviceLatitude = 0;
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition);
+        DeviceLongitude = position.coords.longitude;
+        DeviceLatitude = position.coords.latitude;
       }else{
         x.innerHTML = "Geolocation is not supported by this browser.";
+        DeviceLongitude = -38.031000;
+        DeviceLatitude = 145.363500;
       }
       var CenterLongitude = -38.031000;
       var CenterLatitude = 145.363500;
-      var DeviceLongitude = position.coords.longitude;
-      var DeviceLatitude = position.coords.latitude;
       var mymap = L.map('mapid').setView([CenterLongitude, CenterLatitude], 17);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
