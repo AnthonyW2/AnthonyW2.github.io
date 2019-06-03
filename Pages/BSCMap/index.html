@@ -43,13 +43,13 @@
         DeviceLatitude = position.coords.latitude;
       }
       function getLocation(){
-      if(navigator.geolocation){
-        navigator.geolocation.updatePosition(showPosition);
-      }else{
-        //x.innerHTML = "Geolocation is not supported by this browser.";
-        DeviceLongitude = -38.031000;
-        DeviceLatitude = 145.363500;
-      }
+        if(navigator.geolocation){
+          navigator.geolocation.updatePosition(showPosition);
+        }else{
+          //x.innerHTML = "Geolocation is not supported by this browser.";
+          DeviceLongitude = -38.031000;
+          DeviceLatitude = 145.363500;
+        }
       }
       var CenterLongitude = -38.031000;
       var CenterLatitude = 145.363500;
@@ -63,6 +63,7 @@
       var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
     </script>
     <br>
+    <p>Note: You location information stays completely private. Nothin on this site is processed server-side, everything is done on your device.</p>
     <img src="https://Anthony-Wilson-Programming.github.io/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
   </body>
 </html>
