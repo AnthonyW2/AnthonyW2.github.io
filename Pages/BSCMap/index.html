@@ -63,7 +63,7 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
       }).addTo(mymap);
-      var marker = L.marker([DeviceLongitude, DeviceLatitude]).addTo(mymap);
+      var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
     </script>
     <br>
