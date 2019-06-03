@@ -54,8 +54,10 @@
         }
       }
       getLocation();
+      
       var CenterLongitude = 145.363500;
       var CenterLatitude = -38.031000;
+      
       var mymap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -65,6 +67,29 @@
       }).addTo(mymap);
       var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
+      
+      var frameCount = 0;
+      var doLoop = true;
+      var frameRate = 60;
+      var MSPT = 1000/frameRate;
+      
+      function loop(){doLoop = true;}
+      function noLoop(){doLoop = false;}
+      
+      function draw(){
+        frameRate = 10;
+        MSPT = 1000/frameRate;
+        
+        marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
+        marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
+        
+        if(doLoop){
+          frameCount += 1;
+          setTimeout(draw,Math.ceil(MSPT));
+        }
+      }
+      
+      draw();
     </script>
     <br>
     <p>Privacy Note: You location information stays completely private. Nothing on this site is processed server-side, everything is done on your device.</p>
