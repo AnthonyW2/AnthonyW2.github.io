@@ -19,11 +19,11 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
-    <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
-    <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
-    <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
-    <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
-    <meta name="apple-mobile-web-app-title" content="W̵">
+    <link rel="icon" type="image/jpeg" href="https://Anthony-Wilson-Programming.github.io/LogoSimple.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="https://Anthony-Wilson-Programming.github.io/LogoSimple.jpeg">
+    <meta name="msapplication-TileImage" content="https://Anthony-Wilson-Programming.github.io/LogoSimple.jpeg">
+    <link rel="apple-touch-icon" id="apple-touch-icon" href="https://Anthony-Wilson-Programming.github.io/LogoSimple.jpeg">
+    <meta name="apple-mobile-web-app-title" content="BSC Map">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -63,7 +63,6 @@
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
       }).addTo(mymap);
-      //var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       var marker = L.marker([DeviceLongitude, DeviceLatitude]).addTo(mymap);
       marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
     </script>
