@@ -30,6 +30,9 @@
     <h1>Berwick Secondary College Interactive Map</h1>
     <br>
     <br>
+    <p id="FRAMECOUNT"></p>
+    <p id="LatLng"></p>
+    <br>
     <p class="default">
       <h2>School Map:</h2>
       <div id="mapid"></div>
@@ -80,8 +83,12 @@
         frameRate = 10;
         MSPT = 1000/frameRate;
         
+        getLocation();
         marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
         marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
+        
+        document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
+        document.getElementById("LatLng").innerHTML = "Latitude: "+DeviceLatitude+", Longitude: "+DeviceLongitude;
         
         if(doLoop){
           frameCount += 1;
