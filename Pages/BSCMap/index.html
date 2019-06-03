@@ -91,11 +91,8 @@
         
         getLocation();
         var newLatLng = new L.LatLng(DeviceLatitude, DeviceLongitude);
-        marker.setLatLng(newLatLng); 
-        //marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
-        //marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
+        marker.setLatLng(newLatLng);
         
-        document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         document.getElementById("LatLng").innerHTML = "Latitude: "+DeviceLatitude+", Longitude: "+DeviceLongitude;
         
         if(doLoop){
