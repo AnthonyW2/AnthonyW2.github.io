@@ -65,6 +65,7 @@
       }).addTo(mymap);
       //var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       var marker = L.marker([DeviceLongitude, DeviceLatitude]).addTo(mymap);
+      marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
     </script>
     <br>
     <p>Privacy Note: You location information stays completely private. Nothing on this site is processed server-side, everything is done on your device.</p>
