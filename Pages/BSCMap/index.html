@@ -30,12 +30,11 @@
     <h1>Berwick Secondary College Interactive Map</h1>
     <br>
     <br>
-    <p id="FRAMECOUNT"></p>
     <p id="LatLng"></p>
     <br>
     <br>
-    <button onclick="panMap(DeviceLatitude,DeviceLongitude)">Pan to self</button>
-    <button onclick="panMap(CenterLatitude,CenterLongitude)">Pan to College</button>
+    <button onclick="panMap(DeviceLatitude,DeviceLongitude)">Center on self</button>
+    <button onclick="panMap(CenterLatitude,CenterLongitude)">Center on College</button>
     <br>
     <p class="default">
       <h2>School Map:</h2>
@@ -48,7 +47,6 @@
         //x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
         DeviceLongitude = position.coords.longitude;
         DeviceLatitude = position.coords.latitude;
-        //alert("Geolocation Success!\nLng: "+DeviceLongitude+", Lat: "+DeviceLatitude);
       }
       function getLocation(){
         if(navigator.geolocation){
@@ -57,7 +55,7 @@
           //x.innerHTML = "Geolocation is not supported by this browser.";
           DeviceLongitude = 145.363500;
           DeviceLatitude = -38.031000;
-          alert("Geolocation Failure. Please contact Anthony Wilson");
+          alert("Geolocation Failure. Please contact Anthony Wilson for help.\nIt is possible that you have location service turned off.");
         }
       }
       getLocation();
