@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--This is the index for all other connected pages (other than testing pages)-->
+<!--This site is made and owned by Anthony Wilson (awilsonprogramming@gmail.com) and is for public use by Berwick Secondary College-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -41,7 +41,7 @@
         //x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
         DeviceLongitude = position.coords.longitude;
         DeviceLatitude = position.coords.latitude;
-        alert("Geolocation Success!");
+        alert("Geolocation Success!\n"+DeviceLongitude+","DeviceLatitude);
       }
       function getLocation(){
         if(navigator.geolocation){
