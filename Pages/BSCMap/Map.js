@@ -1,11 +1,9 @@
-
       var DeviceLongitude = 145.363500;
       var DeviceLatitude = -38.031000;
       function updatePosition(position) {
         //x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
         DeviceLongitude = position.coords.longitude;
         DeviceLatitude = position.coords.latitude;
-        alert("Geolocation Success!\nLng: "+DeviceLongitude+", Lat: "+DeviceLatitude);
       }
       function getLocation(){
         if(navigator.geolocation){
@@ -14,7 +12,7 @@
           //x.innerHTML = "Geolocation is not supported by this browser.";
           DeviceLongitude = 145.363500;
           DeviceLatitude = -38.031000;
-          alert("Geolocation Failure. Please contact Anthony Wilson");
+          alert("Geolocation Failure. Please contact Anthony Wilson for help.\nIt is possible that you have location service turned off.");
         }
       }
       getLocation();
@@ -32,6 +30,10 @@
       var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
       
+      function panMap(Lat, Lng){
+        mymap.panTo(new L.LatLng(Lat, Lng));
+      }
+      
       var frameCount = 0;
       var doLoop = true;
       var frameRate = 60;
@@ -45,10 +47,9 @@
         MSPT = 1000/frameRate;
         
         getLocation();
-        marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
-        marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
+        var newLatLng = new L.LatLng(DeviceLatitude, DeviceLongitude);
+        marker.setLatLng(newLatLng);
         
-        document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         document.getElementById("LatLng").innerHTML = "Latitude: "+DeviceLatitude+", Longitude: "+DeviceLongitude;
         
         if(doLoop){
