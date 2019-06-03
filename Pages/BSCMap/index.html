@@ -41,6 +41,7 @@
         //x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
         DeviceLongitude = position.coords.longitude;
         DeviceLatitude = position.coords.latitude;
+        alert("Geolocation Success!");
       }
       function getLocation(){
         if(navigator.geolocation){
@@ -49,6 +50,7 @@
           //x.innerHTML = "Geolocation is not supported by this browser.";
           DeviceLongitude = -38.031000;
           DeviceLatitude = 145.363500;
+          alert("Geolocation Failure. Please contact Anthony Wilson");
         }
       }
       getLocation();
