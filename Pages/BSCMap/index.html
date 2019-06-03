@@ -33,6 +33,10 @@
     <p id="FRAMECOUNT"></p>
     <p id="LatLng"></p>
     <br>
+    <br>
+    <button onclick="panMap(DeviceLatitude,DeviceLongitude)">Pan to self</button>
+    <button onclick="panMap(CenterLatitude,CenterLongitude)">Pan to College</button>
+    <br>
     <p class="default">
       <h2>School Map:</h2>
       <div id="mapid"></div>
@@ -70,6 +74,10 @@
       }).addTo(mymap);
       var marker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(mymap);
       marker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
+      
+      function panMap(Lat, Lng){
+        mymap.panTo(new L.LatLng(Lat, Lng));
+      }
       
       var frameCount = 0;
       var doLoop = true;
