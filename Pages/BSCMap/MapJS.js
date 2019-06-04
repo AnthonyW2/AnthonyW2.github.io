@@ -29,14 +29,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
 }).addTo(SchoolMap);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
-DeviceMarker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
-//DeviceMarker.autoPan = false;
+DeviceMarker.bindPopup("<b>You are here</b>).openPopup();
+//<br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude
 
 function panMap(Lat, Lng){
   SchoolMap.panTo(new L.LatLng(Lat, Lng));
 }
-function zoomMap(zoom){
-  SchoolMap.setZoom(zoom);
+function zoomMap(newZoom){
+  SchoolMap.setZoom(newZoom);
 }
 
 var frameCount = 0;
@@ -54,7 +54,6 @@ function draw(){
   getLocation();
   var newLatLng = new L.LatLng(DeviceLatitude, DeviceLongitude);
   DeviceMarker.setLatLng(newLatLng);
-  //DeviceMarker.setContent("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
   
   document.getElementById("LatLng").innerHTML = "Latitude: "+DeviceLatitude+", Longitude: "+DeviceLongitude;
   
