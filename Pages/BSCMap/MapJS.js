@@ -19,10 +19,12 @@ getLocation();
 var CenterLongitude = 145.363500;
 var CenterLatitude = -38.031000;
 
-//'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
+//https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png
+//http://{s}.somedomain.com/blabla/{z}/{x}/{y}.png
 
 var SchoolMap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+//L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+L.tileLayer('https://{s}.anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   minZoom: 16,
   maxZoom: 20,
