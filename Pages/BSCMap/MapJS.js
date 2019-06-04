@@ -20,6 +20,7 @@ var CenterLongitude = 145.363500;
 var CenterLatitude = -38.031000;
 
 var SchoolMap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
+//'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   minZoom: 16,
@@ -53,7 +54,7 @@ function draw(){
   getLocation();
   var newLatLng = new L.LatLng(DeviceLatitude, DeviceLongitude);
   DeviceMarker.setLatLng(newLatLng);
-  DeviceMarker.setContent("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
+  //DeviceMarker.setContent("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude);
   
   document.getElementById("LatLng").innerHTML = "Latitude: "+DeviceLatitude+", Longitude: "+DeviceLongitude;
   
