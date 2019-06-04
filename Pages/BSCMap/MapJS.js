@@ -19,8 +19,9 @@ getLocation();
 var CenterLongitude = 145.363500;
 var CenterLatitude = -38.031000;
 
-var SchoolMap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
 //'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
+
+var SchoolMap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   minZoom: 16,
@@ -30,7 +31,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(SchoolMap);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 DeviceMarker.bindPopup("<b>You are here</b>).openPopup();
-//<br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude
 
 function panMap(Lat, Lng){
   SchoolMap.panTo(new L.LatLng(Lat, Lng));
