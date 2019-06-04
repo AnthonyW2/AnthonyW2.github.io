@@ -30,7 +30,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
 }).addTo(SchoolMap);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
-DeviceMarker.bindPopup("<b>You are here</b>).openPopup();
+DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
 
 function panMap(Lat, Lng){
   SchoolMap.panTo(new L.LatLng(Lat, Lng));
