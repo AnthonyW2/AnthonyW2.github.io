@@ -23,14 +23,16 @@ var CenterLatitude = -38.031000;
 //http://{s}.somedomain.com/blabla/{z}/{x}/{y}.png
 
 var SchoolMap = L.map('mapid').setView([CenterLatitude, CenterLongitude], 17);
-//L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-L.tileLayer('https://{s}.anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256/{z}/{x}/{y}.png', {
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   //minZoom: 16,
   //maxZoom: 20,
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
 }).addTo(SchoolMap);
+var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png',
+    imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
 
