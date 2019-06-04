@@ -29,10 +29,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(SchoolMap);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 DeviceMarker.bindPopup("<b>You are here</b><br>Longitude: "+DeviceLongitude+", Latitude: "+DeviceLatitude).openPopup();
-DeviceMarker.autoPan = false;
+//DeviceMarker.autoPan = false;
 
 function panMap(Lat, Lng){
   SchoolMap.panTo(new L.LatLng(Lat, Lng));
+}
+function zoomMap(zoom){
+  SchoolMap.setZoom(zoom);
 }
 
 var frameCount = 0;
