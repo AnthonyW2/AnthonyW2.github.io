@@ -1,6 +1,6 @@
 //This code is made and owned by Anthony Wilson (awilsonprogramming@gmail.com) and is for public use by Berwick Secondary College Interactive School Map
 function contributions(){
-  alert("Designed and programmed by Anthony Wilson\nHosted on GitHub\nLibrary supplied by LeafletJS\nMap supplied and hosted by Mapbox");
+  alert("Designed and programmed by Anthony Wilson\nHosted on GitHub\nMapping library supplied by LeafletJS\nMap supplied and hosted by Mapbox");
 }
 
 var DeviceLongitude = 145.363500;
@@ -39,10 +39,9 @@ var imageUrl = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg'
 //var imageBounds = [[145.363500, -38.031000], [145.353500, -38.021000]];
 var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
-//var NewMarker = L.marker([40,712216, -74.22655]).addTo(SchoolMap);
-var NewMarker = L.marker([40,712216,-74.22655]).addTo(SchoolMap);
-//DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
-NewMarker.bindPopup("<b>You aren't here</b>").openPopup();
+var NewMarker = L.marker([40,773941, -74.12544]).addTo(SchoolMap);
+var NewMarker2 = L.marker([40,712216, -74.22655]).addTo(SchoolMap);
+DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
 L.imageOverlay(imageUrl, imageBounds).addTo(SchoolMap);
 
 function panMap(Lat, Lng){
