@@ -34,12 +34,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
 }).addTo(SchoolMap);
-var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
+//var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
+var imageUrl = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg'
 //var imageBounds = [[145.363500, -38.031000], [145.353500, -38.021000]];
 var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 //var NewMarker = L.marker([40,712216, -74.22655]).addTo(SchoolMap);
-var NewMarker = L.marker([-74.22655, 40,712216]).addTo(SchoolMap);
+var NewMarker = L.marker([40,712216,-74.22655]).addTo(SchoolMap);
 //DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
 NewMarker.bindPopup("<b>You aren't here</b>").openPopup();
 L.imageOverlay(imageUrl, imageBounds).addTo(SchoolMap);
