@@ -38,6 +38,7 @@ var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicL
 var imageBounds = [[145.363500, -38.031000], [145.353500, -38.021000]];
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
+L.imageOverlay(imageUrl, imageBounds).addTo(SchoolMap);
 
 function panMap(Lat, Lng){
   SchoolMap.panTo(new L.LatLng(Lat, Lng));
@@ -69,7 +70,5 @@ function draw(){
     setTimeout(draw,Math.ceil(MSPT));
   }
 }
-
-L.imageOverlay(imageUrl, imageBounds).addTo(map);alert("Image Success");
 
 draw();
