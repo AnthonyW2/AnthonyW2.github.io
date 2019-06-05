@@ -30,8 +30,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiYW50aG9ueS13LXByb2dyYW1taW5nIiwiYSI6ImNqd2ZuaGY4YTE3amM0YW91ZHB1ZHZ5NGUifQ.hBTnWAx0ulkkWihsysRrCw'
 }).addTo(SchoolMap);
-//var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
-//var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+var imageUrl = 'https://anthony-wilson-programming.github.io/Pages/BSCMap/BasicLogo256.png'
+var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
 //L.imageOverlay(imageUrl, imageBounds).addTo(map);
 var DeviceMarker = L.marker([DeviceLatitude, DeviceLongitude]).addTo(SchoolMap);
 DeviceMarker.bindPopup("<b>You are here</b>").openPopup();
