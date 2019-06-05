@@ -1,6 +1,6 @@
 //This code is made and owned by Anthony Wilson (awilsonprogramming@gmail.com) and is for public use by Berwick Secondary College Interactive School Map
 function contributions(){
-  alert("Designed and programmed by Anthony Wilson");
+  alert("Designed and programmed by Anthony Wilson\nHosted on GitHub\nLibrary supplied by LeafletJS\nMap supplied and hosted by Mapbox");
 }
 
 var DeviceLongitude = 145.363500;
