@@ -1,132 +1,153 @@
-<html><head><title>
-Home | Compass
-</title><meta http-equiv="X-UA-Compatible" content="IE=Edge"><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="/cdn-cgi/apps/head/nXBUbHOMoxcWCnUqQqrCuyGGJ4s.js"></script><link id="ctl00_favicon" rel="SHORTCUT ICON" href="/Assets/Pix/favicon.png"><link id="ctl00_styleExtBase" rel="stylesheet" type="text/css"><link id="ctl00_styleExtColors" rel="stylesheet" type="text/css"><link id="ctl00_styleExtCustom" rel="stylesheet" type="text/css"><link id="ctl00_styleMain" rel="stylesheet" type="text/css"><meta http-equiv="Content-type" content="text/html;charset=UTF-8"> <link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/azzurra/672caab_azzurra-ui-all.min.css" rel="Stylesheet" type="text/css"><link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/azzurra/ba2a2ff_azzurra-core.min.css" rel="Stylesheet" type="text/css"><link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/bd6497a_azzurra-custom-extensions.min.css" rel="Stylesheet" type="text/css"><link href="https://assets.compass.education/StaticAssetsL/Styles/17255e6_style.min.css" rel="Stylesheet" type="text/css"><link href="https://assets.compass.education/StaticAssetsL/Common/Styles/ca8860a_introjs.min.css" rel="Stylesheet" type="text/css"><link href="https://assets.compass.education/StaticAssetsL/PageScripts/e25e817_HomePage.min.css" rel="Stylesheet" type="text/css"><style>.cke{visibility:hidden;}</style></head> <body class="greyBody x-body x-webkit x-safari x-mac x-no-scrollbar" id="ext-gen1018"> <script type="text/javascript">
-var Compass = Compass || {};
-Compass.attributes = Compass.attributes || {};
-Compass.features = Compass.features || {};
-Compass.attributes.StoreDateTimeInUTC = true;
-Compass.attributes.SchoolTimezone = "Australia/Melbourne";
-Compass.attributes.SchoolSystemType = 1;
-Compass.attributes.SlipstreamAuthToken = "";
-Compass.attributes.MultipleFileUploadMaxAllowable = 10;
-Compass.attributes.Gpa_ImportFromLearningTask = false;
-Compass.attributes.AttendanceV2Enabled = true;
-Compass.attributes.PeopleManagement_CeNetMode = false;
-Compass.attributes.Attendance_ShowVceColInSummary = true;
-Compass.attributes.ImportParentSussiIdFormatSuffixSecondary = "_2";
-Compass.attributes.ImportSplitParentAccounts = false;
-Compass.attributes.ImportV3 = false;
-Compass.attributes.UserV3 = true;
-Compass.attributes.HasChildOrganisations = false;
-Compass.attributes.LetterManagerEnabled = true;
-Compass.isSaMode = false;
-Compass.features = { "Analytics": true, "AnalyticsV2": true, "Attendance": true, "Attendance.Events.OnlineProcess": true, "Attendance.ParentApprovals": true, "Attendance.RoomChangeRequest.AllowFreeRooms": true, "Attendance.RoomChangeRequest.AllowSwaps": true, "Chronicle": true, "Continuum": true, "CourseConfirmation": true, "LiveChat": true, "Portal.ParentEmailTeacher": true, "Portal.StudentEmailTeacher": true, "PushNotifications": true, "Schedule": true, "Attendance.Events": true, "Insights": true, "NewsFeed": true, "Reporting.GPA": true, "Bookings": true, "CustomFlags": true, "LearningTasks": true, "Attendance.SMS": true, "Pst": true, "Attendance.RoomChangeRequest": true, "ParentLogin": true, "Digest": true, "Chronicle.Outcomes": true, "CompassPay": true, "PaymentInstalments": true, "Reporting.Publisher": true, "Wiki": true, "ProductDiscount": true, "Reporting.Writer": true, "PurchaseOrdering": true, "BulkSms": true, "Chronicle.SMS": true, "LearningTasks.Sms": true, "ProfessionalDevelopment": true, "TimeCard": true, "Kiosk": true, "Calendar": true};
-Compass.yearLevels = [{"c":true,"cimm":2,"id":-1,"ii":"UG","n":"No YL","ps":null},{"c":true,"cimm":2,"id":7,"ii":"7","n":"Year 7","ps":null},{"c":true,"cimm":2,"id":8,"ii":"8","n":"Year 8","ps":null},{"c":true,"cimm":2,"id":9,"ii":"9","n":"Year 9","ps":null},{"c":true,"cimm":2,"id":10,"ii":"10","n":"Year 10","ps":null},{"c":true,"cimm":2,"id":11,"ii":"11","n":"Year 11","ps":null},{"c":true,"cimm":2,"id":12,"ii":"12","n":"Year 12","ps":null},{"c":false,"cimm":2,"id":99,"ii":"CY","n":"Cross Year","ps":null}];
-Compass.assetPath = "/Assets/";
-Compass.idCardPhotosPath = "/download/cdn/card/";
-Compass.idSquarePhotosPath = "/download/cdn/square/";
-Compass.idBiblioPhotosPath = "/download/cdn/biblio/";
-Compass.idRollPhotosPath = "/download/cdn/roll/";
-Compass.idPhotosPath = "/download/cdn/full/";
-Compass.lingo = {"SchoolCountry":{"Code":"AU",
-"CitizenString":"Australian",
-"Phone":{"MobileIntlPrefix":"+61",
-"MobileLocalPrefix":"4"},
-"Currency":{"Code":"AUD",
-"DecimalPlaces":2,
-"DecimalSymbol":".",
-"Symbol":"$",
-"SymbolAtEnd":false,
-"ThousandsSeparator":","},
-"Address":{"Line1":{"Label":"Address Line 1",
-"Hint":"eg. Level 2",
-"Mandatory":false},
-"Line2":{"Label":"Address Line 2",
-"Hint":"eg. 74 Doncaster Road",
-"Mandatory":true},
-"Suburb":{"Label":"Suburb",
-"Hint":"eg. Balwyn North",
-"Mandatory":true},
-"State":{"Label":"State",
-"Hint":"eg. VIC",
-"Mandatory":true},
-"Postcode":{"Label":"Postcode",
-"Hint":"eg. 3104",
-"Mandatory":true},
-"Country":{"Label":"Country",
-"Hint":"eg. Australia",
-"Mandatory":true}},
-"AddedTaxName":"GST",
-"TaxationIdentifier":"ABN",
-"LocaleString":"en-AU",
-"AdvancedAddress":{"Lot":{"Label":"Lot:",
-"Hint":"eg. Lot 4",
-"Mandatory":false},
-"Unit":{"Label":"Unit:",
-"Hint":"eg. Unit 5",
-"Mandatory":false},
-"HouseNumber":{"Label":"House Number:",
-"Hint":"eg. 24",
-"Mandatory":false},
-"Property":{"Label":"Property Name:",
-"Hint":"eg. Riverwood",
-"Mandatory":false},
-"Street":{"Label":"Street Name:",
-"Hint":"eg. Johnston",
-"Mandatory":false},
-"StreetType":{"Label":"Street Type:",
-"Hint":"eg. Australia",
-"Mandatory":false},
-"Comments":{"Label":"Comment:",
-"Hint":"eg. Blue Roof",
-"Mandatory":false},
-"Longitude":{"Label":"Longitude:",
-"Hint":"eg. -10.01",
-"Mandatory":false},
-"Latitude":{"Label":"Latitude:",
-"Hint":"eg. -10.01",
-"Mandatory":false}},
-"Vendor":{"Name":"Compass Education",
-"Address1":"Level 2, 72 Doncaster Road",
-"Address2":"Balwyn North, VIC 3104",
-"Phone":"(03) 9005 5217",
-"Email":"contact@compass.edu.au"},
-"Billing":{"SchoolFeeDescription":"School Fees",
-"EventsSections":"No events or school fees",
-"SchoolFeeRadio":"Don't pay school fees now",
-"SchoolFeePayable":"school fees",
-"SchoolFeeLoading":"Retrieving school fees",
-"NoSchoolFee":"There aren't any school fees that need paying!",
-"VoluntaryDescription":"Voluntary Payments",
-"VoluntaryPayable":"voluntary payments",
-"VoluntaryRadio":"Don't make voluntary payments now",
-"NoVoluntary":"There aren't any voluntary payments that needs paying!",
-"Action":"Make a Payment"}},
-"SchoolDepartment":{"Abbreviation":"DET",
-"FullName":"Department of Education and Training"},
-"GovtCode1":{"Student":"VSN",
-"Staff":"VSN"},
-"GovtCode2":{"Student":"VCAA",
-"Staff":"Govt Code 2"},
-"DateOfArrival":"Date of Arrival (Australia)",
-"SickbayStatusName":"Sickbay"};
-Compass.attributes.startOfSchoolYear = '2019-01-01T00:00:00Z';
-Compass.attributes.chronicle_multipleCommsEnabled = 'true';
-Compass.isCrtAccount = false;
-Compass.attributes.CEnetNoteParentDaysThresholdEnabled = false;
-Compass.attributes.CEnetNoteParentDaysThreshold = 10;
-Compass.attributes.PeopleManagement_ModifyMilestonesImportModeSync = false;
-Compass.attributes.LearningTasks_DataPoints_Grid = true;
-Compass.attributes.LearningTask_Default_Records_Count = 20;
-Compass.attributes.BillingEventIntegrationEnabled = false;
-Compass.attributes.CanSendSMSCommunications = true;
-Compass.attributes.MaskSenderEmail = 'noreply@compass.email';
-Compass.attributes.CSEFPaymentEnabled = false;
-Compass.attributes.BillingManagementMode = 2;
-Compass.attributes.MicrosoftClientId = "";
-Compass.attributes.RollStripeEnabled = false;
-Compass.attributes.GoogleDriveIntegrationEnabled = true;
-Compass.attributes.ConsolidationV2 = false;
+<html>
+  <head>
+    <title>Home | Compass</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script src="/cdn-cgi/apps/head/nXBUbHOMoxcWCnUqQqrCuyGGJ4s.js"></script>
+    <link id="ctl00_favicon" rel="SHORTCUT ICON" href="https://berwickcollege-vic.compass.education/Assets/Pix/favicon.png">
+    <link id="ctl00_styleExtBase" rel="stylesheet" type="text/css">
+    <link id="ctl00_styleExtColors" rel="stylesheet" type="text/css">
+    <link id="ctl00_styleExtCustom" rel="stylesheet" type="text/css">
+    <link id="ctl00_styleMain" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/azzurra/672caab_azzurra-ui-all.min.css" rel="Stylesheet" type="text/css">
+    <link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/azzurra/ba2a2ff_azzurra-core.min.css" rel="Stylesheet" type="text/css">
+    <link href="https://assets.compass.education/StaticAssetsL/Scripts/Lib/ext-js4.2.2/resources/css/bd6497a_azzurra-custom-extensions.min.css" rel="Stylesheet" type="text/css">
+    <link href="https://assets.compass.education/StaticAssetsL/Styles/17255e6_style.min.css" rel="Stylesheet" type="text/css">
+    <link href="https://assets.compass.education/StaticAssetsL/Common/Styles/ca8860a_introjs.min.css" rel="Stylesheet" type="text/css">
+    <link href="https://assets.compass.education/StaticAssetsL/PageScripts/e25e817_HomePage.min.css" rel="Stylesheet" type="text/css">
+    <style>
+      .cke{visibility:hidden;}
+    </style>
+  </head>
+  <body class="greyBody x-body x-webkit x-safari x-mac x-no-scrollbar" id="ext-gen1018">
+    <script type="text/javascript">
+    var Compass = Compass || {};
+    Compass.attributes = Compass.attributes || {};
+    Compass.features = Compass.features || {};
+    Compass.attributes.StoreDateTimeInUTC = true;
+    Compass.attributes.SchoolTimezone = "Australia/Melbourne";
+    Compass.attributes.SchoolSystemType = 1;
+    Compass.attributes.SlipstreamAuthToken = "";
+    Compass.attributes.MultipleFileUploadMaxAllowable = 10;
+    Compass.attributes.Gpa_ImportFromLearningTask = false;
+    Compass.attributes.AttendanceV2Enabled = true;
+    Compass.attributes.PeopleManagement_CeNetMode = false;
+    Compass.attributes.Attendance_ShowVceColInSummary = true;
+    Compass.attributes.ImportParentSussiIdFormatSuffixSecondary = "_2";
+    Compass.attributes.ImportSplitParentAccounts = false;
+    Compass.attributes.ImportV3 = false;
+    Compass.attributes.UserV3 = true;
+    Compass.attributes.HasChildOrganisations = false;
+    Compass.attributes.LetterManagerEnabled = true;
+    Compass.isSaMode = false;
+    Compass.features = { "Analytics": true, "AnalyticsV2": true, "Attendance": true, "Attendance.Events.OnlineProcess": true, "Attendance.ParentApprovals": true, "Attendance.RoomChangeRequest.AllowFreeRooms": true, "Attendance.RoomChangeRequest.AllowSwaps": true, "Chronicle": true, "Continuum": true, "CourseConfirmation": true, "LiveChat": true, "Portal.ParentEmailTeacher": true, "Portal.StudentEmailTeacher": true, "PushNotifications": true, "Schedule": true, "Attendance.Events": true, "Insights": true, "NewsFeed": true, "Reporting.GPA": true, "Bookings": true, "CustomFlags": true, "LearningTasks": true, "Attendance.SMS": true, "Pst": true, "Attendance.RoomChangeRequest": true, "ParentLogin": true, "Digest": true, "Chronicle.Outcomes": true, "CompassPay": true, "PaymentInstalments": true, "Reporting.Publisher": true, "Wiki": true, "ProductDiscount": true, "Reporting.Writer": true, "PurchaseOrdering": true, "BulkSms": true, "Chronicle.SMS": true, "LearningTasks.Sms": true, "ProfessionalDevelopment": true, "TimeCard": true, "Kiosk": true, "Calendar": true};
+    Compass.yearLevels = [{"c":true,"cimm":2,"id":-1,"ii":"UG","n":"No YL","ps":null},{"c":true,"cimm":2,"id":7,"ii":"7","n":"Year 7","ps":null},{"c":true,"cimm":2,"id":8,"ii":"8","n":"Year 8","ps":null},{"c":true,"cimm":2,"id":9,"ii":"9","n":"Year 9","ps":null},{"c":true,"cimm":2,"id":10,"ii":"10","n":"Year 10","ps":null},{"c":true,"cimm":2,"id":11,"ii":"11","n":"Year 11","ps":null},{"c":true,"cimm":2,"id":12,"ii":"12","n":"Year 12","ps":null},{"c":false,"cimm":2,"id":99,"ii":"CY","n":"Cross Year","ps":null}];
+    Compass.assetPath = "/Assets/";
+    Compass.idCardPhotosPath = "/download/cdn/card/";
+    Compass.idSquarePhotosPath = "/download/cdn/square/";
+    Compass.idBiblioPhotosPath = "/download/cdn/biblio/";
+    Compass.idRollPhotosPath = "/download/cdn/roll/";
+    Compass.idPhotosPath = "/download/cdn/full/";
+    Compass.lingo = {"SchoolCountry":{"Code":"AU",
+    "CitizenString":"Australian",
+    "Phone":{"MobileIntlPrefix":"+61",
+    "MobileLocalPrefix":"4"},
+    "Currency":{"Code":"AUD",
+    "DecimalPlaces":2,
+    "DecimalSymbol":".",
+    "Symbol":"$",
+    "SymbolAtEnd":false,
+    "ThousandsSeparator":","},
+    "Address":{"Line1":{"Label":"Address Line 1",
+    "Hint":"eg. Level 2",
+    "Mandatory":false},
+    "Line2":{"Label":"Address Line 2",
+    "Hint":"eg. 74 Doncaster Road",
+    "Mandatory":true},
+    "Suburb":{"Label":"Suburb",
+    "Hint":"eg. Balwyn North",
+    "Mandatory":true},
+    "State":{"Label":"State",
+    "Hint":"eg. VIC",
+    "Mandatory":true},
+    "Postcode":{"Label":"Postcode",
+    "Hint":"eg. 3104",
+    "Mandatory":true},
+    "Country":{"Label":"Country",
+    "Hint":"eg. Australia",
+    "Mandatory":true}},
+    "AddedTaxName":"GST",
+    "TaxationIdentifier":"ABN",
+    "LocaleString":"en-AU",
+    "AdvancedAddress":{"Lot":{"Label":"Lot:",
+    "Hint":"eg. Lot 4",
+    "Mandatory":false},
+    "Unit":{"Label":"Unit:",
+    "Hint":"eg. Unit 5",
+    "Mandatory":false},
+    "HouseNumber":{"Label":"House Number:",
+    "Hint":"eg. 24",
+    "Mandatory":false},
+    "Property":{"Label":"Property Name:",
+    "Hint":"eg. Riverwood",
+    "Mandatory":false},
+    "Street":{"Label":"Street Name:",
+    "Hint":"eg. Johnston",
+    "Mandatory":false},
+    "StreetType":{"Label":"Street Type:",
+    "Hint":"eg. Australia",
+    "Mandatory":false},
+    "Comments":{"Label":"Comment:",
+    "Hint":"eg. Blue Roof",
+    "Mandatory":false},
+    "Longitude":{"Label":"Longitude:",
+    "Hint":"eg. -10.01",
+    "Mandatory":false},
+    "Latitude":{"Label":"Latitude:",
+    "Hint":"eg. -10.01",
+    "Mandatory":false}},
+    "Vendor":{"Name":"Compass Education",
+    "Address1":"Level 2, 72 Doncaster Road",
+    "Address2":"Balwyn North, VIC 3104",
+    "Phone":"(03) 9005 5217",
+    "Email":"contact@compass.edu.au"},
+    "Billing":{"SchoolFeeDescription":"School Fees",
+    "EventsSections":"No events or school fees",
+    "SchoolFeeRadio":"Don't pay school fees now",
+    "SchoolFeePayable":"school fees",
+    "SchoolFeeLoading":"Retrieving school fees",
+    "NoSchoolFee":"There aren't any school fees that need paying!",
+    "VoluntaryDescription":"Voluntary Payments",
+    "VoluntaryPayable":"voluntary payments",
+    "VoluntaryRadio":"Don't make voluntary payments now",
+    "NoVoluntary":"There aren't any voluntary payments that needs paying!",
+    "Action":"Make a Payment"}},
+    "SchoolDepartment":{"Abbreviation":"DET",
+    "FullName":"Department of Education and Training"},
+    "GovtCode1":{"Student":"VSN",
+    "Staff":"VSN"},
+    "GovtCode2":{"Student":"VCAA",
+    "Staff":"Govt Code 2"},
+    "DateOfArrival":"Date of Arrival (Australia)",
+    "SickbayStatusName":"Sickbay"};
+    Compass.attributes.startOfSchoolYear = '2019-01-01T00:00:00Z';
+    Compass.attributes.chronicle_multipleCommsEnabled = 'true';
+    Compass.isCrtAccount = false;
+    Compass.attributes.CEnetNoteParentDaysThresholdEnabled = false;
+    Compass.attributes.CEnetNoteParentDaysThreshold = 10;
+    Compass.attributes.PeopleManagement_ModifyMilestonesImportModeSync = false;
+    Compass.attributes.LearningTasks_DataPoints_Grid = true;
+    Compass.attributes.LearningTask_Default_Records_Count = 20;
+    Compass.attributes.BillingEventIntegrationEnabled = false;
+    Compass.attributes.CanSendSMSCommunications = true;
+    Compass.attributes.MaskSenderEmail = 'noreply@compass.email';
+    Compass.attributes.CSEFPaymentEnabled = false;
+    Compass.attributes.BillingManagementMode = 2;
+    Compass.attributes.MicrosoftClientId = "";
+    Compass.attributes.RollStripeEnabled = false;
+    Compass.attributes.GoogleDriveIntegrationEnabled = true;
+    Compass.attributes.ConsolidationV2 = false;
 Compass.attributes.PrimaryAttendancePerspective = 1;
 Compass.attributes.AttendanceOverrideSelection = false;
 Compass.attributes.EnableAdvancedLearningTaskOrdering = true;
