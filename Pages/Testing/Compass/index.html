@@ -248,18 +248,18 @@
               // disable all other menus
               $('#mnuMenuContainer li.clickable.active').removeClass('active');
               // display current menu
-$(event.currentTarget).addClass('active');
-// if the user has clicked an inner link - follow it
-var innerTarget = $(event.target);
-if(innerTarget.hasClass('navigatable')) {
-innerTarget.addClass('active');
-event.target.click();
-}
-});
-// if the user tapped anywhere else on the page, close the currently active menu
-$(document).on('touchend', function(e) {
-var target = $('#mnuMenuContainer li.clickable.active');
-if (!target.is(e.target) && target.has(e.target).length === 0 ) {
+              $(event.currentTarget).addClass('active');
+              // if the user has clicked an inner link - follow it
+              var innerTarget = $(event.target);
+              if(innerTarget.hasClass('navigatable')) {
+                innerTarget.addClass('active');
+                event.target.click();
+              }
+            });
+            // if the user tapped anywhere else on the page, close the currently active menu
+            $(document).on('touchend', function(e) {
+              var target = $('#mnuMenuContainer li.clickable.active');
+              if (!target.is(e.target) && target.has(e.target).length === 0 ) {
 target.removeClass('active');
 }
 });
