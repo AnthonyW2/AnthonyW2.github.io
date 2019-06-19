@@ -7,7 +7,7 @@
       body {position: absolute;}
       h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
-      p {color: #000000; font-family: "times new roman"; width: 500px; word-wrap: break-word;}
+      p {color: #000000; font-family: "times new roman"; width: 500px; word-wrap: normal;}
       a {color: #0000FF; text-decoration: underline;}
       .Fixed {position: fixed; top: 0px; right: 0px;}
     </style>
@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>17
+    <br>18
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -32,6 +32,7 @@
     <p id="VanEck"></p>
     <script>
       var allNums = [0];
+      var largestNum = 0;
       
       function VanEck(){
         var currentNum = allNums[allNums.length-1];
@@ -46,16 +47,16 @@
         }else{
           allNums.push(allNums.length-latestAppeared-1);
         }
-        //if(allNums[allNums.length-1] > largestNum){
-          //largestNum = allNums[allNums.length-1];
-        //}
+        if(allNums[allNums.length-1] > largestNum){
+          largestNum = allNums[allNums.length-1];
+        }
       }
       
       function DisplayArray(INPUT){
         var input = INPUT;
         var output = "{"+input[0];
         for(var a = 1;a < input.length;a += 1){
-          output += ","+input[a];
+          output += ", "+input[a];
         }
         return output+"}";
       }
