@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>......
+    <br>0
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -72,7 +72,7 @@
         frameRate = document.getElementById("FPS").value;
         MSPT = 1000/frameRate;
         
-        VanEck();
+        //VanEck();
         
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         document.getElementById("VanEck").innerHTML = allNums[allNums.length-1];
