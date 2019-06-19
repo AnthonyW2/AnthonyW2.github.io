@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>...
+    <br>....
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -34,11 +34,11 @@
       function VanEck(){
         var currentNum = allNums[allNums.length-1];
         var latestAppeared = -1;
-        //for(var a = 0;a < allNums.length-1;a += 1){
-          //if(allNums[a] == currentNum){
-            //latestAppeared = a;
-          //}
-        //}
+        for(var a = 0;a < allNums.length-1;a += 1){
+          if(allNums[a] == currentNum){
+            latestAppeared = a;
+          }
+        }
         //if(latestAppeared == -1){
           //allNums = append(allNums,0);
         //}else{
