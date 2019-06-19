@@ -21,13 +21,13 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>18
+    <br>
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
-    FPS: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
+    Target Framerate: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
     <br>
-    FPS: <input type="range" id="TPF" min="1" max="1000" value="60" class="slider"><p id="tpf"></p>
+    Calculations per frame: <input type="range" id="TPF" min="1" max="1000" value="60" class="slider"><p id="tpf"></p>
     <br>
     <p id="Details"></p>
     <br>
@@ -85,7 +85,7 @@
         document.getElementById("fps").innerHTML = "Target FPS: "+frameRate;
         document.getElementById("tpf").innerHTML = "Calculations per frame: "+multiplier;
         //document.getElementById("VanEck").innerHTML = allNums.toString();
-        document.getElementById("Details").innerHTML = "Last number: "+allNums[allNums.length-1]+"<br>Amount of numbers: "+allNums.length+"<br>Largest number so far:"+largestNum;
+        document.getElementById("Details").innerHTML = "Last number: "+allNums[allNums.length-1]+"<br>Amount of numbers: "+allNums.length+"<br>Largest number so far: "+largestNum;
         document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
         
         if(doLoop){
