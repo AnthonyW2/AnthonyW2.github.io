@@ -49,16 +49,16 @@
         //}
       }
       
-      function DisplayArray(input){
-        var output = input[0];
-        if(input.length > 1){
-          for(int a = 1;a < input.length;a += 1){
-            output += ",";
-            output += input[a];
-          }
-        }
-        return output;
-      }
+      //function DisplayArray(input){
+      //  var output = input[0];
+      //  if(input.length > 1){
+      //    for(int a = 1;a < input.length;a += 1){
+      //      output += ",";
+      //      output += input[a];
+      //    }
+      //  }
+      //  return output;
+      //}
       
       var frameCount = 0;
       var doLoop = true;
@@ -73,7 +73,7 @@
         MSPT = 1000/frameRate;
         
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
-        document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
+        document.getElementById("VanEck").innerHTML = allNums[allNums.length-1];
         
         if(doLoop){
           frameCount += 1;
