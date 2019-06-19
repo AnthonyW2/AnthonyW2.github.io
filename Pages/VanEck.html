@@ -74,7 +74,8 @@
         
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         //document.getElementById("VanEck").innerHTML = allNums.toString();
-        document.getElementById("VanEck").innerHTML = allNums[allNums.length-1]+"<br>"+allNums.length+"<br>"+allNums.toString();
+        //document.getElementById("VanEck").innerHTML = allNums[allNums.length-1]+"<br>"+allNums.length+"<br>"+allNums.toString();
+        document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
         
         if(doLoop){
           frameCount += 1;
