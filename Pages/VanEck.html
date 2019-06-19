@@ -22,9 +22,53 @@
   <body>
     <h1>Van Eck Sequence Generator</h1>
     <br>
+    <button onclick="loop()">Begin</button>
+    <button onclick="noLoop()">Stop</button>
     <br>
+    FPS: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
     <script>
+      var allNums = [0];
       
+      function VanEck(){
+        var currentNum = allNums[allNums.length-1];
+        var latestAppeared = -1;
+        for(int a = 0;a < allNums.length-1;a += 1){
+          if(allNums[a] == currentNum){
+            latestAppeared = a;
+          }
+        }
+        if(latestAppeared == -1){
+          allNums = append(allNums,0);
+        }else{
+          allNums = append(allNums,allNums.length-latestAppeared-1);
+        }
+        //if(allNums[allNums.length-1] > largestNum){
+          //largestNum = allNums[allNums.length-1];
+        //}
+      }
+      
+      var frameCount = 0;
+      var doLoop = true;
+      var frameRate = 60;
+      var MSPT = 1000/frameRate;
+      
+      function loop(){doLoop = true;draw();}
+      function noLoop(){doLoop = false;}
+      
+      function draw(){
+        frameRate = document.getElementById("FPS").value;
+        MSPT = 1000/frameRate;
+        
+        document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
+        document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
+        
+        if(doLoop){
+          frameCount += 1;
+          setTimeout(draw,Math.ceil(MSPT));
+        }
+      }
+      
+      draw();
     </script>
     <br>
     <img src="https://Anthony-Wilson-Programming.github.io/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
