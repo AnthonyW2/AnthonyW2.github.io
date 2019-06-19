@@ -49,12 +49,11 @@
         //}
       }
       
-      function DisplayArray(input){
+      function DisplayArray(INPUT){
+        var input = INPUT;
         var output = "{"+input[0];
-        if(input.length > 1){
-          for(var a = 1;a < input.length;a += 1){
-            output += ","+input[a];
-          }
+        for(var a = 1;a < input.length;a += 1){
+          output += ","+input[a];
         }
         return output+"}";
       }
