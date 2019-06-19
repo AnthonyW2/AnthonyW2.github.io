@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>3
+    <br>4
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -40,9 +40,11 @@
           }
         }
         if(latestAppeared == -1){
-          allNums = appendChild(allNums,0);
+          //allNums = appendChild(allNums,0);
+          allNums = [0]
         }else{
-          allNums = appendChild(allNums,allNums.length-latestAppeared-1);
+          //allNums = appendChild(allNums,allNums.length-latestAppeared-1);
+          allNums = [allNums.length-latestAppeared-1];
         }
         //if(allNums[allNums.length-1] > largestNum){
           //largestNum = allNums[allNums.length-1];
