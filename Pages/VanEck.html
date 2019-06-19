@@ -26,6 +26,8 @@
     <button onclick="noLoop()">Stop</button>
     <br>
     FPS: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
+    <br>
+    <p id="VanEck"></p>
     <script>
       var allNums = [0];
       
@@ -47,6 +49,17 @@
         //}
       }
       
+      function DisplayArray(input){
+        var output = input[0];
+        if(input.length > 1){
+          for(int a = 1;a < input.length;a += 1){
+            output += ",";
+            output += input[a];
+          }
+        }
+        return output;
+      }
+      
       var frameCount = 0;
       var doLoop = true;
       var frameRate = 60;
@@ -60,7 +73,7 @@
         MSPT = 1000/frameRate;
         
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
-        document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
+        document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
         
         if(doLoop){
           frameCount += 1;
