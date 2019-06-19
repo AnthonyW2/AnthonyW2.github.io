@@ -7,7 +7,7 @@
       body {position: absolute;}
       h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
       h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
-      p {color: #000000; font-family: "times new roman"; width: 800px; word-wrap: normal;}
+      p {color: #000000; font-family: "times new roman"; width: 500px; word-wrap: break-word;}
       a {color: #0000FF; text-decoration: underline;}
       .Fixed {position: fixed; top: 0px; right: 0px;}
     </style>
@@ -21,11 +21,13 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>16
+    <br>17
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
     FPS: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
+    <br>
+    <p id="Details"></p>
     <br>
     <p id="VanEck"></p>
     <script>
@@ -74,7 +76,7 @@
         
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         //document.getElementById("VanEck").innerHTML = allNums.toString();
-        //document.getElementById("VanEck").innerHTML = allNums[allNums.length-1]+"<br>"+allNums.length+"<br>"+allNums.toString();
+        document.getElementById("Details").innerHTML = "Last Number: "+allNums[allNums.length-1]+"<br>Amount of numbers: "+allNums.length;
         document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
         
         if(doLoop){
