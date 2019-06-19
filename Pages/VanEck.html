@@ -27,6 +27,8 @@
     <br>
     FPS: <input type="range" id="FPS" min="1" max="1000" value="60" class="slider"><p id="fps"></p>
     <br>
+    FPS: <input type="range" id="TPF" min="1" max="1000" value="60" class="slider"><p id="tpf"></p>
+    <br>
     <p id="Details"></p>
     <br>
     <p id="VanEck"></p>
@@ -61,6 +63,8 @@
         return output+"}";
       }
       
+      var multiplier = 1;
+      
       var frameCount = 0;
       var doLoop = true;
       var frameRate = 60;
@@ -72,10 +76,14 @@
       function draw(){
         frameRate = document.getElementById("FPS").value;
         MSPT = 1000/frameRate;
+        multiplier = document.getElementById("TPF").value;
         
-        VanEck();
+        for(var tick = 0;tick < multiplier;tick += 1){
+          VanEck();
+        }
         
-        document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
+        document.getElementById("fps").innerHTML = "Target FPS: "+frameRate;
+        document.getElementById("tpf").innerHTML = "Calculations per frame: "+multiplier;
         //document.getElementById("VanEck").innerHTML = allNums.toString();
         document.getElementById("Details").innerHTML = "Last number: "+allNums[allNums.length-1]+"<br>Amount of numbers: "+allNums.length+"<br>Largest number so far:"+largestNum;
         document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
