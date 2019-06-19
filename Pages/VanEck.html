@@ -49,14 +49,14 @@
         //}
       }
       
-      function DisplayArray(input[]){
-        var output = input[0];
+      function DisplayArray(input){
+        var output = "{"+input[0];
         if(input.length > 1){
           for(var a = 1;a < input.length;a += 1){
             output += ","+input[a];
           }
         }
-        return output;
+        return output+"}";
       }
       
       var frameCount = 0;
