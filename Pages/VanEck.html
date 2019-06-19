@@ -21,7 +21,7 @@
   </head>
   <body>
     <h1>Van Eck Sequence Generator</h1>
-    <br>9
+    <br>10
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -53,8 +53,8 @@
         var output = input[0];
         if(input.length > 1){
           for(var a = 1;a < input.length;a += 1){
-            output += ",";
-            output += input[a];
+            //output += ",";
+            output += ","+input[a];
           }
         }
         return output;
@@ -83,8 +83,6 @@
           setTimeout(draw,Math.ceil(MSPT));
         }
       }
-      
-      draw();
     </script>
     <br>
     <img src="https://Anthony-Wilson-Programming.github.io/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
