@@ -51,12 +51,12 @@
       
       function DisplayArray(input){
         var output = input[0];
-      //  if(input.length > 1){
-      //    for(var a = 1;a < input.length;a += 1){
-      //      output += ",";
-      //      output += input[a];
-      //    }
-      //  }
+        if(input.length > 1){
+          for(var a = 1;a < input.length;a += 1){
+            output += ",";
+            output += input[a];
+          }
+        }
         return output;
       }
       
