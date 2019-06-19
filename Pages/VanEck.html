@@ -22,6 +22,8 @@
   <body>
     <h1>Van Eck Sequence Generator</h1>
     <br>
+    <input type="checkbox" id="AutoRefresh" checked><p>Automatically refresh digits</p><button onclick="RefreshDigits()">Manual Refresh</button>
+    <br>
     <button onclick="loop()">Begin</button>
     <button onclick="noLoop()">Stop</button>
     <br>
@@ -63,6 +65,10 @@
         return output+"}";
       }
       
+      function RefreshDigits(){
+        document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
+      }
+      
       var multiplier = 1;
       
       var frameCount = 0;
@@ -84,9 +90,12 @@
         
         document.getElementById("fps").innerHTML = "Target FPS: "+frameRate;
         document.getElementById("tpf").innerHTML = "Calculations per frame: "+multiplier;
-        //document.getElementById("VanEck").innerHTML = allNums.toString();
         document.getElementById("Details").innerHTML = "Last number: "+allNums[allNums.length-1]+"<br>Amount of numbers: "+allNums.length+"<br>Largest number so far: "+largestNum;
-        document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
+        //document.getElementById("VanEck").innerHTML = DisplayArray(allNums);
+        //document.getElementById("VanEck").innerHTML = allNums.toString();
+        if(document.getElementById("AutoRefresh").checked == true){
+          RefreshDigits();
+        }
         
         if(doLoop){
           frameCount += 1;
