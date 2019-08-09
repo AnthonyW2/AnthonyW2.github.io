@@ -25,8 +25,14 @@
     <br>
     <br>
     <script>
+      //Define the variable assigned to the canvas "testcanvas" on the page, "testcanvas"
       var testcanvas = document.getElementById("testcanvas");
-      var ctx = c.getContext("2d");
+      //Give "testcanvas" a 2D context
+      var ctx = testcanvas.getContext("2d");
+      //Define first point of line
+      ctx.moveTo(10,10);
+      //Draw line from first point to a new point
+      ctx.lineTo(190,90);
     </script>
     <canvas id="testcanvas" width="200" height="100">Your browser does not support the HTML5 canvas tag.</canvas>
     <br>
