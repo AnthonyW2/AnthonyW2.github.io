@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Code Indenter & Replacer</h1>
+    <h1>Code Indenter & Replacer.</h1>
     <br>
     <br>
     String to replace:
@@ -55,7 +55,7 @@
     <br>
     <h2>Result:</h2>
     <!--h2 id="OUTPUT"></h2-->
-    <textarea rows="32" cols="100" id="OUTPUT" class="center" placeholder="Output Code Goes Here" readonly></textarea>
+    <textarea rows="32" cols="100" id="OUTPUT" class="center" placeholder="Output Code Goes Here"></textarea>
     <br>
     <script>
       /*
@@ -91,16 +91,16 @@
       }*/
       
       function processCode(){
-        println("Script started");
+        console.log("Script started");
         var Input = document.getElementById("INPUT").value;
         var InputLines = Input.split("\n");
         var Output = InputLines.join("\n ");
-        println("Lines joined:");
-        println(Output);
+        console.log("Lines joined:");
+        console.log(Output);
         
         
         document.getElementById("OUTPUT").value = Output;
-        println("Successfully finished script");
+        console.log("Successfully finished script");
       }
       
       
