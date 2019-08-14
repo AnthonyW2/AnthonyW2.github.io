@@ -90,12 +90,15 @@
       }
       
       function processCode(){
+        println("Script started");
         var Input = document.getElementById("INPUT").value;
         var InputLines = Input.split("\n");
         var Output = InputLines.join("\n ");
+        println("Lines joined");
         
         
         document.getElementById("OUTPUT").value = Output;
+        println("Successfully finished script");
       }
       
       
