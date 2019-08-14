@@ -49,7 +49,7 @@
     <br>
     Indentation amount (spaces):
     <input type="text" name="INDENTAMOUNT" id="AMOUNT">
-    <button onclick="processCodes()">Indent</button>
+    <button onclick="processCode()">Indent</button>
     <br>
     <textarea rows="32" cols="100" id="INPUT" class="center" placeholder="Input Code Goes Here"></textarea>
     <br>
@@ -92,15 +92,15 @@
       
       function processCode(){
         console.log("Script started");
-        var Input = document.getElementById("INPUT").value;
-        var InputLines = Input.split("\n");
-        var Output = InputLines.join("\n ");
-        console.log("Lines joined:");
-        console.log(Output);
+        //var Input = document.getElementById("INPUT").value;
+        //var InputLines = Input.split("\n");
+        //var Output = InputLines.join("\n ");
+        //console.log("Lines joined:");
+        //console.log(Output);
         
         
-        document.getElementById("OUTPUT").value = Output;
-        console.log("Successfully finished script");
+        //document.getElementById("OUTPUT").value = Output;
+        //console.log("Successfully finished script");
       }
       
       
