@@ -58,6 +58,7 @@
     <textarea rows="32" cols="100" id="OUTPUT" class="center" placeholder="Output Code Goes Here" readonly></textarea>
     <br>
     <script>
+      /*
       function randomiseInputs(){
         var Input = document.getElementById("INPUT").value;
         var Output = [];
@@ -87,14 +88,15 @@
         if(document.getElementById("ALERTS").checked == true){
           alert("The result is:\n"+singleOutput);
         }
-      }
+      }*/
       
       function processCode(){
         println("Script started");
         var Input = document.getElementById("INPUT").value;
         var InputLines = Input.split("\n");
         var Output = InputLines.join("\n ");
-        println("Lines joined");
+        println("Lines joined:");
+        println(Output);
         
         
         document.getElementById("OUTPUT").value = Output;
