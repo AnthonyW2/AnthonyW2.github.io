@@ -54,8 +54,8 @@
     <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Input Code Goes Here"></textarea>
     <br>
     <h2>Result:</h2>
-    <h2 id="OUTPUT"></h2>
-    <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Output Code Goes Here" readonly></textarea>
+    <!--h2 id="OUTPUT"></h2-->
+    <textarea rows="64" cols="100" id="OUTPUT" class="center" placeholder="Output Code Goes Here" readonly></textarea>
     <br>
     <script>
       function randomiseInputs(){
@@ -90,7 +90,12 @@
       }
       
       function processCode(){
+        var Input = document.getElementById("INPUT").value;
+        var InputLines = Input.split("\n");
+        var Output = InputLines.join("\n");
         
+        
+        document.getElementById("OUTPUT").innerHTML = Output;
       }
       
       
