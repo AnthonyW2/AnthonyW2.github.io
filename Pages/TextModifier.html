@@ -45,7 +45,7 @@
     <br>
     What to replace it with:
     <input type="text" name="REPLACESTRING" id="STRING">
-    <button onclick="void()">Replace</button>
+    <button onclick="alert('Test Alert')">Replace</button>
     <br>
     Indentation amount (spaces):
     <input type="text" name="INDENTAMOUNT" id="AMOUNT">
@@ -92,10 +92,10 @@
       
       function processCode(){
         console.log("Script started");
-        //var Input = document.getElementById("INPUT").value;
-        //var InputLines = Input.split("\n");
-        //var Output = InputLines.join("\n ");
-        //console.log("Lines joined:");
+        var Input = document.getElementById("INPUT").value;
+        var InputLines = Input.split("\n");
+        var Output = InputLines.join("\n ");
+        console.log("Lines joined:");
         //console.log(Output);
         
         
