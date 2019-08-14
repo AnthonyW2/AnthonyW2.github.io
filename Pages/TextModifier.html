@@ -28,7 +28,7 @@
         font-size: 15px;
       }
     </style>
-    <title>Text Modifier</title>
+    <title>Code Modifier</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Text Indenter & Replacer (WIP)</h1>
+    <h1>Code Indenter & Replacer</h1>
     <br>
     <br>
     String to replace:
@@ -51,10 +51,11 @@
     <input type="text" name="INDENTAMOUNT" id="AMOUNT">
     <button onclick="void()">Indent</button>
     <br>
-    <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Text Goes Here"></textarea>
+    <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Input Code Goes Here"></textarea>
     <br>
     <h2>Result:</h2>
     <h2 id="OUTPUT"></h2>
+    <textarea rows="64" cols="100" id="INPUT" class="center" placeholder="Output Code Goes Here" readonly></textarea>
     <br>
     <script>
       function randomiseInputs(){
@@ -87,6 +88,12 @@
           alert("The result is:\n"+singleOutput);
         }
       }
+      
+      function processCode(){
+        
+      }
+      
+      
     </script>
     <br>
     <img src="https://Anthony-Wilson-Programming.github.io/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
