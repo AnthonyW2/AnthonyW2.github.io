@@ -26,7 +26,7 @@
     <br>
     <textarea>This is a text area</textarea>
     <br>
-    <canvas id="Keyboard" width="200" height="100">Your browser does not support the HTML5 canvas tag.</canvas>
+    <canvas id="Keyboard" width="200" height="100">Your browser does not support the HTML5 canvas tag. In other words, no torture for you!</canvas>
     <br>
     <script>
       var w = window.innerWidth
@@ -37,6 +37,7 @@
         || document.body.clientHeight;
       
       document.getElementById("Keyboard").width = w;
+      document.getElementById("Keyboard").height = h;
       
       var testcanvas = document.getElementById("Keyboard");
       var ctx = testcanvas.getContext("2d");
