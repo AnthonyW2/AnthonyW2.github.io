@@ -27,8 +27,11 @@
     <textarea>This is a text area</textarea>
     <br>
     <canvas id="Keyboard" width="200" height="100">Your browser does not support the HTML5 canvas tag. In other words, no torture for you!</canvas>
-    <br>
+    <!--br-->
     <script>
+      var x = event.touches[0].clientX;
+      var y = event.touches[0].clientY;
+      
       var w = window.innerWidth
         || document.documentElement.clientWidth
         || document.body.clientWidth;
@@ -45,8 +48,6 @@
       ctx.lineTo(180,90);
       ctx.stroke();
     </script>
-    <br>
-    <br>
     <img src="https://Anthony-Wilson-Programming.github.io/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
   </body>
 </html>
