@@ -22,7 +22,7 @@
   </head>
   <body>
     <h1>Testing the Decimal.js Library</h1>
-    <br>.
+    <br>..
     <br>
     <button onclick="loop();draw();">START</button>
     <button onclick="noLoop()">STOP</button>
@@ -54,7 +54,7 @@
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
-        Result = pow(2,Math.floor(frameCount/10));
+        Result = Math.pow(2,Math.floor(frameCount/10));
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
         
