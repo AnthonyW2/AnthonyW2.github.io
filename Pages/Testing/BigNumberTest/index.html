@@ -22,7 +22,7 @@
   </head>
   <body>
     <h1>Testing the Decimal.js Library</h1>
-    <br>...
+    <br>....
     <br>
     <button onclick="loop();draw();">START</button>
     <button onclick="noLoop()">STOP</button>
@@ -58,7 +58,7 @@
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
         //document.getElementById("BigResult").innerHTML = "Big Number Result: "+BigResult.toExponential(Math.floor(frameCount/10));
-        //document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
+        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
         
         if(doLoop){
           frameCount += 1;
