@@ -55,10 +55,9 @@
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
         Result = pow(2,Math.floor(frameCount/10));
-        BigResult.pow(Math.floor(frameCount/10));
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
-        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Result;
+        document.getElementById("BigResult").innerHTML = "Big Number Result: "+BigResult.pow(Math.floor(frameCount/10));
         
         if(doLoop){
           frameCount += 1;
