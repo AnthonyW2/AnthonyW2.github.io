@@ -18,11 +18,11 @@
     <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
     <meta name="apple-mobile-web-app-title" content="W̵">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='./decimal.js'></script>
+    <script src='mikemcl.github.io/decimal.js/decimal.js'></script>
   </head>
   <body>
     <h1>Testing the Decimal.js Library</h1>
-    <br>
+    <br>..
     <br>
     <button onclick="loop();draw();">START</button>
     <button onclick="noLoop()">STOP</button>
@@ -57,8 +57,8 @@
         Result = pow(2,Math.floor(frameCount/10));
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
-        document.getElementById("BigResult").innerHTML = "Big Number Result: "+BigResult.toExponential(Math.floor(frameCount/10));
-        //document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
+        //document.getElementById("BigResult").innerHTML = "Big Number Result: "+BigResult.toExponential(Math.floor(frameCount/10));
+        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
         
         if(doLoop){
           frameCount += 1;
