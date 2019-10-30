@@ -49,6 +49,8 @@
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
+        Result = Math.pow(2,frameCount);
+        
         document.getElementById("Result").innerHTML = "Result: "+Result;
         
         if(doLoop){
