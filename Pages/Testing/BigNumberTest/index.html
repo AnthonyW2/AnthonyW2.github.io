@@ -11,6 +11,7 @@
       a {color: #0000FF; text-decoration: underline;}
       .slider {width: 500px;}
     </style>
+    <script src='path/to/decimal.js'></script>
     <title>Big Number Testing</title>
     <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
     <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
@@ -33,8 +34,10 @@
     <p id="FRAMECOUNT"></p>
     <br>
     <p id="Result"></p>
+    <p id="BigResult"></p>
     <script>
       var Result = 0;
+      var BigResult = new Decimal(2);
       
       var frameCount = 0;
       var doLoop = true;
@@ -51,9 +54,11 @@
         document.getElementById("fps").innerHTML = "FPS: "+frameRate+" MSPT:"+Math.ceil(MSPT);
         document.getElementById("FRAMECOUNT").innerHTML = "Total Framecount: "+frameCount;
         
-        Result = frameCount;
+        Result = pow(2,Math.floor(frameCount/10));
+        BigResult.pow(Math.floor(frameCount/10));
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
+        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Result;
         
         if(doLoop){
           frameCount += 1;
