@@ -57,8 +57,8 @@
         Result = Math.pow(2,Math.floor(frameCount/10));
         
         document.getElementById("Result").innerHTML = "Result: "+Result;
-        //document.getElementById("BigResult").innerHTML = "Big Number Result: "+BigResult.toExponential(Math.floor(frameCount/10));
-        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
+        //document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Math.floor(frameCount/10));
+        document.getElementById("BigResult").innerHTML = "Big Number Result: "+Decimal.pow(2,Decimal.pow(2,Math.floor(frameCount/10)));
         
         if(doLoop){
           frameCount += 1;
