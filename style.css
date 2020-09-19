@@ -1,0 +1,36 @@
+body {
+  position: absolute;
+  background-color: #202020;
+  color: #e0e0e0;
+  font-family: "times new roman";
+}
+
+/**
+h1 {
+  color: #006400;
+  font-size: 250%;
+  font-family: "times new roman";
+}
+
+h2 {
+  color: #006400;
+  font-size: 150%;
+  font-family: "times new roman";
+}
+
+p.default {
+  color: #000000;
+  font-family: "times new roman";
+}
+* 
+p.other {
+  color:#000000;
+  font-family: "arial";
+}*/
+
+
+.Fixed {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}

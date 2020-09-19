@@ -1,114 +1,42 @@
+<!--
+Anthony Wilson - Main Github-Pages webpage
+
+Site started:
+22/10/2018
+
+Site revamp:
+?/9/20
+-->
+
 <!DOCTYPE html>
-<!--This is my main Github page-->
 <html>
   <head>
     <meta charset="utf-8">
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script-->
-    <style>
-      body {position: absolute;}
-      h1 {color: #006400; font-size: 250%; font-family: "times new roman";}
-      h2 {color: #006400; font-size: 150%; font-family: "times new roman";}
-      p.default {color: #000000; font-family: "times new roman";}
-      p.other {color:#000000; font-family: "arial";}
-      a {color: #0000FF; text-decoration: underline;}
-      .Fixed {position: fixed; top: 0px; right: 0px;}
-    </style>
-    <title>Anthony Wilson Programming</title>
-    <link rel="icon" type="image/jpeg" href="/LogoSimple.jpeg">
-    <link rel="shortcut icon" type="image/jpeg" href="/LogoSimple.jpeg">
-    <meta name="msapplication-TileImage" content="/LogoSimple.jpeg">
-    <link rel="apple-touch-icon" id="apple-touch-icon" href="/LogoSimple.jpeg">
-    <meta name="apple-mobile-web-app-title" content="W̵">
+    <title>Anthony W - Github</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/jpeg" href="LogoSimple.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="LogoSimple.jpeg">
+    <link rel="apple-touch-icon" href="Resources/TouchIcon256x256.png">
+    <meta name="apple-mobile-web-app-title" content="Anthony W">
+    
+    <meta name="description" content="The index page for my Github pages site">
+    
+    <meta property="og:title" content="Anthony W - Github">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://anthony-wilson-programming.github.io/">
+    <meta property="og:image" content="/LogoSimple.jpeg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <meta property="og:description" content="The index page for my Github pages site">
   </head>
   <body>
-    <h1>Welcome to my Github Home Page!</h1>
-    <br>
-    <br>
-    <p class="default">
-      <h2>Links:</h2>
-      ✯ <a style="color:red;" href="https://github.com" target="_blank">Github Home</a>
-      <br>
-      ✯ <a href="https://github.com/Anthony-Wilson-Programming/Anthony-Wilson-Programming.github.io" target="_blank">See the Repository</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages" target="_blank">Pages Index</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages/Testing" target="_blank">Testing Index</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages/CPS.html" target="_blank">CPS Meter</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages/StringRandomiser.html" target="_blank">String/Word Randomiser</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages/TerrainGen.html" target="_blank">Terrain Gen</a>
-      <br>
-      ✯ <a href="https://anthony-wilson-programming.github.io/Pages/TextModifier.html" target="_blank">Text Modifier</a>
-      <br>
-      <br>
-      ✯ <a style="color:red;" href="https://www.khanacademy.org" target="_blank">Khan Academy Home</a>
-      <br>
-      ✯ <a href="https://www.khanacademy.org/profile/Awilsonprogramming/projects" target="_blank">My Khan Academy Programs</a>
-      <br>
-      ✯ <a href="https://www.khanacademy.org/computer-programming/my-programming-booklet/5061889141833728" target="_blank">My Programming Booklet [KA]</a>
-      <br>
-      ✯ <a href="https://www.khanacademy.org/computer-programming/shrinking-golden-spiral-v21/5256503630004224" target="_blank">Golden Spiral [KA]</a>
-      <br>
-      ✯ <a href="https://www.khanacademy.org/computer-programming/science-talent-search/6336042524246016" target="_blank">Science Talent Search [KA]</a>
-      <br>
-      ✯ <a href="https://www.khanacademy.org/computer-programming/bouncy-ball-simulator-30/5940901782781952" target="_blank">Rainbow Bounce Painter [KA]</a>
-      <br>
-      <br>
-      ✯ <a style="color:red;" href="https://youtube.com" target="_blank">Youtube Home</a>
-      <br>
-      <br>
-      <h2>Couldn't have done any of this without:</h2>
-      ✯ <a style="color:green;" href="https://www.khanacademy.org" target="_blank">Khan Academy</a>
-      ✯ <a style="color:green;" href="https://processing.org" target="_blank">Processing Foundation</a>
-      ✯ <a style="color:green;" href="https://www.sololearn.com" target="_blank">Sololearn</a>
-      ✯ <a style="color:green;" href="https://www.w3schools.com" target="_blank">W3Schools</a>
-      ✯ <a style="color:green;" href="https://github.com" target="_blank">GitHub</a>
-      ✯
-    </p>
-    <br>
-    <br>
-    <!--h2>You have wasted <b id="Hours">0</b> Hours, <b id="Minutes">0</b> Minutes, <b id="Seconds">0</b> Seconds and <b id="MilliSeconds">000</b> Milliseconds on this page.</h2-->
-    <h2>This page was opened <b id="tHours">0</b> Hours, <b id="tMinutes">0</b> Minutes, <b id="tSeconds">0</b> Seconds and <b id="tMilliSeconds">000</b> Milliseconds ago.</h2>
-    <script>
-      var frameCount = 0;
-      var doLoop = true;
-      var frameRate = 100;
-      var MSPT = 1000/frameRate;
-      var d = new Date();
-      var StartTime = d.getTime();
-      var TotalTime = 0;
-      
-      function loop(){doLoop = true;}
-      function noLoop(){doLoop = false;}
-      
-      function draw(){
-        
-        d = new Date();
-        TotalTime = d.getTime()-StartTime;
-        /*
-        document.getElementById("Hours").innerHTML = Math.floor(frameCount*10/1000/60/60);
-        document.getElementById("Minutes").innerHTML = Math.floor(frameCount*10/1000/60)%60;
-        document.getElementById("Seconds").innerHTML = Math.floor(frameCount*10/1000)%60;
-        document.getElementById("MilliSeconds").innerHTML = Math.floor(frameCount*10/100)%10+""+Math.floor(frameCount*10/10)%10+""+Math.floor(frameCount*10/1)%10;
-        */
-        document.getElementById("tHours").innerHTML = Math.floor(TotalTime/1000/60/60);
-        document.getElementById("tMinutes").innerHTML = Math.floor(TotalTime/1000/60)%60;
-        document.getElementById("tSeconds").innerHTML = Math.floor(TotalTime/1000)%60;
-        document.getElementById("tMilliSeconds").innerHTML = Math.floor(TotalTime/100)%10+""+Math.floor(TotalTime/10)%10+""+Math.floor(TotalTime/1)%10;
-        
-        if(doLoop){
-          frameCount += 1;
-          setTimeout(draw,Math.ceil(MSPT));
-        }
-      }
-      
-      draw();
-    </script>
-    <br>
-    <br>
+    <h1>[Work in Progress]</h1>
+    
+    
+    
     <img src="LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
     <br>
   </body>
