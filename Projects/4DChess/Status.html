@@ -35,7 +35,7 @@ Page made:
     <h2 id="StatusHTTP">Connecting to HTTP server...</h2>
     <h2 id="StatusNode">Connecting to NodeJS server...</h2>
     
-    <p>Play 4D Chess <a id="PageURL" href="">here</a></p>
+    <p id="LinkToPage" hidden>Play 4D Chess <a id="PageURL" href="">here</a></p>
     
     <script>
       var HostAddress = "101.188.168.172";
@@ -47,12 +47,14 @@ Page made:
         xmlhttp.onreadystatechange = function(){
           if(this.status == 404){
             document.getElementById("StatusHTTP").innerHTML = "HTTP server up";
+            document.getElementById("LinkToPage").hidden = false;
+            document.getElementById("PageURL").href = "http://"+HostAddress+":"+PortHTTP+"/4DChess/";
           }else{
             document.getElementById("StatusHTTP").innerHTML = "HTTP server down, please try again later";
           }
         }
         
-        xmlhttp.open("GET",HostAddress+":"+PortHTTP+"/4DChess/",true);
+        xmlhttp.open("GET","http://"+HostAddress+":"+PortHTTP+"/4DChess/",true);
         xmlhttp.send();
       }
       
@@ -66,9 +68,12 @@ Page made:
           }
         }
         
-        xmlhttp.open("GET",HostAddress+":"+PortNode+"/4DChess/",true);
+        xmlhttp.open("GET","http://"+HostAddress+":"+PortNode+"/4DChess/",true);
         xmlhttp.send();
       }
+      
+      requestHTTP();
+      requestNode();
     </script>
     
     <img src="/LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
