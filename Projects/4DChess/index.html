@@ -53,6 +53,7 @@ Page made:
       function requestHTTP(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
+          console.log(this.readyState+","+this.status);
           if(this.status == 404){
             document.getElementById("StatusHTTP").innerHTML = "HTTP server up";
             document.getElementById("LinkToPage").hidden = false;
@@ -69,6 +70,7 @@ Page made:
       function requestNode(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
+          console.log(this.readyState+","+this.status);
           if(this.status == 404){
             document.getElementById("StatusNode").innerHTML = "Node server up";
           }else{
