@@ -63,7 +63,8 @@ Page made:
           }
         }
         
-        xmlhttp.open("GET","https://"+HostAddress+":"+PortHTTP+"/4DChess/",true);
+        //xmlhttp.open("GET","https://"+HostAddress+":"+PortHTTP+"/4DChess/",true);
+        xmlhttp.open("GET",HostAddress+":"+PortHTTP+"/4DChess/",true);
         xmlhttp.send();
       }
       
@@ -78,7 +79,8 @@ Page made:
           }
         }
         
-        xmlhttp.open("GET","https://"+HostAddress+":"+PortNode+"/4DChess/",true);
+        //xmlhttp.open("GET","https://"+HostAddress+":"+PortNode+"/4DChess/",true);
+        xmlhttp.open("GET",HostAddress+":"+PortNode+"/4DChess/",true);
         xmlhttp.send();
       }
       
