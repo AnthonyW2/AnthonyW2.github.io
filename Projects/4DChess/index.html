@@ -57,7 +57,7 @@ Page made:
         xmlhttp.onreadystatechange = function(){
           console.log(this.readyState+","+this.status);
           if(this.status == 200){
-            document.getElementById("StatusHTTP").innerHTML = "HTTP server up";
+            document.getElementById("StatusHTTP").innerHTML = "HTTP(S) server up";
             document.getElementById("LinkToPage").hidden = false;
             document.getElementById("PageURL").href = "http://"+HostAddress+":"+PortHTTP+"/4DChess/";
           }else{
@@ -77,7 +77,7 @@ Page made:
           if(this.status == 200){
             document.getElementById("StatusNode").innerHTML = "Node server up";
           }else{
-            document.getElementById("StatusNode").innerHTML = "Node server down, this should not affect the experience of 4D Chess";
+            document.getElementById("StatusNode").innerHTML = "Node server down or unreachable, this should not affect the experience of 4D Chess";
           }
         }
         
