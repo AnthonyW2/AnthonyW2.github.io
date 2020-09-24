@@ -52,8 +52,6 @@ Page made:
       var PortNode = 8002;
       //var PortNodeSSL = 44302;
       
-      console.log(document.getElementById("IPv4").value);
-      
       function requestHTTP(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
@@ -87,8 +85,22 @@ Page made:
         xmlhttp.send();
       }
       
-      requestHTTP();
-      requestNode();
+      //requestHTTP();
+      //requestNode();
+    </script>
+    
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+          HostAddress = this.responseText;
+          
+          requestHTTP();
+          requestNode();
+        }
+      }
+      xhttp.open("GET","IPv4",true);
+      xhttp.send();
     </script>
     
     <img src="../../LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
