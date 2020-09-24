@@ -17,7 +17,14 @@ Anthony Wilson - Redirect to server
     <meta property="og:description" content="Redirect to server">
     
     <script>
-      window.location.href = "http://101.188.168.172";
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+          window.location.href = "http://"+this.responseText;
+        }
+      }
+      xmlhttp.open("GET","IPv4",true);
+      xmlhttp.send();
     </script>
   </head>
   <body></body>
