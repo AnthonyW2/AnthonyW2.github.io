@@ -50,6 +50,8 @@ Page made:
       var PortHTTP = 8082;
       var PortNode = 8002;
       
+      console.log(document.getElementById("IPv4").value);
+      
       function requestHTTP(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
@@ -87,6 +89,8 @@ Page made:
       requestHTTP();
       requestNode();
     </script>
+    
+    <script src="../../IPv4" id="IPv4"></script>
     
     <img src="../../LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
     <br>
