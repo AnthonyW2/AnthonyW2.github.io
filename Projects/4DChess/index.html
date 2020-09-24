@@ -49,9 +49,10 @@ Page made:
     
     <script>
       var HostAddress = "101.188.168.172";
-      //var PortHTTP = 8082;
-      var PortHTTP = 443;
+      var PortHTTP = 8082;
+      //var PortHTTPS = 44382;
       var PortNode = 8002;
+      //var PortNodeSSL = 44302;
       
       console.log(document.getElementById("IPv4").value);
       
@@ -68,8 +69,8 @@ Page made:
           }
         }
         
-        //xmlhttp.open("GET","https://"+HostAddress+":"+PortHTTP+"/4DChess/",true);
-        xmlhttp.open("GET",HostAddress+":"+PortHTTP+"/4DChess/",true);
+        //xmlhttp.open("GET","http://"+HostAddress+":"+PortHTTP+"/4DChess/",true);
+        xmlhttp.open("GET","https://"+HostAddress+"/4DChess/",true);
         xmlhttp.send();
       }
       
@@ -84,8 +85,8 @@ Page made:
           }
         }
         
-        //xmlhttp.open("GET","https://"+HostAddress+":"+PortNode+"/4DChess/",true);
-        xmlhttp.open("GET",HostAddress+":"+PortNode+"/4DChess/",true);
+        //xmlhttp.open("GET","http://"+HostAddress+":"+PortNode+"/4DChess/",true);
+        xmlhttp.open("GET","https://"+HostAddress+"/4DChess/",true);
         xmlhttp.send();
       }
       
