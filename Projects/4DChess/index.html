@@ -45,8 +45,6 @@ Page made:
     
     <p id="LinkToPage">Play 4D Chess <a id="PageURL" href="">here</a></p>
     
-    <p src="../../IPv4" id="IPv4"></p>
-    
     <script>
       var HostAddress = "101.188.168.172";
       var PortHTTP = 8082;
@@ -60,12 +58,12 @@ Page made:
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
           console.log(this.readyState+","+this.status);
-          if(this.status == 404){
-            document.getElementById("StatusHTTP").innerHTML = "HTTP server down, please try again later";
-          }else{
+          if(this.status == 200){
             document.getElementById("StatusHTTP").innerHTML = "HTTP server up";
             document.getElementById("LinkToPage").hidden = false;
             document.getElementById("PageURL").href = "http://"+HostAddress+":"+PortHTTP+"/4DChess/";
+          }else{
+            document.getElementById("StatusHTTP").innerHTML = "HTTP server down, please try again later";
           }
         }
         
@@ -78,15 +76,14 @@ Page made:
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function(){
           console.log(this.readyState+","+this.status);
-          if(this.status == 404){
-            document.getElementById("StatusNode").innerHTML = "Node server down, this should not affect the experience of 4D Chess";
-          }else{
+          if(this.status == 200){
             document.getElementById("StatusNode").innerHTML = "Node server up";
+          }else{
+            document.getElementById("StatusNode").innerHTML = "Node server down, this should not affect the experience of 4D Chess";
           }
         }
         
-        //xmlhttp.open("GET","http://"+HostAddress+":"+PortNode+"/4DChess/",true);
-        xmlhttp.open("GET","https://"+HostAddress+"/4DChess/",true);
+        xmlhttp.open("GET","http://"+HostAddress+":"+PortNode+"/4DChess/",true);
         xmlhttp.send();
       }
       
