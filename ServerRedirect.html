@@ -16,15 +16,9 @@ Anthony Wilson - Redirect to server
     <meta property="og:url" content="https://anthonyw2.github.io/">
     <meta property="og:description" content="Redirect to server">
     
+    <script src="ServerIPv4.js"></script>
     <script>
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-          window.location.href = "http://"+this.responseText;
-        }
-      }
-      xhttp.open("GET","IPv4",true);
-      xhttp.send();
+      window.location.href = "http://"+IPv4;
     </script>
   </head>
   <body></body>
