@@ -1,0 +1,140 @@
+Changelog for Anthony Wilson's 4 Dimensional Chess
+
+
+
+=== TO DO ===
+- Change the way gamestates are stored:
+  * Add extra data section (For the future - custom castling rules - pawn double-first-move - En Passant)
+  * Change movement visuals to [B,T,X,Y] instead of [T,B,X,Y] (Reformat them altogether - [B0,T0,X0,Y0, B1,T1,X1,Y1, {Extra data}] - this allows for keeping track of moves and easily creating cross-time arrows) - also renamed to "pastMoves"
+  * Store pieces as simple integer arrays, instead of large object strings
+  * Add timeline "ancestor"s. This should be a simple integer, which is a RELATIVE reference to the timeline that the target timeline was created from.
+- Get rid of leftover code
+
+- Seperate the game.js file into "API" and "Game control"
+
+- Change the field class constructor - create a field straight from a simplified object
+
+- Add timeline branch visuals (the elements will need to be contained by the field element because of z-index weirdness) (Will require gamestate change)
+- Use SVGs for the piece sprites
+- Change Import/Export game menu - looks horrible at the moment
+- Add icons to the buttons
+- Change the titlebar?
+
+- Add a visual indicator for kings in check (detect automatically?)
+
+- Make pawn promotion give a choice of pieces
+
+- Add an option to view only white/black boards
+
+- Create a page for making custom layouts / editing saves
+- Add global and local game settings
+- Add "How to Play" and "Credits"
+- Add chess clock (options in global settings)
+
+- Add move confirmation to online multiplayer
+- Add per-game chat for online multiplayer
+- Fix online multiplayer POV (specifically for Black)
+- Add a "spectate"/"view only" mode for online multiplayer
+- Add a NodeJS websocket option for online multiplayer, which will be used by default, with the fallback being PHP requests.
+
+- Add a save-conversion page:
+  > My JSON format to Alexbay218's notation
+  > My JSON format to Alexbay218's JSON format
+  > Alexbay218's notation to my JSON format
+
+- Add more variants (Arimaa, Andernach Chess, Soveriegn Chess, etc.)
+
+
+
+=== Version History ===
+
+[24/7/20] (0.0.0.1-0) - Project started
+
+[?/?/20] (1.0.0.?-0) - First working build, with most 5D moves. New boards are created when pieces are moved, and new timelines when pieces time travel.
+
+[?/?/20] (1.0.1.?-0) - Online multiplayer functional, with no menus and no way to create games.
+
+[13/9/20] (1.0.2.1-1) - First release, including fully functional local multiplayer, online multiplayer, complete set of 5D Chess mechanics, importing/exporting game as JSON and much more. Roughly 3100 SLOC in total.
+
+[13/9/20] (1.1.0.1-0) - Some minor tweaks to the code after the first release.
+
+[13/9/20] (1.1.0.2-0) - Compacted the 4 2D loops that calculate most of the queen's time-travel moves into one 3 dimensional nested loop.
+
+[14/9/20] (1.1.0.3-0) - Changed the colour and opacity of the past movement visuals.
+
+[14/9/20] (1.1.0.4-0) - Tweaked some small parts of the code. Tested the delay between starting a web request and recieving an answer.
+
+[16/9/20] (1.1.0.5-0) - Fixed a problem in some PHP files that caused the game password to be ignored.
+
+[23/9/20] (1.1.0.6-0) - Began work on NodeJS websocket architecture to replace PHP requests. Added option to undo when playing online multiplayer.
+
+[27/9/20] (1.1.0.7-0) - Changed the function that calculates a piece's moves - now storing them in an intermediate array before adding the elements using a seperate function. This makes far more sense for calculating piece danger.
+
+[27/9/20] (1.1.0.8-0) - Added function to check for piece danger (implemented function to check if a king is in check).
+
+[28/9/20] (1.1.0.9-0) - Changed the "unhide title bar" symbol to a classic hamburger menu symbol (3 horizontal lines).
+
+[30/9/20] (1.1.0.10-0) - Changed the addMoveVisuals() function (made the code neater than it was, but it's still horrible). Added checkmate detection, which appears to work most of the time. It'll need a lot more tweaking to become 100% reliable though.
+
+[30/9/20] (1.1.0.11-0) - Fixed "Undo" in online multiplayer. Tweaked checkmate detection, now more efficient and more reliable if both players are in check.
+
+[2/10/20] (1.1.0.12-0) - Changed the way layouts are applied when creating a new game. Instead of generating them in code, pull the entire JSON file from the server, and load the game from that.
+
+[3/10/20] (1.1.0.13-0) - Past-movement-visual arrays in simplified objects are no longer references, and are now stand-alone arrays.
+
+[3/10/20] (1.1.0.14-0) - Layouts are now in a smaller JSON format, meaning less text to pull from the server. Added the 8x8 turn 0 starting layout. Changed castling move-detection to use normal if-clauses instead of switch/case, so that the same code can support multiple layouts.
+
+[5/10/20] (1.1.0.15-0) - Changed the way board colors are set. Minor HTML edits.
+
+[8/10/20] (1.1.0.16-0) - Added The Present functionality in the background. Added a page to render a game as a 1:1 scale image. You can no longer castle if in check. You can now deselect pieces.
+
+[11/10/20] (1.1.0.17-0) - Changed the code which shifts all timelines down by one space. Now much more efficient, and less expensive.
+
+[11/10/20] (1.1.0.18-0) - Minor HTML and CSS changes (Fixed scrollIntoView).
+
+[11/10/20] (1.1.0.19-0) - "The Present" will now automatically update its position whenever a move is made. Added some padding field-tiles to make the field feel fuller.
+
+[12/10/20] (1.1.0.20-0) - Fixed the knight time-travel moves. Added En Passant.
+
+[12/10/20] (1.1.0.21-0) - Modified En Passant code. Compressed some nested if clauses.
+
+[12/10/20] (1.1.0.22-0) - Changed castling detection code to a function. Added castling to the "Defended Pawn" layout.
+
+[14/10/20] (1.1.0.23-0) - Removed "fullid" object attributes. Removed element IDs.
+
+[17/10/20] (1.1.0.24-0) - Checkmate in now properly detected if the opponent can immediately move their attacking piece.
+
+[17/10/20] (1.1.0.25-0) - Fixed a small bug causing "The Present" indicator element to have the wrong width.
+
+[17/10/20] (1.1.0.25-1) - 1.1 Release. Roughly 3500 SLOC in total.
+
+[18/10/20] (1.2.0.1-0) - Added field grid coordinate text.
+
+[19/10/20] (1.2.0.2-0) - Minor edits (The Present is now updated when a game is imported. Changed the text displayed by the checkForCheck function. Changed the way color is used to interact with directional components of the game (white is always on the bottom now).
+
+[19/10/20] (1.2.0.3-0) - Changed the way pieces are stored in game save files (roughly 40% smaller on average).
+
+[20/10/20] (1.2.0.4-0) - Added function to create arrows pointing from one set of coords to another. Changed timeline arrow-tips to SVGs. Changed "Field.movementVisuals" variable name to "pastMoves".
+
+[20/10/20] (1.2.0.5-0) - "boardWidth" & "boardHeight" are no longer glabal variables, and are now Field attributes.
+
+[21/10/20] (-) - Changed 4D Chess directory path (planning for future variants). From /4DChess/ to /4D/4DChess/ and /4D/[Game name]/.
+
+[21/10/20] (1.2.0.6-0) - Minor tweaks and bug fixes.
+
+[21/10/20] (1.2.0.7-0) - Added timeline ancestors.
+
+[1/11/20] (1.2.0.8-0) - All special piece moves (castling, pawn double-move, En Passant) are now stored in extraGameData (the "data" attribute of JSON saves).
+
+[1/11/20] (1.2.0.9-0) - Fixed a bug which occurs when the position of a captured piece is different to the new position of the capturing piece (such as En Passant) (board.pieceIDmap and board.pieceTypeMap were incorrectly updated).
+
+[1/11/20] (1.2.0.10-0) - Replaced "fields" array with a single "playField" variable.
+
+[2/11/20] (1.2.0.11-0) - Updated the image generation page for the new save file format.
+
+[3/11/20] (1.2.0.12-0) - Created a save file conversion page (from 1.1 to 1.2). Removed the "active" timeline attribute from JSON saves.
+
+
+
+
+
