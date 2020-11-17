@@ -1,11 +1,13 @@
 <!--
-Anthony Wilson - Main Github-Pages webpage
+Anthony Wilson - Main Github Pages webpage
+
+Protected by the GNU General Public License V3
 
 Site started:
 24/10/2018
 
 Site revamp:
-?/9/20
+20-11-?
 -->
 
 <!DOCTYPE html>
@@ -33,14 +35,60 @@ Site revamp:
     <meta property="og:description" content="The index page for my Github pages site">
   </head>
   <body>
-    <h1>[Work in Progress]</h1>
+    <!--The heading bar that stays at the top of the page-->
+    <div id="HeaderContainer">
+      <div id="MainHeaderContainer">
+        <h1 id="MainHeader">Anthony Wilson</h1>
+        <div id="SettingsBtn" onclick="OpenSettingsDialogue()">⚙</div>
+      </div>
+    </div>
     
-    <h2>Projects:</h2>
-    <p>
-      <a href="Projects/4DChess/">4D Chess</a>
-    </p>
+    <!--Page links-->
+    <div id="PageLinksContainer">
+      <a href="https://anthonyw2.github.io/" class="InheritColor">
+        <div class="PageLink" style="top: 100px;">
+          <div class="PageLinkHeader">
+            Github Pages site
+          </div>
+          <div class="PageLinkDescription">
+            <p>My server does't have 24/7 uptime, so a copy of this site is also hosted on Github Pages.<br>Follow this link to visit it.</p>
+          </div>
+        </div>
+      </a>
+      <a href="Projects/" class="InheritColor">
+        <div class="PageLink" style="top: 400px;">
+          <div class="PageLinkHeader">
+            Projects page
+          </div>
+          <div class="PageLinkDescription">
+            <p>On this page you can find links to all of my public & open-source projects.<br>There are links to things like 4 Dimensional Chess, 4 Dimensional Arimaa, smaller test projects, physics simulations, AI projects, etc.</p>
+          </div>
+        </div>
+      </a>
+      <a href="Projects/4DChess/" class="InheritColor">
+        <div class="PageLink" style="top: 700px;">
+          <div class="PageLinkHeader">
+            4 Dimensional Chess
+          </div>
+          <div class="PageLinkDescription">
+            <p>Direct link to 4 Dimensional Chess project (local multiplayer only on Github Pages)</p>
+          </div>
+        </div>
+      </a>
+    </div>
     
-    <img src="LogoSimpleCorner.png" class="Fixed" alt="" height="100" width="100">
-    <br>
+    <div id="SettingsDialogue" hidden>
+      <div id="DimBackground" onclick="CloseSettingsDialogue()"></div>
+      <div id="SettingsWindow">
+        <select id="ThemeSelector" onchange="UpdateColorScheme()">
+          <option value="0">Faded Grey (Default)</option>
+          <option value="1">Light White</option>
+          <option value="2">Steel Grey</option>
+          <option value="3">Green</option>
+        </select>
+      </div>
+    </div>
+    
+    
   </body>
 </html>

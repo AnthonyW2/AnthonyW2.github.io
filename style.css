@@ -1,36 +1,367 @@
+/*
+Anthony Wilson - Main Github Pages webpage
+
+Protected by the GNU General Public License V3
+
+20-11-?
+*/
+
+
+
+/*
+Z-Index map:
+
+0 - Body
+
+10 - Project links
+
+100 - Title/header bar
+
+200 - Settings dialogue
+*/
+
+
+
+/* ========== Element Styles ========== */
+
+/* Body styles */
 body {
+  z-index: 0;
+  
   position: absolute;
-  background-color: #202020;
+  
+  /* Honestly this should be default */
+  width: 100%;
+  height: 100%;
+  min-width: 350px;
+  
+  /* Unsetting the margin removes the small border around the edge of the page */
+  margin: unset;
+  padding: unset;
+  border: none;
+  
+  background-color: #505050;
+  
+  color: #808080;
+ 
+  font-family: serif; 
+}
+
+/* Link styles */
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+a.InheritColor {
+  color: inherit;
+}
+
+
+
+/* ========== Header Styles ========== */
+
+/* Overall header container */
+#HeaderContainer {
+  z-index: 100;
+  
+  position: fixed;
+  
+  left: 0px;
+  top: 0px;
+  
+  width: 100%;
+  height: 75px;
+  min-width: 350px;
+  
+  background-color: #383838;
+}
+
+/* Main heading text */
+#MainHeader {
+  position: relative;
+  
+  margin: unset;
+  padding-top: 0.5em;
+  padding-left: 0.2em;
+  
+  left: 10px;
+  
   color: #e0e0e0;
-  font-family: "times new roman";
 }
 
-/**
-h1 {
-  color: #006400;
-  font-size: 250%;
-  font-family: "times new roman";
+/* Settings button in the header */
+#SettingsBtn {
+  position: absolute;
+  
+  top: 5px;
+  right: 10px;
+  
+  cursor: pointer;
+  
+  color: #e0e0e0;
+  font-size: 50px;
 }
 
-h2 {
-  color: #006400;
-  font-size: 150%;
-  font-family: "times new roman";
+
+
+/* ========== Header Chategory Buttons ========== */
+
+/* Chategory buttons 
+.HeaderChategoryBtn {
+  position: absolute;
+  
+  top: 70px;
+  
+  width: 10%;
+  height: 30px;
+  box-sizing: border-box;
+  
+  margin: unset;
+  padding: unset;
+  padding-top: 2px;
+  border: none;
+  
+  cursor: pointer;
+  
+  text-align: center;
+  font-size: 1.2rem;
+  
+  background-color: #353535;
+  color: #d0d0d0;
+}
+/* Chategory buttons cycling colours 
+.HeaderChategoryBtn:nth-child(even) {
+  background-color: #404040;
+}
+/* Position each button 
+.HeaderChategoryBtn:nth-child(1) {
+  left: 0%;
+}
+.HeaderChategoryBtn:nth-child(2) {
+  left: 10%;
+}
+.HeaderChategoryBtn:nth-child(3) {
+  left: 20%;
+}
+.HeaderChategoryBtn:nth-child(4) {
+  left: 30%;
+}
+.HeaderChategoryBtn:nth-child(5) {
+  left: 40%;
+}
+.HeaderChategoryBtn:nth-child(6) {
+  left: 50%;
+}
+.HeaderChategoryBtn:nth-child(7) {
+  left: 60%;
+}
+/* Change button color if selected 
+.HeaderChategoryBtn[selected] {
+  background: #505050;
 }
 
-p.default {
-  color: #000000;
-  font-family: "times new roman";
-}
-* 
-p.other {
-  color:#000000;
-  font-family: "arial";
+/* Search bar 
+#SearchBar {
+  position: absolute;
+  
+  top: 70px;
+  left: 70%;
+  
+  width: 30%;
+  height: 30px;
+  box-sizing: border-box; /* Prevents the padding from affecting the size 
+  
+  border: none;
+  margin: unset;
+  padding: 4px;
+  padding-top: 6px;
+  
+  text-align: left;
+  font-size: 1rem;
+  
+  background-color: #404040;
+  color: #d0d0d0;
 }*/
 
 
-.Fixed {
+
+/* ========== Settings Dialogue ========== */
+
+#SettingsDialogue {
   position: fixed;
+  
+  z-index: 200;
+  
   top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 100%;
+}
+
+#DimBackground {
+  position: absolute;
+  
+  top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 100%;
+  
+  background: #202020;
+  
+  opacity: 0.8;
+}
+
+#SettingsWindow {
+  position: absolute;
+  
+  width: 75%;
+  height: 75%;
+  
+  top: 12.5%;
+  left: 12.5%;
+  
+  background: #a0a0a0;
+}
+
+
+
+/* ========== Page Link Styles ========== */
+
+#PageLinksContainer {
+  z-index: 10;
+  
+  position: absolute;
+  
+  width: 80%;
+  height: 100%;
+  
+  left: 10%;
+  top: 70px;
+}
+
+.PageLink {
+  position: absolute;
+  
+  width: 100%;
+  height: 200px;
+  
+  left: 0px;
+  
+  background: #303030;
+}
+.PageLink:hover, .PageLink:active {
+  text-decoration: underline;
+}
+
+.PageLinkHeader {
+  position: absolute;
+  
+  width: 100%;
+  height: 50px;
+  
+  text-decoration: inherit;
+  text-align: center;
+  font-size: 2rem;
+  
+  color: #d0d0d0;
+  
+  background: #404040;
+}
+
+.PageLinkDescription {
+  position: absolute;
+  
+  top: 50px;
+  left: 0px;
+  
+  height: 150px;
+  box-sizing: border-box;
+  
+  margin: unset;
+  padding: unset;
+  padding-left: 16px;
+  padding-right: 16px;
+  border: none;
+  
+  color: #d0d0d0;
+  
+  font-size: 1.3rem;
+  
+  /* Prevent the text from spilling out onto the rest of the page */
+  overflow: hidden;
+}
+
+.PageLinkImg {
+  position: absolute;
+  
+  width: 150px;
+  height: 150px;
+  
+  top: 50px;
   right: 0px;
 }
+
+
+
+/* ========== Responsive CSS ========== */
+
+/* Change element layouts when screen width is smaller than 650 pixels */
+@media screen and (max-width: 650px) {
+  /*#HeaderContainer {
+    height: 130px;
+  }
+  
+  .HeaderChategoryBtn {
+    width: 14.3%;
+  }
+  .HeaderChategoryBtn:nth-child(2) {
+    left: calc(100% / 7);
+  }
+  .HeaderChategoryBtn:nth-child(3) {
+    left: calc(calc(100% / 7) * 2);
+  }
+  .HeaderChategoryBtn:nth-child(4) {
+    left: calc(calc(100% / 7) * 3);
+  }
+  .HeaderChategoryBtn:nth-child(5) {
+    left: calc(calc(100% / 7) * 4);
+  }
+  .HeaderChategoryBtn:nth-child(6) {
+    left: calc(calc(100% / 7) * 5);
+  }
+  .HeaderChategoryBtn:nth-child(7) {
+    left: calc(calc(100% / 7) * 6);
+  }
+  
+  #SearchBar {
+    top: 100px;
+    left: 0px;
+    width: 100%;
+  }*/
+}
+
+/* Change element layouts when screen width is smaller than 430 pixels */
+@media screen and (max-width: 430px) {
+  /*#MainHeader {
+    font-size: 1.6rem;
+  }
+  
+  .HeaderChategoryBtn {
+    font-size: 0.9rem;
+    padding-top: 7px;
+  }*/
+}
+
+
+
+
