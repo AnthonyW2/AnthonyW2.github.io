@@ -1,0 +1,230 @@
+/*
+Anthony Wilson - ITP Web design CAT
+
+Protected by the GNU General Public License V3
+
+2 November 2020
+20-11-2
+*/
+
+
+
+/*
+Z-Index map:
+
+0 - Body
+
+10 - Project links
+
+100 - Title/header bar
+
+200 - Settings dialogue
+*/
+
+
+
+/* ========== Element Styles ========== */
+
+/* Body styles */
+body {
+  z-index: 0;
+  
+  position: absolute;
+  
+  min-width: 350px;
+  
+  background-color: #454545;
+  
+  color: #e0e0e0;
+ 
+  font-family: serif; 
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Link styles */
+a {
+  color: #d0d0d0;
+  text-decoration: underline;
+}
+a:hover, a:active {
+  color: #b0b0b0;
+  text-decoration: underline;
+}
+
+
+
+/* ========== Header Styles ========== */
+
+/* Overall header container */
+#HeaderContainer {
+  z-index: 100;
+  
+  position: fixed;
+  
+  left: 0px;
+  top: 0px;
+  
+  width: 100%;
+  height: 75px;
+  min-width: 350px;
+  
+  background-color: #383838;
+}
+
+/* Main heading text */
+#MainHeader {
+  position: relative;
+  
+  margin: unset;
+  padding-top: 0.5em;
+  padding-left: 0.2em;
+  
+  left: 10px;
+  
+  color: #e0e0e0;
+}
+
+/* Settings button in the header */
+#SettingsBtn {
+  position: absolute;
+  
+  top: 5px;
+  right: 10px;
+  
+  cursor: pointer;
+  
+  color: #e0e0e0;
+  font-size: 50px;
+}
+
+
+
+/* ========== Header Chategory Buttons ========== */
+
+/* Chategory buttons */
+.HeaderChategoryBtn {
+  position: absolute;
+  
+  top: 70px;
+  
+  width: 33.33%;
+  height: 30px;
+  box-sizing: border-box;
+  
+  margin: unset;
+  padding: unset;
+  padding-top: 2px;
+  border: none;
+  
+  cursor: pointer;
+  
+  text-align: center;
+  font-size: 1.2rem;
+  
+  background-color: #353535;
+  color: #d0d0d0;
+}
+/* Chategory buttons cycling colours */
+.HeaderChategoryBtn:nth-child(even) {
+  background-color: #404040;
+}
+/* Position each button */
+.HeaderChategoryBtn:nth-child(1) {
+  left: 0%;
+}
+.HeaderChategoryBtn:nth-child(2) {
+  left: calc(100% / 3);
+}
+.HeaderChategoryBtn:nth-child(3) {
+  left: calc(calc(100% / 3) * 2);
+}
+/* Change button color if selected */
+.HeaderChategoryBtn[selected] {
+  background: #505050;
+}
+
+
+
+/* ========== Settings Dialogue ========== */
+
+#SettingsDialogue {
+  position: fixed;
+  
+  z-index: 200;
+  
+  top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 100%;
+}
+
+#DimBackground {
+  position: absolute;
+  
+  top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 100%;
+  
+  background: #202020;
+  
+  opacity: 0.8;
+}
+
+#SettingsWindow {
+  position: absolute;
+  
+  width: 75%;
+  height: 75%;
+  box-sizing: border-box;
+  
+  top: 12.5%;
+  left: 12.5%;
+  
+  padding: 20px;
+  
+  background: #a0a0a0;
+}
+
+
+
+/* ========== Responsive CSS ========== */
+
+/* Change element layouts when screen width is smaller than 650 pixels */
+@media screen and (max-width: 650px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Change element layouts when screen width is smaller than 430 pixels */
+@media screen and (max-width: 430px) {
+  #MainHeader {
+    font-size: 1.6rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+

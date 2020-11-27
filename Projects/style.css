@@ -79,7 +79,7 @@ a.InheritColor {
   top: 0px;
   
   width: 100%;
-  height: 75px;
+  height: 100px;
   min-width: 350px;
   
   background-color: #383838;
@@ -115,7 +115,7 @@ a.InheritColor {
 
 /* ========== Header Chategory Buttons ========== */
 
-/* Chategory buttons 
+/* Chategory buttons */
 .HeaderChategoryBtn {
   position: absolute;
   
@@ -138,11 +138,11 @@ a.InheritColor {
   background-color: #353535;
   color: #d0d0d0;
 }
-/* Chategory buttons cycling colours 
+/* Chategory buttons cycling colours */
 .HeaderChategoryBtn:nth-child(even) {
   background-color: #404040;
 }
-/* Position each button 
+/* Position each button */
 .HeaderChategoryBtn:nth-child(1) {
   left: 0%;
 }
@@ -164,12 +164,12 @@ a.InheritColor {
 .HeaderChategoryBtn:nth-child(7) {
   left: 60%;
 }
-/* Change button color if selected 
+/* Change button color if selected */
 .HeaderChategoryBtn[selected] {
   background: #505050;
 }
 
-/* Search bar 
+/* Search bar */
 #SearchBar {
   position: absolute;
   
@@ -178,7 +178,7 @@ a.InheritColor {
   
   width: 30%;
   height: 30px;
-  box-sizing: border-box; /* Prevents the padding from affecting the size 
+  box-sizing: border-box; /* Prevents the padding from affecting the size */
   
   border: none;
   margin: unset;
@@ -190,7 +190,7 @@ a.InheritColor {
   
   background-color: #404040;
   color: #d0d0d0;
-}*/
+}
 
 
 
@@ -239,9 +239,9 @@ a.InheritColor {
 
 
 
-/* ========== Page Link Styles ========== */
+/* ========== Project Link Styles ========== */
 
-#PageLinksContainer {
+#ProjectLinksContainer {
   z-index: 10;
   
   position: absolute;
@@ -250,10 +250,10 @@ a.InheritColor {
   height: 100%;
   
   left: 10%;
-  top: 70px;
+  top: 100px;
 }
 
-.PageLink {
+.ProjectLink {
   position: absolute;
   
   width: 100%;
@@ -263,11 +263,11 @@ a.InheritColor {
   
   background: #303030;
 }
-.PageLink:hover, .PageLink:active {
+.ProjectLink:hover, .ProjectLink:active {
   text-decoration: underline;
 }
 
-.PageLinkHeader {
+.ProjectLinkHeader {
   position: absolute;
   
   width: 100%;
@@ -282,12 +282,14 @@ a.InheritColor {
   background: #404040;
 }
 
-.PageLinkDescription {
+.ProjectLinkDescription {
   position: absolute;
   
   top: 50px;
   left: 0px;
   
+  /* Account for the image */
+  width: calc(100% - 150px);
   height: 150px;
   box-sizing: border-box;
   
@@ -305,7 +307,11 @@ a.InheritColor {
   overflow: hidden;
 }
 
-.PageLinkImg {
+.ProjectLinkDescription.NoImg {
+  width: 100%;
+}
+
+.ProjectLinkImg {
   position: absolute;
   
   width: 150px;
@@ -321,7 +327,7 @@ a.InheritColor {
 
 /* Change element layouts when screen width is smaller than 650 pixels */
 @media screen and (max-width: 650px) {
-  /*#HeaderContainer {
+  #HeaderContainer {
     height: 130px;
   }
   
@@ -351,19 +357,27 @@ a.InheritColor {
     top: 100px;
     left: 0px;
     width: 100%;
-  }*/
+  }
+  
+  .ProjectLinkDescription {
+    font-size: 1rem;
+  }
 }
 
 /* Change element layouts when screen width is smaller than 430 pixels */
 @media screen and (max-width: 430px) {
-  /*#MainHeader {
+  #MainHeader {
     font-size: 1.6rem;
   }
   
   .HeaderChategoryBtn {
     font-size: 0.9rem;
     padding-top: 7px;
-  }*/
+  }
+  
+  .ProjectLinkDescription {
+    font-size: 0.8rem;
+  }
 }
 
 

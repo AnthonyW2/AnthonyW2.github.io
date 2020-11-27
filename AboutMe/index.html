@@ -1,5 +1,5 @@
 <!--
-Anthony Wilson - Site root page - CSS Progress Test
+Anthony Wilson - About Me Page - CSS Progress Test
 
 Protected by the GNU General Public License V3
 
@@ -13,30 +13,30 @@ Protected by the GNU General Public License V3
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Anthony Wilson</title>
+    <title>About Me</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="author" content="Anthony Wilson">
-    <meta name="description" content="Main project webpage, which links to all of my most popular public projects">
+    <meta name="description" content="About Me - General Info, Projects, My setup">
     
-    <link rel="icon" type="image/png" href="/Favicon128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="Resources/Favicon128x128.png" sizes="128x128">
     
-    <meta property="og:title" content="Anthony Wilson">
+    <meta property="og:title" content="Anthony Wilson - About Me">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://AnthonyW2.github.io/">
     <!--meta property="og:image" content="/OGImage.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="256">
     <meta property="og:image:height" content="256"-->
-    <meta property="og:description" content="Welcome to my site. From here, I link my various open-source projects, an about me page, and other relevant information.">
+    <meta property="og:description" content="About Me - General Info, Projects, My setup">
     
   </head>
   <body onload="StartJS()">
     <!--The heading bar that stays at the top of the page-->
     <div id="HeaderContainer">
       <div id="MainHeaderContainer">
-        <h1 id="MainHeader">Anthony Wilson</h1>
+        <h1 id="MainHeader"><a href="../" class="InheritColor">Anthony Wilson</a> - About Me</h1>
         <div id="SettingsBtn" onclick="OpenSettingsDialogue()">
           <svg id="GearSVG" width="60" height="60">
             <polygon id="GearPolygon" points="29.800003,49.999 34.097767,49.575706 35.601387,43.9149 38.457855,42.388084 44.00001,44.28285 46.739674,40.944557 43.8001,35.878544 44.740307,32.77909 49.999,30.199995 49.575706,25.902235 43.9149,24.398613 42.388084,21.542143 44.28285,15.99999 40.944557,13.260326 35.87854,16.1999 32.779095,15.259693 30.199995,10.000999 25.902231,10.4242935 24.398615,16.085098 21.542145,17.611916 15.999989,15.7171545 13.260323,19.05545 16.1999,24.121458 15.259693,27.22091 10.000999,29.8 10.4242935,34.09777 16.085098,35.601383 17.611916,38.457863 15.717154,44.00001 19.055445,46.739677 24.121452,43.8001 27.220911,44.740307" fill="#e0e0e0"/>
@@ -46,58 +46,77 @@ Protected by the GNU General Public License V3
         </div>
       </div>
       <!--div id="HeaderChategoryBtnsContainer">
-        <a href="#All"     id="HdrCtgBtnAll"     class="HeaderChategoryBtn" onclick="SetChategoryFilter(0)">All</a>
-        <a href="#Games"   id="HdrCtgBtnGames"   class="HeaderChategoryBtn" onclick="SetChategoryFilter(1)">Games</a>
-        <a href="#4D"      id="HdrCtgBtn4D"      class="HeaderChategoryBtn" onclick="SetChategoryFilter(2)">4D</a>
-        <a href="#Physics" id="HdrCtgBtnPhysics" class="HeaderChategoryBtn" onclick="SetChategoryFilter(3)">Physics</a>
-        <a href="#Plants"  id="HdrCtgBtnPlants"  class="HeaderChategoryBtn" onclick="SetChategoryFilter(4)">Plants</a>
-        <a href="#AI"      id="HdrCtgBtnAI"      class="HeaderChategoryBtn" onclick="SetChategoryFilter(5)">AI</a>
-        <a href="#Other"   id="HdrCtgBtnOther"   class="HeaderChategoryBtn" onclick="SetChategoryFilter(6)">Other</a>
-        <input type="text" id="SearchBar" placeholder="Search"></input>
+        <a href="#GenInf"   id="HdrCtgBtnGenInf"   class="HeaderChategoryBtn">General Info</a>
+        <a href="#Setup"    id="HdrCtgBtnSetup"    class="HeaderChategoryBtn">My Setup</a>
+        <a href="#ProjHist" id="HdrCtgBtnProjHist" class="HeaderChategoryBtn">Project History</a>
       </div-->
     </div>
     
-    <!--Page links-->
-    <div id="PageLinksContainer">
-      <!--Parity Site-->
-      <a href="https://anthonyw2.github.io/" class="InheritColor">
-        <div class="PageLink" style="top: 100px;">
-          <div class="PageLinkHeader">
-            Github Pages site
-          </div>
-          <div class="PageLinkDescription">
-            <p>My server does't have 24/7 uptime, so a copy of this site is also hosted on Github Pages.<br>Follow this link to visit it.</p>
-          </div>
-        </div>
-      </a>
-      <!--Projects Page-->
-      <a href="Projects/" class="InheritColor">
-        <div class="PageLink" style="top: 400px;">
-          <div class="PageLinkHeader">
-            Projects page
-          </div>
-          <div class="PageLinkDescription">
-            <p>On this page you can find links to all of my public & open-source projects.<br>There are links to things like 4 Dimensional Chess, 4 Dimensional Arimaa, smaller test projects, physics simulations, AI projects, etc.</p>
-          </div>
-        </div>
-      </a>
-      <!--About Me Page-->
-      <a href="AboutMe/" class="InheritColor">
-        <div class="PageLink" style="top: 700px;">
-          <div class="PageLinkHeader">
-            About Me
-          </div>
-          <div class="PageLinkDescription">
-            <p>
-              • General Info<br>
-              • My Setup<br>
-              • Projects History<br>
-            </p>
-          </div>
-        </div>
-      </a>
-    </div>
+    <!--Offset the vertical position of other elements so that they are below the heading bar-->
+    <div style="height: 75px;"></div>
     
+    <!--div id="">
+      <!--General Information--
+      <div id="GenInfDiv">
+        
+      </div>
+      
+      <!--Description of my setup (OS, Devices, Configs)--
+      <div id="SetupDiv">
+        
+      </div>
+      
+      <!--History of Projects (Past/Current/Future)--
+      <div id="ProjHistDiv">
+        
+      </div>
+    </div-->
+    
+    <h2 id="GenInf">General Info</h2>
+    <p>
+      I'm an aspiring Australian software developer who has a deep passion for helping the natural environment, and is interesting in anything that involves complex mathematical concepts.<br>
+      I like to play around with simulations of many types, and I'm always looking for a new, challenging project.<br>
+      I also have an interest in robotics, with access to a couple of old 'UMI RTX' robots, which I'm working on Python & Java libraries for.
+    </p>
+    
+    <br><hr><br>
+    
+    <h2 id="Setup">My Setup</h2>
+    <p>
+      I'm using a Lenovo Thinkpad L15 as my main machine (AMD Ryzen 4750U, 16GB RAM), which is running Arch Linux (alongside Win10). I try to use Linux for anything I can, and rarely have to use Windows (mostly to use Visual Studio and test compatability of my projects).<br>
+      I use <a href="https://github.com/alacritty/alacritty">Alacritty</a> as my terminal emulator, <a href="https://www.geany.org/">Geany IDE</a> for my text editor and <a href="https://awesomewm.org/">Awesome WM</a> for my window manager - the configuration files for which can be found <a href="https://github.com/AnthonyW2/Configs">here</a>.<br>
+      <br>
+      I also use an old Presario CQ60 for various purposes. Using the software <a href="https://github.com/debauchee/barrier">Barrier</a>, I can essentially use it as a second display, and with SSHFS I have no trouble transferring files seamlessly between the machines.
+      Most of the time it just runs an Apache web server, which I am currently using to host 4D Chess multiplayer along with other web-based projects (though I can't have it up 24/7, especially when I'm out of the house or when it's too hot inside)
+    </p>
+    
+    <br><hr><br>
+    
+    <h2 id="ProjHist">Project History</h2>
+    <p>
+      I started making various experimental programs in 2018 using <a href="https://processing.org/">Processing</a> (Java with a bunch of built-in graphics libraries), which led to larger and larger projects from there.
+      The two largest projects I tackled using Processing were a 2 Dimensional 2-wheeled vehicle physics simulator, and a complex fractal image-generator.<br>
+      With what I would now call spaghetti code, I was able to make a reasonably convincing interactive physics simulation of a vehicle with 2 wheels, which I'm now working on porting to JavaScript, and <i>vastly</i> improving in the process.<br>
+      The complex fractal generator is able to generate high-resolution images of the Mandlebrot set, Julia set, and other complex fractals. I've made quite a few nice desktop wallpapers using this program.<br>
+      I still occasionally use Processing for a quick experiment or demo, and sometimes generate a new fractal wallpaper for myself or others to use.<br>
+      <br>
+      After using Processing for around a year on Windows XP, I got access to Linux for the first time (I installed Ubuntu on an old Compaq Presario V4000, alongside WinXP - around mid 2019).
+      This introduced me to Bash scripting, Python, and plain Java (which I wasn't able to use on XP for reasons still unknown)<br>
+      <br>
+      Around half a year after that (early 2020) I got my hands on the old Presario CQ60, which I quickly installed Arch Linux on (accidentally breaking the preinstalled Windows Vista in the process - hooray for Windows' immovable files).<br>
+      After installing Windows 7 alongside that (happily replacing Vista) to experiment with Visual Studio, I was able to start developing some much more interesting things.<br>
+      <br>
+      Starting in July 2020, I began writing my web-based 4 Dimensional Chess game (inspired by 5D Chess with Multiverse Time Travel - released a week earlier) in Linux.
+      Thankfully, with how light and fast Linux can be, the process was pretty fast.
+      Using Apache hosted on that laptop, and the Geany text editor, I came out with the first playable release in September of 2020.<br>
+      <br>
+      In October 2020, I finally decided on a new laptop to buy - the Lenovo Thinkpad L15, with a Ryzen 4750U and 16GB of RAM (quite a step up from the then 12-year-old laptop I was using, with a dual-core Pentium processor and 2GB of RAM)<br>
+      With the new laptop, I am now tackling a large range of things, currently working on 4D Chess, 4D Arimaa, a new physics simulator, the UMI RTX/RT100 libraries and various others.
+    </p>
+    
+    <br><br><br><br><br>
+    
+    <!--Popup settings window-->
     <div id="SettingsDialogue" hidden>
       <div id="DimBackground" onclick="CloseSettingsDialogue()"></div>
       <div id="SettingsWindow">
@@ -188,16 +207,16 @@ Protected by the GNU General Public License V3
         // Search bar (7,8)
         //document.getElementById("SearchBar").style.background = Themes[theme][7];
         //document.getElementById("SearchBar").style.color = Themes[theme][8];
-        // Page links (9,10,11,12)
-        var ProjectLinks = document.getElementsByClassName("PageLink");
-        var ProjectLinkHeaders = document.getElementsByClassName("PageLinkHeader");
-        var ProjectLinkDescriptions = document.getElementsByClassName("PageLinkDescription");
-        for(var a = 0;a < ProjectLinks.length;a += 1){
-          ProjectLinkHeaders[a].style.background = Themes[theme][9];
-          ProjectLinkHeaders[a].style.color = Themes[theme][10];
-          ProjectLinks[a].style.background = Themes[theme][11];
-          ProjectLinkDescriptions[a].style.color = Themes[theme][12];
-        }
+        // Project links (9,10,11,12)
+        //var ProjectLinks = document.getElementsByClassName("ProjectLink");
+        //var ProjectLinkHeaders = document.getElementsByClassName("ProjectLinkHeader");
+        //var ProjectLinkDescriptions = document.getElementsByClassName("ProjectLinkDescription");
+        //for(var a = 0;a < ProjectLinks.length;a += 1){
+        //  ProjectLinkHeaders[a].style.background = Themes[theme][9];
+        //  ProjectLinkHeaders[a].style.color = Themes[theme][10];
+        //  ProjectLinks[a].style.background = Themes[theme][11];
+        //  ProjectLinkDescriptions[a].style.color = Themes[theme][12];
+        //}
       }
       // Get the selected color scheme from the element in the settings menu and apply it
       function UpdateColorScheme(){
@@ -223,14 +242,6 @@ Protected by the GNU General Public License V3
       
       // === Start JavaScript once the body has loaded === //
       function StartJS(){
-        if(window.getComputedStyle(document.body,null).getPropertyValue("background-color") != "rgb(80, 80, 80)"){
-          document.body.style.background = "#505050";
-          document.body.style.setProperty("background-color","#505050");
-          console.log(window.getComputedStyle(document.body,null).getPropertyValue("background-color"));
-          
-          //alert("For the best experience on this site, disable any color-changing plugins (such as dark mode plugins)");
-        }
-        
         RotateSettingsCog();
       }
     </script>

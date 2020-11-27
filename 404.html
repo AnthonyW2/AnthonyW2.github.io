@@ -13,28 +13,80 @@ Protected by the GNU General Public License V3
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Anthony Wilson</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Anthony W - Error 404</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="author" content="Anthony Wilson">
-    <meta name="description" content="Main project webpage, which links to all of my most popular public projects">
-    
-    <link rel="icon" type="image/png" href="Resources/Favicon128x128.png" sizes="128x128">
     
     <meta property="og:title" content="Anthony Wilson">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://AnthonyW2.github.io/">
-    <!--meta property="og:image" content="/OGImage.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="256">
-    <meta property="og:image:height" content="256"-->
-    <meta property="og:description" content="Welcome to my site. From here, I link my various open-source projects, an about me page, and other relevant information.">
+    <meta property="og:description" content="404 - Page Not Found">
     
+    <style>
+      body {
+        background: #404040;
+        
+        color: #e5e5e5;
+      }
+      
+      h1 {
+        color: #e5e5e5;
+      }
+      
+      a {
+        color: #d0d0d0;
+        text-decoration: underline;
+      }
+      a:hover, a:active {
+        color: #b0b0b0;
+        text-decoration: underline;
+      }
+      
+      p.404Message {
+        color: #e5e5e5;
+      }
+      
+      p.PageRecommends {
+        color: #e5e5e5;
+      }
+      
+      p {
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
   <body onload="StartJS()">
     <h1>404 - Not Found</h1>
+    <hr>
     
-    <p>As I'm sure you're already aware, this error means the requested URL is not found on this server. Check if you typed in the URL correctly, and confirm that the page actually exists</p>
+    <h2 id="PageURLTitle" style="color: #DA3131">[URL]</h2>
+    <p id="PossibleIntendedPages" class="PageRecommends"></p>
+    <p class="PageRecommends">
+      Significant Pages:<br>
+      <a href="/">Main Page</a><br>
+      <a href="/Projects">Projects Page</a>
+    </p>
+    <hr>
+    
+    <p class="404Message">As I'm sure you're already aware, this error means the requested URL is not found on this server. Check if you typed in the URL correctly, and make sure that the targetted page actually exists.</p>
+    
+    <script>
+      const PagePath = window.location.pathname;
+      
+      function StartJS(){
+        document.getElementById("PageURLTitle").innerHTML = window.location.href;
+        
+        var PossibleIntendedPages = "You may have meant:";
+        if(PagePath.toLowerCase().includes("project")){
+          PossibleIntendedPages += "<br>> <a href='/Projects'>"+window.location.hostname+"/Projects</a>";
+        }else if(PagePath.toLowerCase().includes("4dchess")){
+          PossibleIntendedPages += "<br>> <a href='/4D/4DChess'>"+window.location.hostname+"/4D/4DChess</a>";
+        }else{
+          PossibleIntendedPages = "";
+        }
+        
+        
+        document.getElementById("PossibleIntendedPages").innerHTML = PossibleIntendedPages;
+      }
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!--
-Anthony Wilson - Site root page - CSS Progress Test
+Anthony Wilson - Projects page - CSS Progress Test
 
 Protected by the GNU General Public License V3
 
@@ -13,7 +13,7 @@ Protected by the GNU General Public License V3
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Anthony Wilson</title>
+    <title>Anthony Wilson - Projects</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -22,21 +22,21 @@ Protected by the GNU General Public License V3
     
     <link rel="icon" type="image/png" href="/Favicon128x128.png" sizes="128x128">
     
-    <meta property="og:title" content="Anthony Wilson">
+    <meta property="og:title" content="Anthony Wilson - Projects">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://AnthonyW2.github.io/">
     <!--meta property="og:image" content="/OGImage.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="256">
     <meta property="og:image:height" content="256"-->
-    <meta property="og:description" content="Welcome to my site. From here, I link my various open-source projects, an about me page, and other relevant information.">
+    <meta property="og:description" content="Main project webpage, which links to all of my public projects">
     
   </head>
   <body onload="StartJS()">
     <!--The heading bar that stays at the top of the page-->
     <div id="HeaderContainer">
       <div id="MainHeaderContainer">
-        <h1 id="MainHeader">Anthony Wilson</h1>
+        <h1 id="MainHeader"><a href="../" class="InheritColor">Anthony Wilson</a> - Projects</h1>
         <div id="SettingsBtn" onclick="OpenSettingsDialogue()">
           <svg id="GearSVG" width="60" height="60">
             <polygon id="GearPolygon" points="29.800003,49.999 34.097767,49.575706 35.601387,43.9149 38.457855,42.388084 44.00001,44.28285 46.739674,40.944557 43.8001,35.878544 44.740307,32.77909 49.999,30.199995 49.575706,25.902235 43.9149,24.398613 42.388084,21.542143 44.28285,15.99999 40.944557,13.260326 35.87854,16.1999 32.779095,15.259693 30.199995,10.000999 25.902231,10.4242935 24.398615,16.085098 21.542145,17.611916 15.999989,15.7171545 13.260323,19.05545 16.1999,24.121458 15.259693,27.22091 10.000999,29.8 10.4242935,34.09777 16.085098,35.601383 17.611916,38.457863 15.717154,44.00001 19.055445,46.739677 24.121452,43.8001 27.220911,44.740307" fill="#e0e0e0"/>
@@ -45,7 +45,7 @@ Protected by the GNU General Public License V3
           </svg>
         </div>
       </div>
-      <!--div id="HeaderChategoryBtnsContainer">
+      <div id="HeaderChategoryBtnsContainer">
         <a href="#All"     id="HdrCtgBtnAll"     class="HeaderChategoryBtn" onclick="SetChategoryFilter(0)">All</a>
         <a href="#Games"   id="HdrCtgBtnGames"   class="HeaderChategoryBtn" onclick="SetChategoryFilter(1)">Games</a>
         <a href="#4D"      id="HdrCtgBtn4D"      class="HeaderChategoryBtn" onclick="SetChategoryFilter(2)">4D</a>
@@ -54,50 +54,58 @@ Protected by the GNU General Public License V3
         <a href="#AI"      id="HdrCtgBtnAI"      class="HeaderChategoryBtn" onclick="SetChategoryFilter(5)">AI</a>
         <a href="#Other"   id="HdrCtgBtnOther"   class="HeaderChategoryBtn" onclick="SetChategoryFilter(6)">Other</a>
         <input type="text" id="SearchBar" placeholder="Search"></input>
-      </div-->
+      </div>
     </div>
     
-    <!--Page links-->
-    <div id="PageLinksContainer">
-      <!--Parity Site-->
-      <a href="https://anthonyw2.github.io/" class="InheritColor">
-        <div class="PageLink" style="top: 100px;">
-          <div class="PageLinkHeader">
-            Github Pages site
+    <!--Offset the vertical position of other elements so that they are below the heading bar-->
+    <div style="height: 100px;"></div>
+    
+    <!--Project links-->
+    <div id="ProjectLinksContainer">
+      <a href="../4D/4DChess/" class="InheritColor">
+        <div class="ProjectLink" style="top: 100px;">
+          <div class="ProjectLinkHeader">
+            4D Chess
           </div>
-          <div class="PageLinkDescription">
-            <p>My server does't have 24/7 uptime, so a copy of this site is also hosted on Github Pages.<br>Follow this link to visit it.</p>
+          <div class="ProjectLinkDescription">
+            <p>[Work in Progress]<br>4 Dimensional Chess (with Multiverse Time Travel) is an open-source game heavily inspired by '5D Chess with Multiverse Time Travel'</p>
+          </div>
+          <img class="ProjectLinkImg" src="ProjectThumbnails/4DChess.png" alt="">
+        </div>
+      </a>
+      <a href="../4D/Arimaa" class="InheritColor">
+        <div class="ProjectLink" style="top: 400px;">
+          <div class="ProjectLinkHeader">
+            4D Arimaa
+          </div>
+          <div class="ProjectLinkDescription NoImg">
+            <p>[Work in Progress]<br>4 Dimensional Arimaa is a variant of 4 Dimensional Chess. It uses a similar set of pieces, but the rules are very different. Visit the project page to learn more.</p>
           </div>
         </div>
       </a>
-      <!--Projects Page-->
-      <a href="Projects/" class="InheritColor">
-        <div class="PageLink" style="top: 400px;">
-          <div class="PageLinkHeader">
-            Projects page
+      <a href="" class="InheritColor">
+        <div class="ProjectLink" style="top: 700px;">
+          <div class="ProjectLinkHeader">
+            Mandelbrot generator
           </div>
-          <div class="PageLinkDescription">
-            <p>On this page you can find links to all of my public & open-source projects.<br>There are links to things like 4 Dimensional Chess, 4 Dimensional Arimaa, smaller test projects, physics simulations, AI projects, etc.</p>
+          <div class="ProjectLinkDescription NoImg">
+            <p>[Yet to make a JS port]<br>A small program which generates complex fractals - such as the Mandelbrot Set, the Julia Set, or the Burning Ship fractal.</p>
           </div>
         </div>
       </a>
-      <!--About Me Page-->
-      <a href="AboutMe/" class="InheritColor">
-        <div class="PageLink" style="top: 700px;">
-          <div class="PageLinkHeader">
-            About Me
+      <a href="" class="InheritColor">
+        <div class="ProjectLink" style="top: 1000px;">
+          <div class="ProjectLinkHeader">
+            2-wheeled vehicle simulator
           </div>
-          <div class="PageLinkDescription">
-            <p>
-              • General Info<br>
-              • My Setup<br>
-              • Projects History<br>
-            </p>
+          <div class="ProjectLinkDescription NoImg">
+            <p>[Yet to make a JS port]<br>A large program originally written in Processing (Java) which simulates a 2 Dimensional vehicle on uneven terrain.</p>
           </div>
         </div>
       </a>
     </div>
     
+    <!--Popup settings window-->
     <div id="SettingsDialogue" hidden>
       <div id="DimBackground" onclick="CloseSettingsDialogue()"></div>
       <div id="SettingsWindow">
@@ -176,22 +184,22 @@ Protected by the GNU General Public License V3
         document.getElementById("GearPolygon").setAttribute("fill",Themes[theme][3]);
         document.getElementById("GearInnerCircle").setAttribute("fill",Themes[theme][1]);
         // Chategory buttons (4,5,6)
-        //var HeaderChategoryBtns = document.getElementsByClassName("HeaderChategoryBtn");
-        //for(var a = 0;a < HeaderChategoryBtns.length;a += 1){
-        //  if(a%2 == 0){
-        //    HeaderChategoryBtns[a].style.background = Themes[theme][4];
-        //  }else{
-        //    HeaderChategoryBtns[a].style.background = Themes[theme][5];
-        //  }
-        //  HeaderChategoryBtns[a].style.color = Themes[theme][6];
-        //}
+        var HeaderChategoryBtns = document.getElementsByClassName("HeaderChategoryBtn");
+        for(var a = 0;a < HeaderChategoryBtns.length;a += 1){
+          if(a%2 == 0){
+            HeaderChategoryBtns[a].style.background = Themes[theme][4];
+          }else{
+            HeaderChategoryBtns[a].style.background = Themes[theme][5];
+          }
+          HeaderChategoryBtns[a].style.color = Themes[theme][6];
+        }
         // Search bar (7,8)
-        //document.getElementById("SearchBar").style.background = Themes[theme][7];
-        //document.getElementById("SearchBar").style.color = Themes[theme][8];
-        // Page links (9,10,11,12)
-        var ProjectLinks = document.getElementsByClassName("PageLink");
-        var ProjectLinkHeaders = document.getElementsByClassName("PageLinkHeader");
-        var ProjectLinkDescriptions = document.getElementsByClassName("PageLinkDescription");
+        document.getElementById("SearchBar").style.background = Themes[theme][7];
+        document.getElementById("SearchBar").style.color = Themes[theme][8];
+        // Project links (9,10,11,12)
+        var ProjectLinks = document.getElementsByClassName("ProjectLink");
+        var ProjectLinkHeaders = document.getElementsByClassName("ProjectLinkHeader");
+        var ProjectLinkDescriptions = document.getElementsByClassName("ProjectLinkDescription");
         for(var a = 0;a < ProjectLinks.length;a += 1){
           ProjectLinkHeaders[a].style.background = Themes[theme][9];
           ProjectLinkHeaders[a].style.color = Themes[theme][10];
@@ -203,6 +211,57 @@ Protected by the GNU General Public License V3
       function UpdateColorScheme(){
         var ThemeSelector = document.getElementById("ThemeSelector");
         ChangeColorScheme(parseInt(ThemeSelector.options[ThemeSelector.selectedIndex].value));
+      }
+      
+      
+      
+      // === Project chategory filtering === //
+      var ChategoryFilters = ["All","Games","4D","Physics","Plants","AI","Other"];
+      //Set the chategory
+      function SetChategoryFilter(filter){
+        if(typeof(filter) == "number"){
+          filter = ChategoryFilters[filter];
+        }
+        
+        for(var a = 0;a < 7;a += 1){
+          document.getElementById("HdrCtgBtn"+ChategoryFilters[a]).style.background = "";
+        }
+        
+        document.getElementById("HdrCtgBtn"+filter).style.background = window.getComputedStyle(document.body,null).getPropertyValue("background-color");
+        
+        switch(filter){
+          case "All":
+            
+            break;
+          case "Games":
+            // Not enough projects linked yet to make the chategories
+            break;
+          case "4D":
+            // Not enough projects linked yet to make the chategories
+            break;
+          case "Physics":
+            // Not enough projects linked yet to make the chategories
+            break;
+          case "Plants":
+            // Not enough projects linked yet to make the chategories
+            break;
+          case "AI":
+            // Not enough projects linked yet to make the chategories
+            break;
+          default:
+            
+        }
+      }
+      //Update the chategory depending on the # in the URL
+      function UpdateChategoryFilter(){
+        var chategory = window.location.hash;
+        chategory = chategory.substring(1);
+        
+        if(chategory == ""){
+          chategory = "All";
+        }
+        
+        SetChategoryFilter(chategory);
       }
       
       
@@ -232,6 +291,8 @@ Protected by the GNU General Public License V3
         }
         
         RotateSettingsCog();
+        
+        UpdateChategoryFilter();
       }
     </script>
   </body>
