@@ -42,27 +42,30 @@ Protected by the GNU General Public License V3
       .smaller {
         font-size: 0.8rem;
       }
+      
+      .textbox1 {
+        width: 8rem;
+      }
+      
+      .textbox2 {
+        width: 5rem;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <h1>Unicode Characters | <a href="https://www.compart.com/en/unicode/block">Compart.com</a></h1>
     
-    <button onclick="GenerateTable()">Generate Table</button>
-    <button onclick="GenerateTableDelayed()">Generate Table (in steps)</button>
+    <button onclick="GenerateTable()">Generate UCS-2/BMP (16-bit) Table</button>
+    <button onclick="GenerateTableDelayed()">Generate Table in Steps</button>
     <button onclick="GenerateTableWithEncodings()">Generate Table with Encodings</button>
     <button onclick="GenerateTableOfUsefulChars()">Generate Tables of Useful Chars</button>
     <br><br>
-    <p>Type character encoding to display:</p>
-    <input type="text" placeholder="0x002A" id="CharTextbox" oninput="UpdateTextboxChar()">
-    <!--div id="TextboxChar"></div-->
-    <input type="text" id="TextboxChar" style="width: 5em;text-align: center;">
+    <p>Type character or encoding:</p>
+    <input type="text" placeholder="Hexadecimal Code" id="TextboxHexCode" class="textbox1" oninput="HexCodeUpdated()">
+    <input type="text" placeholder="Decimal Code"     id="TextboxDecCode" class="textbox1" oninput="DecCodeUpdated()">
+    <input type="text"                                id="TextboxChar"    class="textbox2" oninput="CharUpdated()">
     <button onclick="CopyTextboxChar()">Copy</button>
-    <br>
-    <p>Type character to get the encoding of:</p>
-    <input type="text" placeholder="&" id="CodeTextbox" oninput="UpdateTextboxCode()">
-    <!--div id="TextboxCode">0x0000</div-->
-    <input type="text" id="TextboxCode" style="width: 5em;text-align: center;">
-    <input type="text" id="TextboxCodeDec" style="width: 5em;text-align: center;">
     <br><br>
     
     <!--table id="CharacterTable"></table-->
@@ -295,10 +298,35 @@ Protected by the GNU General Public License V3
       
       //======== Textbox functions ========//
       
-      function UpdateTextboxChar(){
-        var charCode = parseInt(document.getElementById("CharTextbox").value);
+      var TextboxHexCode = document.getElementById("TextboxHexCode");
+      var TextboxDecCode = document.getElementById("TextboxDecCode");
+      var TextboxChar = document.getElementById("TextboxChar");
+      
+      function HexCodeUpdated(){
+        console.log("Hex");
         
-        document.getElementById("TextboxChar").value = String.fromCharCode(charCode);
+        //Update the Dec code textbox
+        TextboxDecCode.value = parseInt((TextboxHexCode.value || "0"),16).toString();
+        //Update the Char textbox
+        TextboxChar.value = String.fromCharCode(parseInt((TextboxHexCode.value || "0"),16));
+      }
+      
+      function DecCodeUpdated(){
+        console.log("Dec");
+        
+        //Update the Hex code textbox
+        TextboxHexCode.value = "0x"+("0000"+parseInt((TextboxDecCode.value || "0"),10).toString(16)).substr(-4);
+        //Update the Char textbox
+        TextboxChar.value = String.fromCharCode(parseInt((TextboxDecCode.value || "0"),10));
+      }
+      
+      function CharUpdated(){
+        console.log("Char");
+        
+        //Update the Hex code textbox
+        TextboxHexCode.value = "0x"+("0000"+(TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString(16)).substr(-4);
+        //Update the Dec code textbox
+        TextboxDecCode.value = (TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString();
       }
       
       function CopyTextboxChar(){
@@ -306,17 +334,18 @@ Protected by the GNU General Public License V3
           //console.log("Successfully wrote to clipboard");
         }, function(){
           console.log("Failed to write to clipboard");
+          var characterText = document.querySelector("#TextboxChar");
+          characterText.select();
+          document.execCommand("copy");
         });
-      }
-      
-      function UpdateTextboxCode(){
-        if(document.getElementById("CodeTextbox").value != ""){
-          document.getElementById("TextboxCode").value = "0x"+("0000"+document.getElementById("CodeTextbox").value.charCodeAt(0).toString(16)).substr(-4);
-          document.getElementById("TextboxCodeDec").value = document.getElementById("CodeTextbox").value.charCodeAt(0).toString();
-        }else{
-          document.getElementById("TextboxCode").value = "0x0000";
-          document.getElementById("TextboxCodeDec").value = "0000";
-        }
+        
+        //iOS:
+        //var range = document.createRange();
+        //range.selectNodeContents(document.getElementById("TextboxChar"));
+        //var selection = window.getSelection();
+        //selection.removeAllRanges();
+        //selection.addRange(range);
+        //document.execCommand("copy");
       }
       
     </script>
