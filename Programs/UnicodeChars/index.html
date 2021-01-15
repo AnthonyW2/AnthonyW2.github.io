@@ -284,7 +284,7 @@ Protected by the GNU General Public License V3
           }
           
           var title = document.createElement("p");
-          title.innerHTML = blockTitles[block];
+          title.innerHTML = blockTitles[block]+" (0x"+("0000"+blocks[block][0].toString(16)).substr(-4)+" - 0x"+("0000"+blocks[block][1].toString(16)).substr(-4)+")";
           ContainerDiv.appendChild(document.createElement("br"));
           ContainerDiv.appendChild(title);
           ContainerDiv.appendChild(CharacterTable);
