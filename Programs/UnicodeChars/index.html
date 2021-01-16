@@ -61,6 +61,7 @@ Protected by the GNU General Public License V3
     <button onclick="GenerateTableWithEncodings()">Generate Table with Encodings</button>
     <button onclick="GenerateTableOfUsefulChars()">Generate Tables of Useful Chars</button>
     <br><br>
+    
     <p>Type character or encoding:</p>
     <input type="text" placeholder="Hexadecimal Code" id="TextboxHexCode" class="textbox1" oninput="HexCodeUpdated()">
     <input type="text" placeholder="Decimal Code"     id="TextboxDecCode" class="textbox1" oninput="DecCodeUpdated()">
@@ -68,16 +69,21 @@ Protected by the GNU General Public License V3
     <button onclick="CopyTextboxChar()">Copy</button>
     <br><br>
     
-    <!--table id="CharacterTable"></table-->
+    <input type="text" placeholder="Search" id="SearchBox" class="textbox1" oninput="SearchForChar()">
+    <table id="SarchResultTable"></table>
+    <br><br>
+    
     <div id="TableContainer"></div>
     
     <script>
-      //var CharacterTable = document.getElementById("CharacterTable");
-      var ContainerDiv = document.getElementById("TableContainer");
+      //Unfortunately javascript's built-in functions only support UCS-2 (16-Bit encodings), which becomes a problem when a user uses chars from astral planes
       
-      var limit = 16*16*16*16;
+      const ContainerDiv = document.getElementById("TableContainer");
       
-      //======== Table gen functions ========//
+      const limit = 16*16*16*16;
+      
+      
+      //======== Table gen functionality ========//
       
       function GenerateTable(){
         var t0 = performance.now();
@@ -172,7 +178,7 @@ Protected by the GNU General Public License V3
           [688,767], //Spacing Modifier Letters
           [768,879], //Combining Diacritical Marks
           [880,1023], //Greek and Coptic
-          [1024,1279], //Cyrillic
+          //[1024,1279], //Cyrillic
           //[1280,1327], //Cyrillic Supplement
           //[1328,1423], //Armenian
           // ...
@@ -227,7 +233,7 @@ Protected by the GNU General Public License V3
           "Spacing Modifier Letters",
           "Combining Diacritical Marks",
           "Greek and Coptic",
-          "Cyrillic",
+          //"Cyrillic",
           //"Cyrillic Supplement",
           //"Armenian",
           // ...
@@ -296,58 +302,215 @@ Protected by the GNU General Public License V3
         console.log(performance.now() - t0,"ms");
       }
       
-      //======== Textbox functions ========//
       
-      var TextboxHexCode = document.getElementById("TextboxHexCode");
-      var TextboxDecCode = document.getElementById("TextboxDecCode");
-      var TextboxChar = document.getElementById("TextboxChar");
+      //======== Textbox functionality ========//
+      
+      const TextboxHexCode = document.getElementById("TextboxHexCode");
+      const TextboxDecCode = document.getElementById("TextboxDecCode");
+      const TextboxChar = document.getElementById("TextboxChar");
       
       function HexCodeUpdated(){
-        console.log("Hex");
-        
-        //Update the Dec code textbox
-        TextboxDecCode.value = parseInt((TextboxHexCode.value || "0"),16).toString();
-        //Update the Char textbox
-        TextboxChar.value = String.fromCharCode(parseInt((TextboxHexCode.value || "0"),16));
+        if(typeof(String.fromCodePoint) == "function"){
+          //Update the Dec code textbox
+          TextboxDecCode.value = parseInt((TextboxHexCode.value || "0"),16).toString();
+          //Update the Char textbox
+          TextboxChar.value = String.fromCodePoint(parseInt((TextboxHexCode.value || "0"),16));
+        }else{
+          //Update the Dec code textbox
+          TextboxDecCode.value = parseInt((TextboxHexCode.value || "0"),16).toString();
+          //Update the Char textbox
+          TextboxChar.value = String.fromCharCode(parseInt((TextboxHexCode.value || "0"),16));
+        }
       }
       
       function DecCodeUpdated(){
-        console.log("Dec");
-        
-        //Update the Hex code textbox
-        TextboxHexCode.value = "0x"+("0000"+parseInt((TextboxDecCode.value || "0"),10).toString(16)).substr(-4);
-        //Update the Char textbox
-        TextboxChar.value = String.fromCharCode(parseInt((TextboxDecCode.value || "0"),10));
+        if(typeof(String.fromCodePoint) == "function"){
+          //Update the Hex code textbox
+          if(parseInt((TextboxDecCode.value || "0"),10) > 65535){
+            TextboxHexCode.value = "0x"+("00000000"+parseInt((TextboxDecCode.value || "0"),10).toString(16)).substr(-8);
+          }else{
+            TextboxHexCode.value = "0x"+("0000"+parseInt((TextboxDecCode.value || "0"),10).toString(16)).substr(-4);
+          }
+          //Update the Char textbox
+          TextboxChar.value = String.fromCodePoint(parseInt((TextboxDecCode.value || "0"),10));
+        }else{
+          //Update the Hex code textbox
+          TextboxHexCode.value = "0x"+("0000"+parseInt((TextboxDecCode.value || "0"),10).toString(16)).substr(-4);
+          //Update the Char textbox
+          TextboxChar.value = String.fromCharCode(parseInt((TextboxDecCode.value || "0"),10));
+        }
       }
       
       function CharUpdated(){
-        console.log("Char");
-        
-        //Update the Hex code textbox
-        TextboxHexCode.value = "0x"+("0000"+(TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString(16)).substr(-4);
-        //Update the Dec code textbox
-        TextboxDecCode.value = (TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString();
+        if(typeof("".codePointAt) == "function"){
+          //Update the Hex code textbox
+          if((TextboxChar.value || String.fromCharCode(0)).codePointAt(0) > 65535){
+            TextboxHexCode.value = "0x"+("00000000"+(TextboxChar.value || String.fromCharCode(0)).codePointAt(0).toString(16)).substr(-8);
+          }else{
+            TextboxHexCode.value = "0x"+("0000"+(TextboxChar.value || String.fromCharCode(0)).codePointAt(0).toString(16)).substr(-4);
+          }
+          //Update the Dec code textbox
+          TextboxDecCode.value = (TextboxChar.value || String.fromCharCode(0)).codePointAt(0).toString();
+        }else{
+          //Update the Hex code textbox
+          TextboxHexCode.value = "0x"+("0000"+(TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString(16)).substr(-4);
+          //Update the Dec code textbox
+          TextboxDecCode.value = (TextboxChar.value || String.fromCharCode(0)).charCodeAt(0).toString();
+        }
       }
       
       function CopyTextboxChar(){
         navigator.clipboard.writeText(document.getElementById("TextboxChar").value).then(function(){
           //console.log("Successfully wrote to clipboard");
         }, function(){
-          console.log("Failed to write to clipboard");
+          //console.log("Failed to write to clipboard");
           var characterText = document.querySelector("#TextboxChar");
           characterText.select();
           document.execCommand("copy");
         });
         
         //iOS:
-        //var range = document.createRange();
-        //range.selectNodeContents(document.getElementById("TextboxChar"));
-        //var selection = window.getSelection();
-        //selection.removeAllRanges();
-        //selection.addRange(range);
-        //document.execCommand("copy");
+        if(['iPad Simulator','iPhone Simulator','iPod Simulator','iPad','iPhone','iPod'].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)){
+          console.log("iOS copy method");
+          var range = document.createRange();
+          range.selectNodeContents(document.getElementById("TextboxChar"));
+          var selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          document.execCommand("copy");
+        }
       }
       
+      
+      //======== Search functionality ========//
+      
+      const SearchBox = document.getElementById("SearchBox");
+      const SearchTable = document.getElementById("SarchResultTable");
+      
+      //First character set is search terms, following set is the array of resulting chars
+      const CharMatches = [
+        [["a"],["À","Á","Â","Ã","Ä","Å","Æ","à","á","â","ã","ä","å","æ","Ā","ā","Ă","ă","Ą","ą"]],
+        [["b"],[]],
+        [["c"],["Ç","ç","Ć","ć","Ĉ","ĉ","Ċ","ċ","Č","č"]],
+        [["d"],["Đ","đ","Ð (Eth)","þ (Eth)"]],
+        [["e"],["È","É","Ê","Ë","è","é","ê","ë","Ē","ē","Ĕ","ĕ","Ė","ė","Ę","ę","Ě","ě"]],
+        [["f"],[]],
+        [["g"],["Ĝ","ĝ","Ğ","ğ","Ġ","ġ","Ģ","ģ"]],
+        [["h"],["Ĥ","ĥ","Ħ","ħ"]],
+        [["i"],["Ì","Í","Î","Ï","ì","í","î","ï","Ĩ","ĩ","Ī","ī","Ĭ","ĭ","Į","į","İ","ı","Ĳ","ĳ"]],
+        [["j"],["Ĳ","ĳ","Ĵ","ĵ"]],
+        [["k"],["Ķ","ķ","ĸ"]],
+        [["l"],["Ĺ","ĺ","Ļ","ļ","Ľ","ľ","Ŀ","ŀ","Ł","ł"]],
+        [["m"],[]],
+        [["n"],["Ñ","ñ","Ń","ń","Ņ","ņ","Ň","ň","ŉ","Ŋ","ŋ"]],
+        [["o"],["Ò","Ó","Ô","Õ","Ö","Ø","ò","ó","ô","õ","ö","ø","Ō","ō","Ŏ","ŏ","Ő","ő","Œ","œ"]],
+        [["p"],[]],
+        [["q"],[]],
+        [["r"],["Ŕ","ŕ","Ŗ","ŗ","Ř","ř"]],
+        [["s"],["ß","Ś","ś","Ŝ","ŝ","Ş","ş","Š","š","ſ"]],
+        [["t"],["Ţ","ţ","Ť","ť","Ŧ","ŧ"]],
+        [["u"],["Ù","Ú","Û","Ü","ù","ú","û","ü","Ũ","ũ","Ū","ū","Ŭ","ŭ","Ů","ů","Ű","ű","Ų","ų"]],
+        [["v"],[]],
+        [["w","wynn"],["Ŵ","ŵ","ƿ","Ƿ"]],
+        [["w","wau","digamma"],["Ϝ","ϝ","ϛ"]],
+        [["x"],[""]],
+        [["y"],["Ý","ý","Ÿ","ÿ","Ŷ","ŷ"]],
+        [["z"],["Ź","ź","Ż","ż","Ž","ž"]],
+        [["0"],[""]],
+        [["1"],[""]],
+        [["2"],[""]],
+        [["3"],[""]],
+        [["4"],[""]],
+        [["5"],[""]],
+        [["6"],[""]],
+        [["7"],[""]],
+        [["8"],[""]],
+        [["9"],[""]],
+        [["th","eth"],["Ð","ð","Þ","þ"]],
+        [["trademark","tm"],["™","®"]],
+        [["copyright","c"],["©"]],
+        [["registered","r"],["®"]],
+        [["interrobang","!","?","question","exclamation"],["‽","⁈","⁉","⁇","‼","¿","¡"]],
+        [["tab"],["	"]],
+        
+        [["greek","alphabet"],["Α","α","Β","β","Γ","γ","Δ","δ","Ε","ε","Ζ","ζ","Η","η","Θ","θ","Ι","ι","Κ","κ","Λ","λ","Μ","μ","Ν","ν","Ξ","ξ","Ο","ο","Π","π","Ρ","ρ","Σ","σ","ς","Τ","τ","Υ","υ","Φ","φ","Χ","χ","Ψ","ψ","Ω","ω"]],
+        [["pi"],["π"]],
+        
+        [["multiplication","multiply","times","*"],["×","∙"]],
+        [["division","divide","/"],["÷"]],
+        [["degrees"],["°"]],
+        [["plus minus","plus-minus"],["±"]],
+        [["infinity"],["∞"]],
+        [["union"],["∪"]],
+        [["intersection"],["∩"]],
+        [["integral"],["∫"]],
+        [["therefore"],["∴"]],
+        [["because"],["∵"]],
+        [["nearly equal","=","~"],["≈"]],
+        [["not equal","="],["≠"]],
+        [["less than or equal","smaller than or equal","<","="],["≤"]],
+        [["greater than or equal","larger than or equal",">","="],["≥"]],
+        [["square root","sqrt"],["√"]],
+        
+        [["music","accidental","flat"],["♭"]],
+        [["music","accidental","natural"],["♮"]],
+        [["music","accidental","sharp"],["♯"]],
+        [["music","treble clef"],["𝄞"]],
+        [["music","treble clef"],["𝄢"]],
+        
+        [["superscript"],["(Superscript)"]],
+        [["subscript"],["(Subscript)"]],
+      ];
+      
+      function SearchForChar(){
+        var searchString = SearchBox.value;
+        
+        SearchTable.innerHTML = "";
+        
+        if(searchString != ""){
+          var matchesList = [];
+          
+          for(var a = 0;a < CharMatches.length;a ++){
+            for(var b = 0;b < CharMatches[a][0].length;b ++){
+              if(CharMatches[a][0][b].includes(searchString.toLowerCase())){
+                for(var c = 0;c < CharMatches[a][1].length;c ++){
+                  //Prevent the same result being added to the list multiple times:
+                  var repeat = false;
+                  for(var d = 0;d < matchesList.length;d ++){
+                    if(CharMatches[a][1][c] == matchesList[d]){
+                      repeat = true;
+                      d = matchesList.length;
+                    }
+                  }
+                  if(!repeat){
+                    matchesList.push(CharMatches[a][1][c]);
+                  }
+                }
+              }
+            }
+          }
+          
+          for(var a = 0;a < matchesList.length;a += 4){
+            var newRow = document.createElement("tr");
+            for(var b = 0;b < 4;b ++){
+              var newBox = document.createElement("td");
+              newBox.innerHTML = matchesList[a+b] || "";
+              newRow.appendChild(newBox);
+            }
+            SearchTable.appendChild(newRow);
+          }
+        }
+      }
+      
+      //Testing code for printing/generating the 𝄞 (Treble Clef) unicode character (which is outside of the first unicode plane - BMP)
+      //console.log("𝄞"); //What should be printed
+      //console.log("&#x1D11E"); //HTML only
+      //console.log(String.fromCharCode(119070)); //Doesn't work
+      //console.log("\uD834\uDD1E"); //Prints the correct character
+      //console.log(String.fromCharCode(55348)+String.fromCharCode(56606)); //Prints the correct character
+      //console.log(String.fromCodePoint(119070)); //It works!
+      //console.log(typeof(String.fromCodePoint));
+      //console.log(typeof("".codePointAt));
     </script>
   </body>
 </html>
