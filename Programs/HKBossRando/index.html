@@ -1,0 +1,166 @@
+<!--
+2021-4-28
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>HK Boss Randomiser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Anthony Wilson">
+    <meta name="description" content="HK Boss Randomiser">
+    
+    <style>
+      
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      
+      table {
+        width: 10em;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Hollow Knight Boss List Randomiser</h1>
+    
+    <button onclick="randomise(0)">Randomise (Easy)</button>
+    <button onclick="randomise(1)">Randomise (Medium)</button>
+    <button onclick="randomise(2)">Randomise (Hard)</button>
+    <br><br>
+    
+    <table id="results">
+      <tr><th>Randomised List:</th></tr>
+    </table>
+    
+    <script>
+      
+      //Array of all bosses
+      var bossesEasy = [
+        ["Broken Vessel",       ["Hornet Protector"]],
+        ["Brooding Mawlek",     []],
+        ["Collector",           ["Hornet Protector"]],
+        ["Crystal Guardian",    ["Hornet Protector"]],
+        ["Dung Defender",       ["Hornet Protector"]],
+        ["Elder Hu",            ["Hornet Protector"]],
+        ["Enraged Guardian",    ["Broken Vessel","Hornet Protector","Crystal Guardian"]],
+        ["Failed Champion",     ["False Knight","Hornet Protector"]],
+        ["False Knight",        []],
+        ["Flukemarm",           ["Soul Master","Hornet Protector"]],
+        ["Galien",              ["Hornet Protector"]],
+        ["God Tamer",           ["Oblobbles","Vengefly King","Gruz Mother","Brooding Mawlek","Hornet Protector"]],
+        ["Gorb",                ["Hornet Protector"]],
+        ["Grey Prince Zote",    ["Gruz Mother","Hornet Protector","Vengefly King"]],
+        ["Gruz Mother",         []],
+        ["Hive Knight",         ["Hornet Protector"]],
+        ["Hornet Protector",    []],
+        ["Hornet Sentinel",     ["Broken Vessel","Hornet Protector"]],
+        ["Lost Kin",            ["Broken Vessel","Hornet Protector"]],
+        ["Mantis Lords",        ["Hornet Protector"]],
+        ["Markoth",             ["Hornet Protector","Hornet Sentinel"]],
+        ["Marmu",               ["Dung Defender","Hornet Protector"],["Broken Vessel","Hornet Protector","Hornet Sentinel"]],
+        ["Massive Moss Charger",["Hornet Protector"]],
+        ["Nightmare King Grimm",["Broken Vessel","Hornet Protector","Troupe Master Grimm"]],
+        ["No Eyes",             []],
+        ["Nosk",                ["Hornet Protector"]],
+        ["Oblobbles",           ["Gruz Mother","Hornet Protector","Vengefly King"]],
+        ["Radiance",            ["1800 Essence","Hornet Protector","Uumuu","Watcher Knights","Traitor Lord","Hornet Sentinel","Broken Vessel"]], //Implement essence requirement
+        ["Soul Master",         ["Hornet Protector"]],
+        ["Soul Tyrant",         ["Hornet Protector","Soul Master"]],
+        ["The Hollow Knight",   ["Watcher Knights","Uumuu","Hornet Protector","Dung Defender"],["Watcher Knights","Uumuu","Hornet Sentinel","Broken Vessel","Hornet Protector"]],
+        ["Traitor Lord",        ["Hornet Protector","Hornet Sentinel"]],
+        ["Troupe Master Grimm", ["Hornet Protector"]],
+        ["Uumuu",               ["Dung Defender","Hornet Protector"],["Hornet Sentinel","Broken Vessel","Hornet Protector"]],
+        ["Vengefly King",       []],
+        ["Watcher Knights",     ["Hornet Protector"]],
+        ["White Defender",      ["Dung Defender","Hornet Protector","Soul Master"]],
+        ["Xero",                []]
+      ];
+      var bossesMed = [
+        ["A",[]],
+        ["A1",["A"]],
+      ];
+      var bossesHard = [
+        ["A",[]],
+        ["A1",["A"]],
+      ];
+      
+      var resultsTable = document.getElementById("results");
+      
+      //Randomise the order of an array
+      function randomiseArray(arr){
+        var arr2 = JSON.parse(JSON.stringify(arr));
+        var output = [];
+        for(var a = 0;a < arr.length;a ++){
+          //Add a random data entry of the copy of the original array to the output array
+          var i = Math.floor(Math.random()*arr2.length);
+          output.push(arr2[i]);
+          //Remove the chosen data from the copy of the original array
+          arr2.splice(i,1);
+        }
+        return output;
+      }
+      
+      function randomise(difficulty){
+        //Create an initial randomised array
+        var randomised;
+        if(difficulty == 0){
+          randomised = randomiseArray(bossesEasy);
+        }else if(difficulty == 1){
+          randomised = randomiseArray(bossesMed);
+        }else if(difficulty == 2){
+          randomised = randomiseArray(bossesHard);
+        }
+        
+        //Loop through each element and make sure its dependencies are satisfied
+        for(var a = 0;a < randomised.length;a ++){
+          
+          //Randomise which set of dependencies are chosen
+          var deps = randomised[a][1];
+          
+          var depFound = false;
+          
+          for(var b = randomised.length-1;b >= a && !depFound;b --){
+            
+            for(var c = 0;c < deps.length && !depFound;c ++){
+              
+              if(randomised[b][0] == deps[c]){
+                
+                var val = randomised[a];
+                var pos = Math.floor(Math.random()*(randomised.length-b))+b;
+                
+                for(var d = a;d < pos;d ++){
+                  randomised[d] = randomised[d+1];
+                }
+                
+                randomised[pos] = val;
+                
+                depFound = true;
+                a --;
+              }
+            }
+          }
+        }
+        
+        //Add to the HTML table
+        resultsTable.innerHTML = "";
+        for(var a = 0;a < randomised.length;a ++){
+          var newRow = document.createElement("tr");
+          newRow.innerHTML = "<td>"+randomised[a][0]+"</td>";
+          
+          resultsTable.appendChild(newRow);
+        }
+      }
+      
+      
+    </script>
+  </body>
+</html>
+
+
