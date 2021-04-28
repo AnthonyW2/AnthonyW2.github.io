@@ -22,7 +22,7 @@
       }
       
       table {
-        width: 10em;
+        width: 20em;
       }
       
     </style>
@@ -41,7 +41,7 @@
     
     <script>
       
-      //Array of all bosses
+      //Array of all bosses and their dependencies
       var bossesEasy = [
         ["Broken Vessel",       ["Hornet Protector"]],
         ["Brooding Mawlek",     []],
@@ -193,13 +193,18 @@
         //Loop through each element and make sure its dependencies are satisfied
         for(var a = 0;a < randomised.length;a ++){
           
-          //Randomise which set of dependencies are chosen
+          //If there are multiple sets of dependencies, randomly remove one set
+          if(randomised[a].length > 2){
+            randomised[a].splice(Math.floor(Math.random() * (randomised[a].length-1)) + 1,1);
+          }
           var deps = randomised[a][1];
           
           var depFound = false;
           
+          //Iterate through the bosses after randomised[a], starting from the end
           for(var b = randomised.length-1;b >= a && !depFound;b --){
             
+            //For each boss, check if it is a dependency of randomised[a]
             for(var c = 0;c < deps.length && !depFound;c ++){
               
               if(randomised[b][0] == deps[c]){
@@ -224,12 +229,11 @@
         resultsTable.innerHTML = "";
         for(var a = 0;a < randomised.length;a ++){
           var newRow = document.createElement("tr");
-          newRow.innerHTML = "<td>"+randomised[a][0]+"</td>";
+          newRow.innerHTML = "<td>"+(a+1)+" - "+randomised[a][0]+"</td>";
           
           resultsTable.appendChild(newRow);
         }
       }
-      
       
     </script>
   </body>
