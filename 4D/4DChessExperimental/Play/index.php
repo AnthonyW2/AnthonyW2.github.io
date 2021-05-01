@@ -12,7 +12,7 @@ While the game concept is not completely mine, this entire site was written from
 See https://github.com/AnthonyW2/4DChess for the complete source code. (./game.js is where the real magic happens)
 -->
 
-<?php
+<!--?php
   ///Set the cache-control header for the dev version of the page
   header("Cache-Control: no-cache");
   
@@ -103,7 +103,7 @@ See https://github.com/AnthonyW2/4DChess for the complete source code. (./game.j
   }
   
   $urlpath = 'http://'.$_SERVER['HTTP_HOST'].'/4DChess/Play/';
-?>
+?-->
 
 <!DOCTYPE html>
 <html>
@@ -122,14 +122,14 @@ See https://github.com/AnthonyW2/4DChess for the complete source code. (./game.j
     <link rel="shortcut icon" type="image/png" href="../Resources/Favicon96x96.png">
     <link rel="apple-touch-icon" href="../Resources/TouchIcon256x256.png">
     
-    <meta property="og:title" content="<?php echo $og_title; ?>">
+    <meta property="og:title" content="4D Chess">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo $urlpath; ?>">
-    <meta property="og:image" content="/4D/4DChess/Play/PreviewImg.png">
+    <meta property="og:url" content="https://anthonyw2.github.io/4D/4DChess/">
+    <meta property="og:image" content="/4D/4DChess/Site/Play/PreviewImg.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="256">
     <meta property="og:image:height" content="256">
-    <meta property="og:description" content="<?php echo $og_desc; ?>">
+    <meta property="og:description" content="Play a local game of 4D Chess on Github Pages">
   </head>
   <body onload="startJS()">
     <div id="TitleBar">
@@ -188,11 +188,31 @@ See https://github.com/AnthonyW2/4DChess for the complete source code. (./game.j
     
     <!-- Pass PHP variables directly to JavaScript -->
     <script>
-      const gameID = "<?php echo $gameid; ?>";
-      const opponent = parseInt(<?php echo $opponent; ?>);
-      const playerColor = ((opponent == 0) ? 0 : parseInt(<?php echo $color; ?>)); // 0 = White, 1 = Black
-      const chosenLayout = parseInt(<?php echo $layout; ?>);
-      const password = "<?php echo $password; ?>";
+      ///const gameID = "<?php echo $gameid; ?>";
+      ///const opponent = parseInt(<?php echo $opponent; ?>);
+      ///const playerColor = ((opponent == 0) ? 0 : parseInt(<?php echo $color; ?>)); // 0 = White, 1 = Black
+      ///const chosenLayout = parseInt(<?php echo $layout; ?>);
+      ///const password = "<?php echo $password; ?>";
+      
+      const gameID = undefined;
+      const playerColor = 0;
+      const password = undefined;
+      const opponent = 0;
+      var chosenLayout = 0;
+      
+      var GETParams = window.location.search.substring(1).split("&");
+      
+      for(var a = 0;a < GETParams.length;a += 1){
+        var Param = GETParams[a].split("=");
+        if(Param[0] == "vs"){
+          if(parseInt(Param[1]) != 0){
+            console.warn("Only local multiplayer is supported on the Github Pages version of this site");
+            alert("Only local multiplayer is supported on the Github Pages version of this site");
+          }
+        }else if (Param[0] == "l"){
+          chosenLayout = parseInt(Param[1]);
+        }
+      }
     </script>
     <script src="game.js"></script>
   </body>
