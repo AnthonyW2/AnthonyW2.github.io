@@ -1,7 +1,7 @@
 
 
 //Configurables
-const pieceCollideRadius = 0.5;
+const pieceCollideRadius = 0.4;
 
 //DOM references
 const boardContainer = document.getElementById("game-board-container");
@@ -48,6 +48,19 @@ const sqrt2 = Math.sqrt(2);
 const sqrt5 = Math.sqrt(5);
 
 
+///var GETParams = window.location.search.substring(1).split("&");
+///
+///for(var a = 0;a < GETParams.length;a += 1){
+///  var Param = GETParams[a].split("=");
+///  if(Param[0] == "moves"){
+///    if(parseInt(Param[1]) == 0){
+///      
+///    }else if(parseInt(Param[1]) == 0){
+///      
+///    }
+///  }
+///}
+
 
 
 //Global variable stores references to all piece objects
@@ -77,6 +90,7 @@ class Piece{
   select(){
     var pieceObj = pieces[parseInt(this.getAttribute("pieceID"))];
     
+    //Only select the piece if it is the correct player's turn
     if(playerTurn == pieceObj.color){
       var moves = pieceObj.getMoves();
       
@@ -103,6 +117,7 @@ class Piece{
         moveObj.y = this.y;
         
         moves.push(moveObj);
+        
         break;
       case 2:
         //Queen
@@ -211,7 +226,6 @@ class Piece{
         
         moves.push(moveObj);
         
-        
         break;
       default:
         console.error("Invalid Piece Type");
@@ -223,8 +237,38 @@ class Piece{
   //Move the piece to a new position
   move(x, y){
     
+    var oX = this.x;
+    var oY = this.Y;
+    
     this.x = x;
     this.y = y;
+    
+    
+    //Remove any overlapping opponent pieces, or prevent the move if overlapping a friendly piece
+    for(var p = 0;p < pieces.length;p ++){
+      
+      if(p != this.id && pieces[p] != undefined){
+        
+        //Test if the pieces are overlapping
+        if(Math.sqrt( Math.pow(pieces[p].x - this.x, 2) + Math.pow(pieces[p].y - this.y, 2) ) < pieceCollideRadius*2){
+          
+          if(pieces[p].color == this.color){
+            //Prevent the move
+            this.x = oX;
+            this.y = oY;
+            
+            console.log("Prevented move because of piece overlap");
+            
+            return false;
+          }else{
+            //Remove the piece (capture)
+            pieces[p].remove();
+          }
+          
+        }
+      }
+    }
+    
     
     this.moveAmount ++;
     
@@ -234,11 +278,28 @@ class Piece{
     displayMoves();
     
     playerTurn = (this.color+1)%2;
+    boardContainer.style.borderColor = (playerTurn == 0 ? "#a0a0a0" : "#303030");
+    
+    return true;
+    
+  }
+  
+  //Remove the piece and the element from the game
+  remove(){
+    
+    this.DOMElement.remove();
+    
+    pieces[this.id] = undefined;
+    
+    //The game ends if a king is captured
+    if(this.type == 1){
+      alert(this.color == 1 ? "White wins" : "Black wins");
+    }
     
   }
 }
 
-//
+//Create the SVG elements needed to display a given piece's possible moves
 function displayMoves(moves = [], piece = {}){
   
   boardSVG.innerHTML = "";
@@ -306,7 +367,7 @@ function displayMoves(moves = [], piece = {}){
         newLine.setAttribute("y1", gridSize*moves[m].y1);
         newLine.setAttribute("x2", gridSize*moves[m].x2);
         newLine.setAttribute("y2", gridSize*moves[m].y2);
-        newLine.setAttribute("stroke-width", 8);
+        newLine.setAttribute("stroke-width", 6);
         newLine.style.stroke = "#20a0207f";
         
         newLine.setAttribute("pieceID", piece.id);
