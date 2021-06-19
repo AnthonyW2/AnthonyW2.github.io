@@ -48,19 +48,8 @@ const sqrt2 = Math.sqrt(2);
 const sqrt5 = Math.sqrt(5);
 
 
-///var GETParams = window.location.search.substring(1).split("&");
-///
-///for(var a = 0;a < GETParams.length;a += 1){
-///  var Param = GETParams[a].split("=");
-///  if(Param[0] == "moves"){
-///    if(parseInt(Param[1]) == 0){
-///      
-///    }else if(parseInt(Param[1]) == 0){
-///      
-///    }
-///  }
-///}
-
+//Get the type of moves from the URL
+var moveSet = parseInt(window.location.search.substring(1).split("&")[0].split("=")[1]);
 
 
 //Global variable stores references to all piece objects
@@ -121,62 +110,94 @@ class Piece{
         break;
       case 2:
         //Queen
-        var moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = this.x;
-        moveObj.x2 = this.x;
-        moveObj.y1 = 0;
-        moveObj.y2 = 8;
-        
-        moves.push(moveObj);
-        
-        moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y;
-        moveObj.y2 = this.y;
-        
-        moves.push(moveObj);
-        
-        moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y-this.x;
-        moveObj.y2 = moveObj.y1+8;
-        
-        moves.push(moveObj);
-        
-        moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y+this.x;
-        moveObj.y2 = moveObj.y1-8;
-        
-        moves.push(moveObj);
+        if(moveSet == 0){
+          //Rook moves
+          var moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = this.x;
+          moveObj.x2 = this.x;
+          moveObj.y1 = 0;
+          moveObj.y2 = 8;
+          moves.push(moveObj);
+          
+          moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y;
+          moveObj.y2 = this.y;
+          moves.push(moveObj);
+          
+          //Bishop moves
+          moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y-this.x;
+          moveObj.y2 = moveObj.y1+8;
+          moves.push(moveObj);
+          
+          moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y+this.x;
+          moveObj.y2 = moveObj.y1-8;
+          moves.push(moveObj);
+          
+        }else if(moveSet == 1){
+          //Rook moves
+          for(var r = 0;r < 8;r ++){
+            var moveObj = {};
+            moveObj.type = "empty-circle";
+            moveObj.radius = r;
+            moveObj.x = this.x;
+            moveObj.y = this.y;
+            
+            moves.push(moveObj);
+          }
+          //Bishop moves
+          for(var r = 0;r < 8*sqrt2;r += sqrt2){
+            var moveObj = {};
+            moveObj.type = "empty-circle";
+            moveObj.radius = r;
+            moveObj.x = this.x;
+            moveObj.y = this.y;
+            
+            moves.push(moveObj);
+          }
+        }
         
         break;
       case 3:
         //Bishop
-        var moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y-this.x;
-        moveObj.y2 = moveObj.y1+8;
-        
-        moves.push(moveObj);
-        
-        moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y+this.x;
-        moveObj.y2 = moveObj.y1-8;
-        
-        moves.push(moveObj);
+        if(moveSet == 0){
+          var moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y-this.x;
+          moveObj.y2 = moveObj.y1+8;
+          moves.push(moveObj);
+          
+          moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y+this.x;
+          moveObj.y2 = moveObj.y1-8;
+          moves.push(moveObj);
+        }else if(moveSet == 1){
+          for(var r = 0;r < 8*sqrt2;r += sqrt2){
+            var moveObj = {};
+            moveObj.type = "empty-circle";
+            moveObj.radius = r;
+            moveObj.x = this.x;
+            moveObj.y = this.y;
+            
+            moves.push(moveObj);
+          }
+        }
         
         break;
       case 4:
@@ -192,23 +213,33 @@ class Piece{
         break;
       case 5:
         //Rook
-        var moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = this.x;
-        moveObj.x2 = this.x;
-        moveObj.y1 = 0;
-        moveObj.y2 = 8;
-        
-        moves.push(moveObj);
-        
-        moveObj = {};
-        moveObj.type = "line";
-        moveObj.x1 = 0;
-        moveObj.x2 = 8;
-        moveObj.y1 = this.y;
-        moveObj.y2 = this.y;
-        
-        moves.push(moveObj);
+        if(moveSet == 0){
+          var moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = this.x;
+          moveObj.x2 = this.x;
+          moveObj.y1 = 0;
+          moveObj.y2 = 8;
+          moves.push(moveObj);
+          
+          moveObj = {};
+          moveObj.type = "line";
+          moveObj.x1 = 0;
+          moveObj.x2 = 8;
+          moveObj.y1 = this.y;
+          moveObj.y2 = this.y;
+          moves.push(moveObj);
+        }else if(moveSet == 1){
+          for(var r = 0;r < 8;r ++){
+            var moveObj = {};
+            moveObj.type = "empty-circle";
+            moveObj.radius = r;
+            moveObj.x = this.x;
+            moveObj.y = this.y;
+            
+            moves.push(moveObj);
+          }
+        }
         
         break;
       case 6:
@@ -238,7 +269,7 @@ class Piece{
   move(x, y){
     
     var oX = this.x;
-    var oY = this.Y;
+    var oY = this.y;
     
     this.x = x;
     this.y = y;
