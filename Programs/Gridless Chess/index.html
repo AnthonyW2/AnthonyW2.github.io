@@ -1,0 +1,179 @@
+<!--
+Anthony Wilson
+
+2021-6-19
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gridless Chess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+      
+      body {
+        color: #e0e0e0;
+        background-color: #383838;
+      }
+      
+      #game-board-container {
+        
+        position: relative;
+        z-index: 1;
+        
+        width: 400px;
+        height: 400px;
+        
+        border: 2px solid #303030;
+        
+        background-color: #404040;
+      }
+      
+      img {
+        position: absolute;
+        z-index: 3;
+        
+        left: 0px;
+        top: 0px;
+      }
+      
+      svg {
+        position: relative;
+        z-index: 4;
+        
+        pointer-events: none;
+      }
+      
+      polygon, circle, line {
+        position: relative;
+        z-index: 5;
+        
+        pointer-events: auto;
+      }
+      
+      .emptyCircle {
+        pointer-events: stroke;
+      }
+      
+      
+      
+      #checkerboard {
+        position: absolute;
+        z-index: 2;
+      }
+      
+      .checkerboard-square-white, .checkerboard-square-black {
+        position: absolute;
+        
+        width: 50px;
+        height: 50px;
+      }
+      .checkerboard-square-white {
+        background-color: #808080;
+      }
+      .checkerboard-square-black {
+        background-color: #404040;
+      }
+      
+    </style>
+  </head>
+  <body onload="init()">
+    
+    <h1>Gridless Chess</h1>
+    
+    <div id="game-board-container">
+      
+      <div id="checkerboard">
+        <!-- Just try to ignore this -->
+        <div class="checkerboard-square-white" style="left: 0px;   top: 0px;"></div>
+        <div class="checkerboard-square-black" style="left: 50px;  top: 0px;"></div>
+        <div class="checkerboard-square-white" style="left: 100px; top: 0px;"></div>
+        <div class="checkerboard-square-black" style="left: 150px; top: 0px;"></div>
+        <div class="checkerboard-square-white" style="left: 200px; top: 0px;"></div>
+        <div class="checkerboard-square-black" style="left: 250px; top: 0px;"></div>
+        <div class="checkerboard-square-white" style="left: 300px; top: 0px;"></div>
+        <div class="checkerboard-square-black" style="left: 350px; top: 0px;"></div>
+        
+        <div class="checkerboard-square-black" style="left: 0px;   top: 50px;"></div>
+        <div class="checkerboard-square-white" style="left: 50px;  top: 50px;"></div>
+        <div class="checkerboard-square-black" style="left: 100px; top: 50px;"></div>
+        <div class="checkerboard-square-white" style="left: 150px; top: 50px;"></div>
+        <div class="checkerboard-square-black" style="left: 200px; top: 50px;"></div>
+        <div class="checkerboard-square-white" style="left: 250px; top: 50px;"></div>
+        <div class="checkerboard-square-black" style="left: 300px; top: 50px;"></div>
+        <div class="checkerboard-square-white" style="left: 350px; top: 50px;"></div>
+        
+        <div class="checkerboard-square-white" style="left: 0px;   top: 100px;"></div>
+        <div class="checkerboard-square-black" style="left: 50px;  top: 100px;"></div>
+        <div class="checkerboard-square-white" style="left: 100px; top: 100px;"></div>
+        <div class="checkerboard-square-black" style="left: 150px; top: 100px;"></div>
+        <div class="checkerboard-square-white" style="left: 200px; top: 100px;"></div>
+        <div class="checkerboard-square-black" style="left: 250px; top: 100px;"></div>
+        <div class="checkerboard-square-white" style="left: 300px; top: 100px;"></div>
+        <div class="checkerboard-square-black" style="left: 350px; top: 100px;"></div>
+        
+        <div class="checkerboard-square-black" style="left: 0px;   top: 150px;"></div>
+        <div class="checkerboard-square-white" style="left: 50px;  top: 150px;"></div>
+        <div class="checkerboard-square-black" style="left: 100px; top: 150px;"></div>
+        <div class="checkerboard-square-white" style="left: 150px; top: 150px;"></div>
+        <div class="checkerboard-square-black" style="left: 200px; top: 150px;"></div>
+        <div class="checkerboard-square-white" style="left: 250px; top: 150px;"></div>
+        <div class="checkerboard-square-black" style="left: 300px; top: 150px;"></div>
+        <div class="checkerboard-square-white" style="left: 350px; top: 150px;"></div>
+        
+        <div class="checkerboard-square-white" style="left: 0px;   top: 200px;"></div>
+        <div class="checkerboard-square-black" style="left: 50px;  top: 200px;"></div>
+        <div class="checkerboard-square-white" style="left: 100px; top: 200px;"></div>
+        <div class="checkerboard-square-black" style="left: 150px; top: 200px;"></div>
+        <div class="checkerboard-square-white" style="left: 200px; top: 200px;"></div>
+        <div class="checkerboard-square-black" style="left: 250px; top: 200px;"></div>
+        <div class="checkerboard-square-white" style="left: 300px; top: 200px;"></div>
+        <div class="checkerboard-square-black" style="left: 350px; top: 200px;"></div>
+        
+        <div class="checkerboard-square-black" style="left: 0px;   top: 250px;"></div>
+        <div class="checkerboard-square-white" style="left: 50px;  top: 250px;"></div>
+        <div class="checkerboard-square-black" style="left: 100px; top: 250px;"></div>
+        <div class="checkerboard-square-white" style="left: 150px; top: 250px;"></div>
+        <div class="checkerboard-square-black" style="left: 200px; top: 250px;"></div>
+        <div class="checkerboard-square-white" style="left: 250px; top: 250px;"></div>
+        <div class="checkerboard-square-black" style="left: 300px; top: 250px;"></div>
+        <div class="checkerboard-square-white" style="left: 350px; top: 250px;"></div>
+        
+        <div class="checkerboard-square-white" style="left: 0px;   top: 300px;"></div>
+        <div class="checkerboard-square-black" style="left: 50px;  top: 300px;"></div>
+        <div class="checkerboard-square-white" style="left: 100px; top: 300px;"></div>
+        <div class="checkerboard-square-black" style="left: 150px; top: 300px;"></div>
+        <div class="checkerboard-square-white" style="left: 200px; top: 300px;"></div>
+        <div class="checkerboard-square-black" style="left: 250px; top: 300px;"></div>
+        <div class="checkerboard-square-white" style="left: 300px; top: 300px;"></div>
+        <div class="checkerboard-square-black" style="left: 350px; top: 300px;"></div>
+        
+        <div class="checkerboard-square-black" style="left: 0px;   top: 350px;"></div>
+        <div class="checkerboard-square-white" style="left: 50px;  top: 350px;"></div>
+        <div class="checkerboard-square-black" style="left: 100px; top: 350px;"></div>
+        <div class="checkerboard-square-white" style="left: 150px; top: 350px;"></div>
+        <div class="checkerboard-square-black" style="left: 200px; top: 350px;"></div>
+        <div class="checkerboard-square-white" style="left: 250px; top: 350px;"></div>
+        <div class="checkerboard-square-black" style="left: 300px; top: 350px;"></div>
+        <div class="checkerboard-square-white" style="left: 350px; top: 350px;"></div>
+      </div>
+      
+      <!-- This displays the possibles move a piece can make -->
+      <svg id="board-svg" width="400" height="400"></svg>
+      
+    </div>
+    
+    <script src="main.js"></script>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
