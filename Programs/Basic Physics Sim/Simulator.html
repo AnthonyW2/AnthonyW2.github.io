@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Newton's Laws - Physics Simulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+  </head>
+  <body onload="init()">
+    <h1>Newton's Laws - Physics Simulation</h1>
+    
+    <div id="object-control-container">
+      
+      <h2 class="centre-heading">Object Management</h2>
+      
+      <!--label for="new-body-button">Add a new object to the simulation</label><br-->
+      <button id="new-body-button" onclick="newObject()">Add new object</button><br>
+      <br>
+      
+      <h2>Active objects:</h2>
+      <div id="active-object-list-container">
+      </div>
+      
+    </div>
+    
+    
+    
+    <div id="sim-container"></div>
+    
+    
+    
+    <div id="physics-control-container">
+      
+      <h2 class="centre-heading">Simulation Control</h2>
+      
+      <button id="pause-button" onclick="pause()">Pause</button>
+      <button id="run-button" onclick="run()" hidden>Run</button><br>
+      <br>
+      
+      <input type="checkbox" id="gravity-checkbox" onchange="updateSettings()">
+      <label for="gravity-checkbox">Gravity</label><br>
+      <br>
+      
+      <input type="checkbox" id="air-resistance-checkbox" onchange="updateSettings()">
+      <label for="air-resistance-checkbox">Air Resistance</label><br>
+      <br>
+      
+      <!--input type="checkbox" id="friction-checkbox" onchange="updateSettings()">
+      <label for="friction-checkbox">Friction</label><br>
+      <br-->
+      
+      <label for="wall-energy-absorbance-input">Wall speed absorbance (%)</label><br>
+      <input type="number" id="wall-energy-absorbance-input" min="0" max = "100" value="0" onchange="updateSettings()"><br>
+      <br>
+      
+      <label for="timestep-length-input">Timestep length (ms)</label><br>
+      <input type="number" id="timestep-length-input" min="5" max = "2000" value="20" onchange="updateSettings()"><br>
+      <br>
+      
+      <br><br>
+      
+      <h2 class="centre-heading">Simulation Information</h2>
+      
+      <!--Total Momentum:
+      <div id="total-momentum"></div-->
+      
+      Total Kinetic Energy:
+      <div id="total-energy"></div>
+      <br>
+      
+      Collision Information:
+      <div id="collision-info-container"></div>
+      
+    </div>
+    
+    
+    
+    
+    <script src="main.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,106 @@
+
+
+* {
+  
+  box-sizing: border-box;
+  
+}
+
+body {
+  
+  position: absolute;
+  
+  width: 100%;
+  height: 100%;
+  
+  margin: 0px;
+  
+  background-color: #1E2228;
+  color: #CDD9E5;
+  
+}
+
+.centre-heading {
+  
+  width: 100%;
+  
+  text-align: center;
+  
+}
+
+.small-input {
+  
+  width: 6em;
+  
+}
+
+
+
+#object-control-container {
+  
+  position: absolute;
+  
+  left: 0px;
+  top: 100px;
+  
+  width: 25%;
+  height: calc(100% - 100px);
+  
+  /*background-color: #272D34;*/
+  
+}
+
+#sim-container {
+  
+  position: absolute;
+  
+  left: 25%;
+  top: 100px;
+  
+  width: 50%;
+  height: calc(100% - 200px);
+  
+  background-color: #2D333B;
+  
+}
+
+#physics-control-container {
+  
+  position: absolute;
+  
+  left: 75%;
+  top: 100px;
+  
+  width: 25%;
+  height: calc(100% - 100px);
+  
+  /*background-color: #272D34;*/
+  
+}
+
+
+
+.physics-object {
+  
+  position: absolute;
+  
+  background-color: #616E80;
+  
+}
+
+.object-controller {
+  
+  margin-bottom: 1em;
+  
+  background-color: #272D34;
+  
+}
+
+
+
+
+
+
+
+
+
